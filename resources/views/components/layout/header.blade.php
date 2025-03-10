@@ -29,7 +29,7 @@
         </ul>
       </nav>
 
-      <a href="{{ localized_route('page.locations') }}">
+      <a href="{{ localized_route('page.standorte') }}">
         {{ __('Standorte') }}
       </a>
     </div>

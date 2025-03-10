@@ -14,7 +14,7 @@ use App\Http\Controllers\PageController;
 */
 
 // Route::view('/', 'home')->name('page.home');
-Route::multilingual('standorte', [PageController::class, 'locations'])->name('page.locations');
+Route::multilingual('standorte', [PageController::class, 'locations'])->name('page.standorte');
 Route::get('{locale?}', [PageController::class, 'home'])->name('page.home')->where('locale', implode('|', config('locales.supported')));
 
 
