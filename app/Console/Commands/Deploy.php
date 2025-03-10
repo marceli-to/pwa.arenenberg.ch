@@ -20,8 +20,8 @@ class Deploy extends Command
     // wrong locale in the html tag. We need to fix this by copying the correct html from the live site.
     $this->fixMissingPages();
 
-    // Search for all occurrences of the string "https://palimpsest.ch.test" and replace it with ENV('APP_URL_PROD') in the dist folder
-    $this->replaceInDist('https://palimpsest.ch.test', env('APP_URL_PROD'));
+    // Search for all occurrences of the string "https://pwa.arenenberg.ch.test" and replace it with ENV('APP_URL_PROD') in the dist folder
+    $this->replaceInDist('https://', env('APP_URL_PROD'));
 
   }
 
