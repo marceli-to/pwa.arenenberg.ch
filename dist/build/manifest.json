@@ -1,0 +1,32 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-916c5e1a.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/fonts/GT-Alpina-Standard-Medium.woff": {
+    "file": "assets/GT-Alpina-Standard-Medium-d1c69f09.woff",
+    "src": "resources/fonts/GT-Alpina-Standard-Medium.woff"
+  },
+  "resources/fonts/GT-Alpina-Standard-Medium.woff2": {
+    "file": "assets/GT-Alpina-Standard-Medium-a77d778d.woff2",
+    "src": "resources/fonts/GT-Alpina-Standard-Medium.woff2"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-e508ae40.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/js/spa.css": {
+    "file": "assets/spa-7388ec06.css",
+    "src": "resources/js/spa.css"
+  },
+  "resources/js/spa.js": {
+    "css": [
+      "assets/spa-7388ec06.css"
+    ],
+    "file": "assets/spa-88ee1a88.js",
+    "isEntry": true,
+    "src": "resources/js/spa.js"
+  }
+}
