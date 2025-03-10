@@ -21,7 +21,7 @@ class Deploy extends Command
     $this->fixMissingPages();
 
     // Search for all occurrences of the string "https://pwa.arenenberg.ch.test" and replace it with ENV('APP_URL_PROD') in the dist folder
-    $this->replaceInDist('https://', env('APP_URL_PROD'));
+    $this->replaceInDist('https://pwa.arenenberg.ch.test', env('APP_URL_PROD'));
 
   }
 
