@@ -3,6 +3,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use RecursiveIteratorIterator;
 use RecursiveDirectoryIterator;
+use Illuminate\Support\Facades\Http;
 
 class Deploy extends Command
 {
@@ -12,8 +13,16 @@ class Deploy extends Command
 
   public function handle()
   {
+    // Call the artisan command "export"
     $this->call('export');
-    $this->replaceInDist('https://pwa.arenenberg.ch.test', env('APP_URL_PROD'));
+        
+    // For some stupid reason, the pages "mentions-legales" and "politique-de-confidentialite" have set the 
+    // wrong locale in the html tag. We need to fix this by copying the correct html from the live site.
+    $this->fixMissingPages();
+
+    // Search for all occurrences of the string "https://palimpsest.ch.test" and replace it with ENV('APP_URL_PROD') in the dist folder
+    $this->replaceInDist('https://palimpsest.ch.test', env('APP_URL_PROD'));
+
   }
 
   protected function replaceInDist($search, $replace)
@@ -69,5 +78,28 @@ class Deploy extends Command
 
     $this->info("Replaced '{$search}' with '{$replace}' in the dist folder");
 
+  }
+
+  protected function fixMissingPages()
+  {
+    $this->info('Start fixing missing pages');
+
+    $routes = [
+      'standorte',
+    ];
+
+    // Get the content for the entries in $routes
+    foreach ($routes as $route)
+    {
+      $url = env('APP_URL') . '/' . $route;
+      $content = Http::get($url)->body();
+      
+      // Save the content to the dist folder
+      // $route is the folder, index.html is the file
+      $filePath = base_path('dist/' . $route . '/index.html');
+      file_put_contents($filePath, $content);
+    }
+
+    $this->info('Finished fixing missing pages');
   }
 }
