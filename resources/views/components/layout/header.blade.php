@@ -29,14 +29,9 @@
         </ul>
       </nav>
 
-      <nav>
-        <ul>
-          <li>
-            <a href="{{ localized_route('page.locations') }}">
-              {{ __('Standorte') }}
-            </a>
-          </li>
-        </ul>
+      <a href="{{ localized_route('page.locations') }}">
+        {{ __('Standorte') }}
+      </a>
     </div>
   </x-layout.inner>
 </header>
