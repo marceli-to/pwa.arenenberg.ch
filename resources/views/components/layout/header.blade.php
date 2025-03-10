@@ -4,7 +4,7 @@
       @if (Route::is('auth.*'))
         <h1>DASHBOARD</h1>
       @else
-        <h1 class="text-crimson text-3xl">
+        <h1 class="text-crimson text-xl">
           {{ __('Kaiser, Kühe und Kultur') }}
         </h1>
       @endif
