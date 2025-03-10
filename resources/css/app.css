@@ -1,0 +1,9 @@
+@import "_webfonts.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-variant-ligatures: none;
+}
