@@ -9,7 +9,7 @@
 <meta name="description" content="{{ env('APP_DESCRIPTION') }}">
 <meta property="og:title" content="{{ env('APP_NAME') }}">
 <meta property="og:description" content="{{ env('APP_DESCRIPTION') }}">
-<meta property="og:url" content="{{ url()->current()}} ">
+<meta property="og:url" content="{{ url()->current()}}">
 <meta property="og:site_name" content="{{ env('APP_NAME') }}">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
