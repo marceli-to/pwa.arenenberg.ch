@@ -14,22 +14,22 @@
           <li>
             <a 
               href="{{ Request::routeIs('page.home') ? '/' : current_route('de') }}"
-              class="{{ app()->getLocale() === 'de' ? 'is-active' : 'transition-colors' }}">de</a>
+              class="{{ app()->getLocale() === 'de' ? 'is-active' : '' }}">de</a>
           </li>
           <li>
             <a 
               href="{{ Request::routeIs('page.home') ? '/fr' : current_route('fr') }}"
-              class="{{ app()->getLocale() === 'fr' ? 'is-active' : 'transition-colors' }}">fr</a>
+              class="{{ app()->getLocale() === 'fr' ? 'is-active' : '' }}">fr</a>
           </li>
           <li>
             <a 
               href="{{ Request::routeIs('page.home') ? '/en' : current_route('en') }}"
-              class="{{ app()->getLocale() === 'en' ? 'is-active' : 'transition-colors' }}">en</a>
+              class="{{ app()->getLocale() === 'en' ? 'is-active' : '' }}">en</a>
           </li>
         </ul>
       </nav>
-
-      <a href="{{ localized_route('page.standorte') }}">
+      <a 
+        href="{{ localized_route('page.locations') }}">
         {{ __('Standorte') }}
       </a>
     </div>

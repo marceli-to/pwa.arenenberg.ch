@@ -20,8 +20,6 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="{{ env('APP_NAME') }}" />
 <link rel="manifest" href="/site.webmanifest" />
-
 @vite('resources/css/app.css')
-@livewireStyles
 </head>
 <body class="antialiased font-gt-alpina-medium text-evergreen flex flex-col min-h-dvh bg-blush max-w-md mx-auto">
