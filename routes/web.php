@@ -13,13 +13,15 @@ use App\Http\Controllers\PageController;
 |
 */
 
-// Route::view('/', 'home')->name('page.home');
-Route::multilingual('standorte', [PageController::class, 'locations'])->name('page.locations');
-Route::get('{locale?}', [PageController::class, 'home'])->name('page.home')->where('locale', implode('|', config('locales.supported')));
+Route::domain(env('PWA_DOMAIN'))->group(function () {
+  Route::multilingual('standorte', [PageController::class, 'locations'])->name('page.locations');
+  Route::get('{locale?}', [PageController::class, 'home'])->name('page.home')->where('locale', implode('|', config('locales.supported')));  
+});
 
-
-Route::get('/dashboard/{any?}', function () {
-  return view('dashboard');
-})->where('any', '.*')->middleware(['auth', 'verified'])->name('page.dashboard');
+Route::domain(env('DASHBOARD_DOMAIN'))->group(function () {
+  Route::get('/dashboard/{any?}', function () {
+    return view('dashboard');
+  })->where('any', '.*')->middleware(['auth', 'verified'])->name('page.dashboard');
+});
 
 require __DIR__.'/auth.php';
