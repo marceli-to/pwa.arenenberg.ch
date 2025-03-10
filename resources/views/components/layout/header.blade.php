@@ -14,17 +14,17 @@
           <li>
             <a 
               href="{{ Request::routeIs('page.home') ? '/' : current_route('fr') }}"
-              class="{{ app()->getLocale() === 'fr' ? 'is-active' : 'hover:text-coral transition-colors' }}">fr</a>
+              class="{{ app()->getLocale() === 'fr' ? 'is-active' : 'transition-colors' }}">fr</a>
           </li>
           <li>
             <a 
               href="{{ Request::routeIs('page.home') ? '/de' : current_route('de') }}"
-              class="{{ app()->getLocale() === 'de' ? 'is-active' : 'hover:text-coral transition-colors' }}">de</a>
+              class="{{ app()->getLocale() === 'de' ? 'is-active' : 'transition-colors' }}">de</a>
           </li>
           <li>
             <a 
               href="{{ Request::routeIs('page.home') ? '/en' : current_route('en') }}"
-              class="{{ app()->getLocale() === 'en' ? 'is-active' : 'hover:text-coral transition-colors' }}">en</a>
+              class="{{ app()->getLocale() === 'en' ? 'is-active' : 'transition-colors' }}">en</a>
           </li>
         </ul>
       </nav>
