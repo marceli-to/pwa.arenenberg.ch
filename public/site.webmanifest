@@ -1,6 +1,6 @@
 {
-  "name": "kartei.site",
-  "short_name": "kartei.site",
+  "name": "Kaiser, Kühe und Kultur – Arenenberger Vielfalt",
+  "short_name": "Kaiser, Kühe und Kultur – Arenenberger Vielfalt",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#f5cddc",
+  "background_color": "#f5cddc",
   "display": "standalone"
 }

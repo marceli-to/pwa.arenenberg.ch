@@ -1,5 +1,7 @@
 <!doctype html>
-<html lang="de" class="scroll-smooth overflow-y-auto {{ $class ?? ''}}">
+<html
+  lang="{{ locale() }}"
+  class="scroll-smooth overflow-y-auto">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,8 +18,9 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="kartei.site" />
+<meta name="apple-mobile-web-app-title" content="{{ env('APP_NAME') }}" />
 <link rel="manifest" href="/site.webmanifest" />
+
 @vite('resources/css/app.css')
 @livewireStyles
 </head>
