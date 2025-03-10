@@ -13,13 +13,13 @@
         <ul class="flex gap-x-24 lg:gap-x-20">
           <li>
             <a 
-              href="{{ Request::routeIs('page.home') ? '/' : current_route('fr') }}"
-              class="{{ app()->getLocale() === 'fr' ? 'is-active' : 'transition-colors' }}">fr</a>
+              href="{{ Request::routeIs('page.home') ? '/' : current_route('de') }}"
+              class="{{ app()->getLocale() === 'de' ? 'is-active' : 'transition-colors' }}">fr</a>
           </li>
           <li>
             <a 
-              href="{{ Request::routeIs('page.home') ? '/de' : current_route('de') }}"
-              class="{{ app()->getLocale() === 'de' ? 'is-active' : 'transition-colors' }}">de</a>
+              href="{{ Request::routeIs('page.home') ? '/fr' : current_route('fr') }}"
+              class="{{ app()->getLocale() === 'fr' ? 'is-active' : 'transition-colors' }}">de</a>
           </li>
           <li>
             <a 
