@@ -64,7 +64,7 @@ const props = defineProps({
 });
 
 const computedClasses = computed(() => {
-  const baseClasses = 'min-h-default pr-8 flex items-center justify-between cursor-pointer group';
+  const baseClasses = 'min-h-32 pr-8 flex items-center justify-between cursor-pointer group';
   const variantClasses = props.variant === 'default' 
     ? 'border-y border-graphite' 
     : 'border-b border-graphite';

@@ -21,7 +21,7 @@
         <ul>
           <li 
             v-for="(item, index) in slides" :key="index" 
-            class="min-h-default flex items-center border-b border-b-graphite first-of-type:border-t first-of-type:border-t-graphite mr-8">
+            class="min-h-32 flex items-center border-b border-b-graphite first-of-type:border-t first-of-type:border-t-graphite mr-8">
             <a 
               href="javascript:;"
               @click="activeIndex = index"

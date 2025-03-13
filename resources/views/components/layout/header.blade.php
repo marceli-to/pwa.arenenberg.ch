@@ -5,7 +5,7 @@
         <h1>DASHBOARD</h1>
       @else
         <h1 class="text-crimson text-xl leading-none">
-          {{ __('Kaiser, Kühe und Kultur') }}
+          {!! __('Kaiser, Kühe<br>und Kultur') !!}
         </h1>
       @endif
 

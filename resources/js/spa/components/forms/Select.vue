@@ -43,7 +43,7 @@ const props = defineProps({
   },
   classes: {
     type: String,
-    default: 'w-full min-h-default !bg-none appearance-none text-md !ring-0 px-0 py-2 border-x-white focus:border-x-white bg-snow border-y border-y-graphite focus:border-black placeholder: placeholder:text-black'
+    default: 'w-full min-h-32 !bg-none appearance-none text-md !ring-0 px-0 py-2 border-x-white focus:border-x-white bg-snow border-y border-y-graphite focus:border-black placeholder: placeholder:text-black'
   },
   error: {
     type: String,

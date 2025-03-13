@@ -22,7 +22,7 @@ const props = defineProps({
   },
   classes: {
     type: String,
-    default: 'border border-graphite min-h-default text-md text-white w-full flex items-center justify-start gap-x-12 px-8 bg-pebble hover:theme-color hover:text-black !ring-0 !outline-none transition-all'
+    default: 'border border-graphite min-h-32 text-md text-white w-full flex items-center justify-start gap-x-12 px-8 bg-pebble hover:theme-color hover:text-black !ring-0 !outline-none transition-all'
   },
   disabled: {
     type: Boolean,

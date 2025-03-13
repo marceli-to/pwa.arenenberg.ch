@@ -12,7 +12,7 @@
   data-toast>
   <div
     @class([
-      'text-center min-h-32 flex items-center justify-center max-w-page mx-auto',
+      'text-center min-h-32 flex items-center justify-center max-w-2xl mx-auto',
       'bg-lime' => $type == 'success',
       'bg-flame' => $type == 'error',
       'bg-ice' => $type == 'info',

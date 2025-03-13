@@ -22,4 +22,4 @@
 <link rel="manifest" href="/site.webmanifest" />
 @vite('resources/css/app.css')
 </head>
-<body class="antialiased font-gt-alpina-medium text-evergreen flex flex-col min-h-dvh bg-blush max-w-md mx-auto">
+<body class="antialiased font-gt-alpina-medium text-md text-evergreen flex flex-col min-h-dvh bg-blush max-w-lg mx-auto">

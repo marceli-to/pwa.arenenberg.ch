@@ -15,15 +15,6 @@ export default {
       screens: {
       },
 
-      minHeight: {
-        'default': '2rem',
-        'slim': '1.5rem',
-      },
-      
-      maxWidth: {
-        'page': '125rem',
-      },
-
       width: {
         '1/12': '8.33333%',
         '2/12': '16.66667%',
@@ -59,27 +50,24 @@ export default {
         'steel': '#8C8C8C',
       },
 
+      fontFamily: {
+        'gt-alpina-medium': ['GT-Alpina-Standard-Medium', ...defaultTheme.fontFamily.sans],
+      },
+
+      fontSize: {
+        'xs': '0.875rem',  // 14px
+        'sm': '1rem',      // 16px
+        'md': '1.1875rem', // 19px
+        'lg': '1.75rem', // 29px
+        'xl': '2.8125rem', // 45px
+      },
+
       zIndex: {
         '60': 60,
         '70': 70,
         '80': 80,
         '90': 90,
         '100': 100,
-      },
-
-      fontFamily: {
-        'gt-alpina-medium': ['GT-Alpina-Standard-Medium', ...defaultTheme.fontFamily.sans],
-      },
-
-      fontSize: {
-        'xs': '0.75rem', // 12px
-        'sm': '0.875rem', // 14px
-        'md': '1rem', // 16px
-
-        // Frontend
-        'xl': '3.25rem',
-        '2xl': '5rem',
-        '3xl': '7.5rem',
       },
 
     },

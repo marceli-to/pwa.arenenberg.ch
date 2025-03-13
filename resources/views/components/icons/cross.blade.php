@@ -1,3 +1,4 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="{{ $class ?? '' }}">
-  <path d="M21.879 0L12 9.879L2.121 0L0 2.121L9.87801 12.001L0 21.879L2.121 24L12 14.122L21.879 24L24 21.879L14.121 12.001L24 2.121L21.879 0Z" fill="currentColor"/>
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="{{ $class ?? '' }}">
+<path d="M1.59515 34.405L34.4052 1.59497" stroke="currentColor" stroke-width="2.844"/>
+<path d="M34.4048 34.405L1.59485 1.59497" stroke="currentColor" stroke-width="2.844"/>
 </svg>
