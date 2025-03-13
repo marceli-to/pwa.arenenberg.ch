@@ -34,6 +34,11 @@ export default defineConfig({
   ],
   build: {
     rollupOptions: {
+      input: {
+        app: 'resources/js/app.js',
+        'app-css': 'resources/css/app.css',
+        spa: 'resources/js/spa.js'
+      },
       output: {
         entryFileNames: 'assets/[name].js',
         chunkFileNames: 'assets/[name].js',
