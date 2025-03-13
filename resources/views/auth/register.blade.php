@@ -1,4 +1,4 @@
-<x-layout.guest class="mt-108 flex justify-center">
+<x-layout.dashboard>
 @section('content')
 
   @if ($errors->any())
@@ -14,7 +14,7 @@
     <form 
       method="POST" 
       action="{{ route('auth.register') }}"
-      class="flex flex-col gap-y-8 w-full">
+      class="flex flex-col gap-y-16 w-full">
       
       @csrf
 
@@ -85,5 +85,5 @@
 
   </x-auth.wrapper>
 @endSection
-</x-layout.guest>
+</x-layout.dashboard>
 

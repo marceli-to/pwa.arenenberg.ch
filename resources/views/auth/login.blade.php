@@ -1,4 +1,4 @@
-<x-layout.guest class="mt-108 flex justify-center">
+<x-layout.dashboard>
 @section('content')
   @if ($errors->any())
     <x-auth.toast status="Es ist ein Fehler aufgetreten." type="error" />
@@ -13,7 +13,7 @@
     <form 
       method="POST" 
       action="{{ route('auth.login') }}" 
-      class="flex flex-col gap-y-8 w-full">
+      class="flex flex-col gap-y-16 w-full">
       @csrf
 
       <x-auth.input-label>
@@ -47,16 +47,10 @@
           </x-auth.helper-link>
         @endif
 
-        @if (Route::has('auth.register'))
-          <x-auth.helper-link :route="'auth.register'">
-            {{ __('Noch nicht registriert?') }}
-          </x-auth.helper-link>
-        @endif
-
       </div>
 
     </form>
   
   </x-auth.wrapper>
 @endsection
-</x-layout.guest>
+</x-layout.dashboard>

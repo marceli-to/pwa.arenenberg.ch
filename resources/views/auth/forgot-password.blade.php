@@ -1,4 +1,4 @@
-<x-layout.guest class="mt-108 flex justify-center">
+<x-layout.dashboard>
 @section('content')
   
   @if (session('status'))
@@ -18,7 +18,7 @@
     <form 
       method="POST" 
       action="{{ route('auth.password.email') }}"
-      class="flex flex-col gap-y-8 w-full">
+      class="flex flex-col gap-y-16 w-full">
       @csrf
 
       <x-auth.text-input 
@@ -46,4 +46,4 @@
   
   </x-auth.wrapper>
 @endsection
-</x-layout.guest>
+</x-layout.dashboard>

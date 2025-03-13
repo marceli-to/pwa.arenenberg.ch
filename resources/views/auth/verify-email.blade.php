@@ -1,4 +1,4 @@
-<x-layout.guest class="mt-108 flex justify-center">
+<x-layout.dashboard>
 @section('content')
 
   @if (session('status') == 'verification-link-sent')
@@ -23,4 +23,4 @@
   </x-auth.wrapper>
 
 @endsection
-</x-layout.guest>
+</x-layout.dashboard>

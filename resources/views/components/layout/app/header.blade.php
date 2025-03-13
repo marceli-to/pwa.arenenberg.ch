@@ -1,13 +1,9 @@
 <header>
   <x-layout.inner>
     <div class="w-full flex flex-col justify-between">
-      @if (Route::is('auth.*'))
-        <h1>DASHBOARD</h1>
-      @else
-        <h1 class="text-crimson text-xl leading-none">
-          {!! __('Kaiser, Kühe<br>und Kultur') !!}
-        </h1>
-      @endif
+      <h1 class="text-crimson text-xl leading-none">
+        {!! __('Kaiser, Kühe<br>und Kultur') !!}
+      </h1>
 
       <nav {{ $attributes->merge(['class' => '']) }}>
         <ul class="flex gap-x-24 lg:gap-x-20">
