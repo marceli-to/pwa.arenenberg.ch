@@ -1,4 +1,3 @@
-@props(['class' => ''])
-<main role="main" class="{{ $class ?? '' }}">
+<main role="main">
   {{ $slot }}
 </main>
