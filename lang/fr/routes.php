@@ -1,6 +1,6 @@
 <?php
 
 return [
-  'home' => 'accueil',
+  '/' => 'accueil',
   'standorte' => 'sites',
 ];

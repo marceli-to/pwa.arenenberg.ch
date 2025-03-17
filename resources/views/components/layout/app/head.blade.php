@@ -1,7 +1,8 @@
 <!doctype html>
 <html
   lang="{{ locale() }}"
-  class="scroll-smooth overflow-y-auto">
+  class="scroll-smooth overflow-y-auto"
+  x-data="{ menu: false }">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,4 +23,4 @@
 <link rel="manifest" href="/site.webmanifest" />
 @vite('resources/css/app.css')
 </head>
-<body class="antialiased font-gt-alpina-medium text-md leading-[1.2] text-evergreen flex flex-col min-h-dvh bg-blush max-w-lg mx-auto p-20">
+<body class="antialiased font-gt-alpina-medium text-md leading-[1.2] text-evergreen bg-blush max-w-lg mx-auto px-15">

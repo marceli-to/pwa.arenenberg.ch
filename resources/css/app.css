@@ -7,3 +7,8 @@
 * {
   font-variant-ligatures: none;
 }
+
+/* Alpine.js */
+[x-cloak] {
+  display: none !important;
+}

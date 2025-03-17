@@ -1,0 +1,28 @@
+@props([
+  'title' => '',
+  'contentClasses' => '',
+  'id' => '',                // Unique identifier for this section
+])
+<div 
+	class="w-full border-t border-t-evergreen py-20">
+	<div 
+		@click="activeSection = (activeSection === '{{ $id }}') ? null : '{{ $id }}'"
+		class="flex items-center justify-between cursor-pointer">
+		<span class="text-lg select-none">
+			{{ $title }}
+		</span>
+		<span x-show="activeSection !== '{{ $id }}'">
+			<x-icons.chevron-left />
+		</span>
+		<span x-show="activeSection === '{{ $id }}'">
+			<x-icons.chevron-down />
+		</span>
+	</div>
+	<div 
+		class="mt-25"
+		x-show="activeSection === '{{ $id }}'">
+		<div class="{{ $contentClasses }}">
+			{{ $slot }}
+		</div>
+	</div>
+</div>

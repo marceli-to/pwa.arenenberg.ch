@@ -1,6 +1,6 @@
 <?php
 
 return [
-  'home' => 'home',
+  '/' => 'home',
   'standorte' => 'locations',
 ];

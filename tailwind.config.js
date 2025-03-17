@@ -58,8 +58,8 @@ export default {
         'xs': '0.875rem',  // 14px
         'sm': '1rem',      // 16px
         'md': '1.1875rem', // 19px
-        'lg': '1.75rem', // 29px
-        'xl': '2.8125rem', // 45px
+        'lg': '1.75rem', // 28px
+        'xl': '2.5rem', // 40px
       },
 
       zIndex: {

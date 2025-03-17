@@ -14,8 +14,9 @@ use App\Http\Controllers\PageController;
 */
 
 Route::domain(env('DOMAIN_PWA'))->group(function () {
+  // Multilingual routes
+  Route::multilingual('/', [PageController::class, 'home'])->name('page.home');
   Route::multilingual('standorte', [PageController::class, 'locations'])->name('page.locations');
-  Route::get('{locale?}', [PageController::class, 'home'])->name('page.home')->where('locale', implode('|', config('locales.supported')));  
 });
 
 Route::domain(env('DOMAIN_DASHBOARD'))->group(function () {
