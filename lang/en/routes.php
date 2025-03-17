@@ -2,5 +2,6 @@
 
 return [
   '/' => 'home',
+  'zugang' => 'access',
   'standorte' => 'locations',
 ];

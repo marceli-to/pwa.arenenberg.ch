@@ -1,7 +1,15 @@
 @props([
   'route' => '#',
   'label' => '',
+  'type' => 'link',
+  'class' => '',
 ])
-<a href="{{ $route }}" class="text-lg h-50 border-2 border-evergreen flex items-center justify-center">
-  <span>{{ $label }}</span>
-</a>
+@if ($type === 'link')
+  <a href="{{ $route }}" class="w-full text-lg h-50 border-2 border-evergreen flex items-center justify-center {{ $class }}">
+    <span>{{ $label }}</span>
+  </a>
+@elseif ($type === 'button')
+  <button type="submit" class="w-full text-lg h-50 border-2 border-evergreen flex items-center justify-center {{ $class }}">
+    <span>{{ $label }}</span>
+  </button>
+@endif

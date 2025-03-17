@@ -10,7 +10,7 @@
       <x-buttons.language route="{{ current_route('fr') }}" label="F" active="{{ locale() === 'fr' }}" />
       <x-buttons.language route="{{ current_route('en') }}" label="E" active="{{ locale() === 'en' }}" />
     </div>
-    <x-buttons.primary route="{{ current_route('de') }}" label="{{ __('Starten') }}" />
+    <x-buttons.primary route="{{ localized_route('page.access') }}" label="{{ __('Starten') }}" />
   </div>
 </div>
 @endsection

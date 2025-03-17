@@ -9,6 +9,11 @@ class PageController extends Controller
     return view('pages.home');
   }
 
+  public function access(Request $request)
+  {
+    return view('pages.access');
+  }
+
   public function locations(Request $request)
   {
     return view('pages.locations');
