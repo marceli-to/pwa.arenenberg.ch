@@ -60,7 +60,7 @@ const ASSETS = [
 	'/zugang/index.html',
 ];
 
-const CACHE_NAME = 'arenenberg-assets-v21';
+const CACHE_NAME = 'arenenberg-assets-v22';
 const COOKIE_NAME = 'arenenberg-auth';
 const PASSWORD_PATH = '/password.txt';
 
@@ -301,12 +301,12 @@ const initAccessForm = () => {
 			setCookie(COOKIE_NAME, 'true', 60); // Set cookie for 60 minutes
 			
 			// Hide access form and show resources loader
-      form.classList.remove('flex');
+			form.classList.remove('flex');
 			form.classList.add('hidden');
 			const resourcesLoader = document.querySelector('[data-resources-loader]');
 			if (resourcesLoader) {
 				resourcesLoader.classList.remove('hidden');
-        resourcesLoader.classList.add('flex');
+				resourcesLoader.classList.add('flex');
 			}
 			
 			// Start caching assets
@@ -315,10 +315,21 @@ const initAccessForm = () => {
 			// Show error message
 			if (accessError) {
 				accessError.textContent = 'Incorrect passcode. Please try again.';
+				accessError.classList.remove('hidden');
+				
+				// Clear input fields
+				inputs.forEach(input => {
+					input.value = '';
+				});
+				
+				// Focus first input for easier retry
+				inputs[0].focus();
 			}
 		}
 	});
 };
+
+// Debug button initialization removed
 
 // =======================================================
 // Application Initialization
