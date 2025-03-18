@@ -60,7 +60,7 @@ const ASSETS = [
 	'/zugang/index.html',
 ];
 
-const CACHE_NAME = 'arenenberg-assets-v20';
+const CACHE_NAME = 'arenenberg-assets-v21';
 const COOKIE_NAME = 'arenenberg-auth';
 const PASSWORD_PATH = '/password.txt';
 
