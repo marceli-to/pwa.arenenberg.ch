@@ -89,40 +89,66 @@ const validatePassword = async (password) => {
 };
 
 const cacheAllAssets = async () => {
-	const cacheProgress = document.querySelector('[data-cache-progress]');
-	const cacheProgressBar = document.querySelector('[ data-cache-progress-bar]');
+  const cacheProgress = document.querySelector('[data-cache-progress]');
+  const cacheProgressBar = document.querySelector('[data-cache-progress-bar]');
   const resourceLoader = document.querySelector('[data-resources-loader]');
 
-  resourceLoader.classList.remove('hidden');
-  resourceLoader.classList.add('flex');
+  if (resourceLoader) {
+    resourceLoader.classList.remove('hidden');
+    resourceLoader.classList.add('flex');
+  }
 
-	try {
-		const cache = await caches.open(CACHE_NAME);
-		let cached = 0;
+  try {
+    const cache = await caches.open(CACHE_NAME);
+    let cached = 0;
+    const totalAssets = ASSETS.length;
 
-		for (const asset of ASSETS) {
-			const response = await cache.match(asset);
-			if (!response && navigator.onLine) {
-				try {
-					const networkResponse = await fetch(asset);
-					await cache.put(asset, networkResponse.clone());
-					cached++;
-				} catch (error) {
-					console.error(`Failed to cache ${asset}:`, error);
-				}
-			} else if (response) {
-				cached++;
-			}
-			cacheProgressBar.value = (cached / ASSETS.length) * 100;
-		}
+    // Update progress text initially
+    if (cacheProgress) {
+      cacheProgress.textContent = `Loading: 0%`;
+    }
 
-		cacheProgress.textContent = cached === ASSETS.length ?
-			'All assets cached' :
-			`Cached ${cached}/${ASSETS.length} assets`;
-	} catch (error) {
-		console.error('Cache check failed:', error);
-		cacheProgress.textContent = 'Cache check failed';
-	}
+    for (const asset of ASSETS) {
+      const response = await cache.match(asset);
+      if (!response && navigator.onLine) {
+        try {
+          const networkResponse = await fetch(asset);
+          await cache.put(asset, networkResponse.clone());
+          cached++;
+        } catch (error) {
+          console.error(`Failed to cache ${asset}:`, error);
+        }
+      } else if (response) {
+        cached++;
+      }
+      
+      // Calculate percentage
+      const progressPercentage = Math.round((cached / totalAssets) * 100);
+      
+      // Update custom progress bar
+      if (cacheProgressBar) {
+        cacheProgressBar.value = progressPercentage;
+        // If it's a div-based progress bar, update the width
+        const progressWidth = `${progressPercentage}%`;
+        cacheProgressBar.style.background = `linear-gradient(to right, #3F7D20 ${progressWidth}, transparent ${progressWidth})`;
+      }
+      
+      // Update progress text with percentage
+      if (cacheProgress) {
+        cacheProgress.textContent = `Loading: ${progressPercentage}%`;
+      }
+    }
+
+    // Final progress update
+    if (cacheProgress) {
+      cacheProgress.textContent = `Loading: 100% - Complete`;
+    }
+  } catch (error) {
+    console.error('Cache check failed:', error);
+    if (cacheProgress) {
+      cacheProgress.textContent = 'Cache check failed';
+    }
+  }
 };
 
 const checkAuth = () => {
