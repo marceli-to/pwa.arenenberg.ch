@@ -2,8 +2,9 @@
   @section('content')
 
   <!-- Access form section -->
-  <form class="!hidden w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen flex flex-col justify-between" 
-    data-access-from>
+  <form 
+    class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen flex flex-col justify-between" 
+    data-access-form>
     <div class="mt-10">
       <h2 class="text-lg">
         {{ __('Passcode:') }}
@@ -70,7 +71,9 @@
   <!-- End Access form section -->
 
   <!-- Resources loader section  -->
-  <div class="!hidden w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen flex flex-col justify-between">
+  <div 
+    class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen flex flex-col justify-between"
+    data-resources-loader>
     <div class="mt-10">
       <h2 class="text-lg">
         {{ __('Die Inhalte werden heruntergeladen. Dies kannn einen Moment dauern.') }}
@@ -83,7 +86,9 @@
   <!-- End Resources loader section -->
 
   <!-- Success section -->
-  <div class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen flex flex-col justify-between">
+  <div 
+    class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen flex flex-col justify-between"
+    data-success-section>
     <div class="text-lg py-10">
       <p>{{ __('Auf Reportage auf dem Arenenberg!') }}</p>
       <p>{{ __('Hinweis zum Rundgang mit Reporter:innen.') }}</p>

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const inputs = document.querySelectorAll('[data-access-input]');
-  const form = document.querySelector('[data-access-from]');
+  const form = document.querySelector('[data-access-form]');
 
   // Return if no inputs or form
   if (!inputs || !form) {
