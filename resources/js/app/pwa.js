@@ -237,7 +237,7 @@ if ('serviceWorker' in navigator) {
 }
 
 // Check authentication on page load
-if (window.location.pathname !== '/index.html') {
+if (window.location.pathname !== '/zugang/index.html' && window.location.pathname !== '/zugang/' && window.location.pathname !== '/') {
 	checkAuth();
 }
 
