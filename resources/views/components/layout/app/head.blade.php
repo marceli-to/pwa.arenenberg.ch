@@ -8,10 +8,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ __(env('APP_NAME')) }}</title>
 <meta name="description" content="{{ __(env('APP_DESCRIPTION')) }}">
-<meta property="og:title" content="{{ __(env('APP_NAME')) }}">
-<meta property="og:description" content="{{ __(env('APP_DESCRIPTION')) }}">
-<meta property="og:url" content="{{ url()->current()}}">
-<meta property="og:site_name" content="{{ __(env('APP_NAME')) }}">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
 <meta name="csrf-token" content="{{ csrf_token() }}">

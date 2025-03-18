@@ -34,6 +34,9 @@ class ExportStatic extends Command
         // Step 4: Add /index.html to links
         $this->fixLinks();
         
+        // Step 5: Remove preload attributes
+        $this->removePreloadAttributes();
+        
         $this->info('Static export completed successfully!');
     }
 
@@ -197,9 +200,16 @@ class ExportStatic extends Command
                         $domain = parse_url($url, PHP_URL_HOST);
                         $path = parse_url($url, PHP_URL_PATH);
                         
-                        // Skip if path already has index.html or is empty/root
-                        if (strpos($path, '/index.html') !== false || $path === '/' || empty($path)) {
+                        // Skip if path already has index.html
+                        if (strpos($path, '/index.html') !== false) {
                             return $matches[0]; // Return unchanged
+                        }
+                        
+                        // Handle root domain URLs (empty path or just /)
+                        if ($path === '/' || empty($path)) {
+                            $newUrl = rtrim($url, '/') . '/index.html';
+                            $fileLinksModified++;
+                            return $attribute . '=' . $quote . $newUrl . $quote;
                         }
                         
                         // Prepare the new URL with /index.html
@@ -239,5 +249,86 @@ class ExportStatic extends Command
         
         $this->info("Processed {$filesProcessed} HTML files");
         $this->info("Modified {$linksModified} links in total");
+    }
+
+    /**
+     * Remove preload attributes from HTML files
+     */
+    protected function removePreloadAttributes()
+    {
+        $this->info('Removing preload attributes from HTML files...');
+        
+        $distPath = base_path('dist');
+        $iterator = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($distPath, RecursiveDirectoryIterator::SKIP_DOTS),
+            RecursiveIteratorIterator::SELF_FIRST
+        );
+        
+        $filesProcessed = 0;
+        $attributesRemoved = 0;
+        
+        foreach ($iterator as $file) {
+            if ($file->isFile() && $file->getExtension() === 'html') {
+                $filePath = $file->getPathname();
+                $content = file_get_contents($filePath);
+                $originalContent = $content;
+                $fileAttributesRemoved = 0;
+                
+                // Remove rel="preload" as="style"
+                $pattern = '/\s+rel="preload"\s+as="style"/i';
+                $newContent = preg_replace($pattern, '', $content);
+                if ($newContent !== $content) {
+                    $fileAttributesRemoved += substr_count($content, 'rel="preload" as="style"');
+                    $content = $newContent;
+                }
+                
+                // Remove data-navigate-track="reload"
+                $pattern = '/\s+data-navigate-track="reload"/i';
+                $newContent = preg_replace($pattern, '', $content);
+                if ($newContent !== $content) {
+                    $fileAttributesRemoved += substr_count($content, 'data-navigate-track="reload"');
+                    $content = $newContent;
+                }
+                
+                // Remove rel="modulepreload"
+                $pattern = '/\s+rel="modulepreload"/i';
+                $newContent = preg_replace($pattern, '', $content);
+                if ($newContent !== $content) {
+                    $fileAttributesRemoved += substr_count($content, 'rel="modulepreload"');
+                    $content = $newContent;
+                }
+                
+                // Remove <link href="https://pwa.arenenberg.ch.marceli.to/build/assets/app.js" />
+                $pattern = '/<link\s+href="[^"]*\/build\/assets\/app\.js"[^>]*\/?>/i';
+                $newContent = preg_replace($pattern, '', $content);
+                if ($newContent !== $content) {
+                    $fileAttributesRemoved += substr_count($content, '<link href="') - substr_count($newContent, '<link href="');
+                    $content = $newContent;
+                }
+                
+                // Also remove any empty link tags for app.css
+                $pattern = '/<link\s+href="[^"]*\/build\/assets\/app\.css"[^>]*\/?>/i';
+                $newContent = preg_replace($pattern, '', $content);
+                if ($newContent !== $content) {
+                    $fileAttributesRemoved += substr_count($content, '<link href="') - substr_count($newContent, '<link href="');
+                    $content = $newContent;
+                }
+                
+                // Only write to file if we made changes
+                if ($content !== $originalContent) {
+                    file_put_contents($filePath, $content);
+                    $attributesRemoved += $fileAttributesRemoved;
+                    
+                    if ($fileAttributesRemoved > 0) {
+                        $this->line("Removed {$fileAttributesRemoved} preload attributes/tags in: " . $filePath);
+                    }
+                }
+                
+                $filesProcessed++;
+            }
+        }
+        
+        $this->info("Processed {$filesProcessed} HTML files");
+        $this->info("Removed {$attributesRemoved} preload attributes/tags in total");
     }
 }
