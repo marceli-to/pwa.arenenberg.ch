@@ -56,7 +56,7 @@ const CACHE_NAME = 'arenenberg-assets-v5';
 
 const COOKIE_NAME = 'arenenberg-auth';
 
-const PASSWORD_PATH = 'password.txt';
+const PASSWORD_PATH = '/password.txt';
 
 const setCookie = (name, value, minutes) => {
 	const date = new Date();
