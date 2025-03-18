@@ -84,9 +84,9 @@
           data-cache-progress-bar 
           value="0" 
           max="100"
-          class="w-full h-2 rounded-full bg-gray-200 appearance-none [&::-webkit-progress-bar]:bg-gray-200 [&::-webkit-progress-value]:bg-blue-500 [&::-moz-progress-bar]:bg-blue-500">
+          class="w-full h-8 border border-evergreen bg-transparent appearance-none [&::-webkit-progress-bar]:border [&::-webkit-progress-bar]:border-evergreen [&::-webkit-progress-bar]:bg-transparent [&::-webkit-progress-value]:bg-evergreen [&::-moz-progress-bar]:bg-evergreen">
         </progress>
-        <div data-cache-progress></div>
+        <div data-cache-progress class="text-right"></div>
       </div>
     </div>
   </div>
