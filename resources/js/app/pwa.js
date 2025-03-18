@@ -231,19 +231,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 });
 
-// Register Service Worker
-// if ('serviceWorker' in navigator) {
-//   window.addEventListener('load', () => {
-//   navigator.serviceWorker.register('/sw.js')
-//     .then((registration) => {
-//       console.log('Service Worker registered with scope:', registration.scope);
-//     })
-//     .catch((error) => {
-//       console.error('Service Worker registration failed:', error);
-//     });
-//   });
-// }
-
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     // Paths where we should NOT register the service worker
@@ -280,13 +267,9 @@ const excludedAuthPaths = [
   '/index.html',
   '/zugang/',
   '/zugang/index.html',
-  '/fr',
-  '/fr/',
   '/fr/index.html',
   '/fr/acces/',
   '/fr/acces/index.html',
-  '/en',
-  '/en/',
   '/en/index.html',
   '/en/access/',
   '/en/access/index.html'
