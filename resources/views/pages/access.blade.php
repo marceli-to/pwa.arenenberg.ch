@@ -73,12 +73,15 @@
   <div 
     class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen hidden flex-col justify-between"
     data-resources-loader>
-    <div class="mt-10">
-      <h2 class="text-lg">
-        {{ __('Die Inhalte werden heruntergeladen. Dies kannn einen Moment dauern.') }}
+    <div class="mt-10 pb-40 border-b border-b-evergreen">
+      <h2 class="text-lg leading-[1.4]">
+        {{ __('Die Inhalte werden heruntergeladen. Dies kann einen Moment dauern.') }}
       </h2>
-      <div data-cache-status>
-        <progress data-progress-bar class="w-full" value="0" max="100"></progress>
+      <div 
+        class="mt-30"
+        data-cache-status>
+        <progress data-cache-progress-bar class="w-full bg-evergreen border border-evergreen h-10" value="0" max="100"></progress>
+        <div data-cache-progress></div>
       </div>
     </div>
   </div>

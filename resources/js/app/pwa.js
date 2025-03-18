@@ -52,7 +52,7 @@ const ASSETS = [
 	'/zugang/index.html',
 ];
 
-const CACHE_NAME = 'arenenberg-assets-v5';
+const CACHE_NAME = 'arenenberg-assets-v6';
 
 const COOKIE_NAME = 'arenenberg-auth';
 
@@ -89,8 +89,8 @@ const validatePassword = async (password) => {
 };
 
 const cacheAllAssets = async () => {
-	const cacheStatus = document.querySelector('[data-cache-progress]');
-	const progressBar = document.querySelector('[data-progress-bar]');
+	const cacheProgress = document.querySelector('[data-cache-progress]');
+	const cacheProgressBar = document.querySelector('[ data-cache-progress-bar]');
   const resourceLoader = document.querySelector('[data-resources-loader]');
 
   resourceLoader.classList.remove('hidden');
@@ -113,15 +113,15 @@ const cacheAllAssets = async () => {
 			} else if (response) {
 				cached++;
 			}
-			progressBar.value = (cached / ASSETS.length) * 100;
+			cacheProgressBar.value = (cached / ASSETS.length) * 100;
 		}
 
-		cacheStatus.textContent = cached === ASSETS.length ?
+		cacheProgress.textContent = cached === ASSETS.length ?
 			'All assets cached' :
 			`Cached ${cached}/${ASSETS.length} assets`;
 	} catch (error) {
 		console.error('Cache check failed:', error);
-		cacheStatus.textContent = 'Cache check failed';
+		cacheProgress.textContent = 'Cache check failed';
 	}
 };
 
