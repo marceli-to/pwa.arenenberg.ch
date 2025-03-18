@@ -52,7 +52,7 @@ const ASSETS = [
 	'/zugang/index.html',
 ];
 
-const CACHE_NAME = 'arenenberg-assets-v11';
+const CACHE_NAME = 'arenenberg-assets-v12';
 
 const COOKIE_NAME = 'arenenberg-auth';
 
@@ -235,32 +235,13 @@ document.addEventListener('DOMContentLoaded', function() {
 // Register Service Worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    // Paths where the service worker should not be registered
-    const excludedPaths = [
-      '/',
-      '/index.html',
-      '/fr',
-      '/fr/',
-      '/fr/index.html',
-      '/en',
-      '/en/',
-      '/en/index.html'
-    ];
-    
-    const currentPath = window.location.pathname;
-    
-    // Check if current path is in the excluded list
-    if (!excludedPaths.includes(currentPath)) {
-      navigator.serviceWorker.register('/sw.js')
-        .then((registration) => {
-          console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch((error) => {
-          console.error('Service Worker registration failed:', error);
-        });
-    } else {
-      console.log('Service Worker registration skipped for excluded path:', currentPath);
-    }
+  navigator.serviceWorker.register('/sw.js')
+    .then((registration) => {
+      console.log('Service Worker registered with scope:', registration.scope);
+    })
+    .catch((error) => {
+      console.error('Service Worker registration failed:', error);
+    });
   });
 }
 
