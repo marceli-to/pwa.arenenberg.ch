@@ -23,6 +23,6 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-progress[value] {
+/* progress[value] {
   @apply w-full bg-evergreen border border-evergreen h-10;
-}
+} */
