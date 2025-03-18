@@ -1,0 +1,218 @@
+<!doctype html>
+<html
+  lang="en"
+  class="scroll-smooth overflow-y-auto"
+  x-data="{ menu: false }">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emperors, cows and culture - Arenenberg diversity</title>
+<meta name="description" content="A course through the diversity of Arenenberg">
+<meta property="og:title" content="Emperors, cows and culture - Arenenberg diversity">
+<meta property="og:description" content="A course through the diversity of Arenenberg">
+<meta property="og:url" content="https://pwa.arenenberg.ch.marceli.to/en/locations/map">
+<meta property="og:site_name" content="Emperors, cows and culture - Arenenberg diversity">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<meta name="csrf-token" content="rNcyDfdVND3jd3HGwUwGkJocfWUU8NeVYsowUwN7">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Emperors, cows and culture - Arenenberg diversity" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="preload" as="style" href="https://pwa.arenenberg.ch.marceli.to/build/assets/app.css" /><link rel="stylesheet" href="https://pwa.arenenberg.ch.marceli.to/build/assets/app.css" data-navigate-track="reload" /></head>
+<body class="antialiased font-gt-alpina-medium text-md leading-[1.2] text-evergreen bg-blush max-w-lg mx-auto px-15">
+<header class="sticky top-0 pt-20 w-full z-40 bg-blush">
+    <div class="w-full flex justify-between">
+      <a
+        href="https://pwa.arenenberg.ch.marceli.to/en"
+        class="block"
+        title="Homepage">
+        <h1 class="text-crimson text-xl leading-none">
+          Emperors, cows<br>and culture
+        </h1>
+        <div class="text-crimson">
+          A course through the<br>diversity of Arenenberg
+        </div>
+      </a>
+      <div class="mt-10">
+        <a 
+          href="javascript:;"
+          @click="menu = !menu"
+          class="w-46 h-32 flex items-center justify-center">
+          <span x-show="!menu" x-cloak>
+            <svg width="48" height="30" viewBox="0 0 48 30" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-46 h-auto">
+<path d="M0.799988 1.97766H47.2" stroke="currentColor" stroke-width="2.844"/>
+<path d="M0.799988 15H47.2" stroke="currentColor" stroke-width="2.844"/>
+<path d="M0.799988 28.0225H47.2" stroke="currentColor" stroke-width="2.844"/>
+</svg>          </span>
+          <span x-show="menu" x-cloak>
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-32 h-auto">
+<path d="M1.59515 34.405L34.4052 1.59497" stroke="currentColor" stroke-width="2.844"/>
+<path d="M34.4048 34.405L1.59485 1.59497" stroke="currentColor" stroke-width="2.844"/>
+</svg>          </span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+<div 
+	x-cloak 
+	x-show="menu"
+	class="relative w-full mt-50">
+  <div x-data="{ activeSection: null }" class="">
+	<div 
+	class="w-full border-t border-t-evergreen py-20">
+	<div 
+		@click="activeSection = (activeSection === 'language') ? null : 'language'"
+		class="flex items-center justify-between cursor-pointer">
+		<span class="text-lg select-none">
+			Sprachauswahl
+		</span>
+		<span x-show="activeSection !== 'language'">
+			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+<path d="M0.5 9.99963L19.8408 0.329712V19.6705L0.5 9.99963Z" fill="currentColor"/>
+</svg>		</span>
+		<span x-show="activeSection === 'language'">
+			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+<path d="M0.32959 0.329712H19.6704L10 19.6705L0.32959 0.329712Z" fill="currentColor"/>
+</svg>		</span>
+	</div>
+	<div 
+		class="mt-25 "
+		x-show="activeSection === 'language'">
+		<div>
+			<div class="flex justify-center gap-45">
+        <a 
+  href="https://pwa.arenenberg.ch.marceli.to/standorte/karte" 
+  class="flex items-center justify-center text-xl text-center rounded-full w-64 h-64 border-2 transition-colors bg-blush text-crimson border-evergreen"
+>
+  <span>D</span>
+</a>        <a 
+  href="https://pwa.arenenberg.ch.marceli.to/fr/sites/carte" 
+  class="flex items-center justify-center text-xl text-center rounded-full w-64 h-64 border-2 transition-colors bg-blush text-crimson border-evergreen"
+>
+  <span>F</span>
+</a>        <a 
+  href="https://pwa.arenenberg.ch.marceli.to/en/locations/map" 
+  class="flex items-center justify-center text-xl text-center rounded-full w-64 h-64 border-2 transition-colors bg-crimson text-blush border-crimson"
+>
+  <span>E</span>
+</a>      </div>
+		</div>
+	</div>
+</div>  
+    <div 
+	class="w-full border-t border-t-evergreen py-20">
+	<div 
+		@click="activeSection = (activeSection === 'impressum') ? null : 'impressum'"
+		class="flex items-center justify-between cursor-pointer">
+		<span class="text-lg select-none">
+			Impressum
+		</span>
+		<span x-show="activeSection !== 'impressum'">
+			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+<path d="M0.5 9.99963L19.8408 0.329712V19.6705L0.5 9.99963Z" fill="currentColor"/>
+</svg>		</span>
+		<span x-show="activeSection === 'impressum'">
+			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+<path d="M0.32959 0.329712H19.6704L10 19.6705L0.32959 0.329712Z" fill="currentColor"/>
+</svg>		</span>
+	</div>
+	<div 
+		class="mt-25 block w-full"
+		x-show="activeSection === 'impressum'">
+		<div>
+			<p>Impressum content goes here.</p>
+		</div>
+	</div>
+</div>  
+    <div 
+	class="w-full border-t border-t-evergreen py-20">
+	<div 
+		@click="activeSection = (activeSection === 'bildquellen') ? null : 'bildquellen'"
+		class="flex items-center justify-between cursor-pointer">
+		<span class="text-lg select-none">
+			Bildquellen
+		</span>
+		<span x-show="activeSection !== 'bildquellen'">
+			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+<path d="M0.5 9.99963L19.8408 0.329712V19.6705L0.5 9.99963Z" fill="currentColor"/>
+</svg>		</span>
+		<span x-show="activeSection === 'bildquellen'">
+			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+<path d="M0.32959 0.329712H19.6704L10 19.6705L0.32959 0.329712Z" fill="currentColor"/>
+</svg>		</span>
+	</div>
+	<div 
+		class="mt-25 block w-full"
+		x-show="activeSection === 'bildquellen'">
+		<div>
+			<p>Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte.</p>
+      <p>»Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab.</p>
+      <p>Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte.</p>
+      <p>»Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab.</p>
+		</div>
+	</div>
+</div>
+</div></div><main role="main">
+  <div x-show="!menu">
+    <div 
+    class="w-full h-[calc(100dvh_-_215px)] mt-50 flex flex-col justify-between">
+    <figure class="h-[calc(100dvh_-_290px)] relative">
+
+  <svg viewBox="0 0 1000 1400" class="block w-full h-full text-blush !leading-none">
+    <image href="/img/map.png" width="1000" height="1400" preserveAspectRatio="xMidYMid slice" />
+
+    <a 
+      href="https://pwa.arenenberg.ch.marceli.to/en/standorte/arenenberger-vielfalt"
+      title="Arenenberger Vielfalt">
+      <circle cx="390" cy="1075" r="60" fill="#0a372d" />
+      <text x="390" y="1080" text-anchor="middle" dominant-baseline="middle" class="fill-current" font-size="5rem">1</text>
+    </a>
+
+    <a 
+      href="https://pwa.arenenberg.ch.marceli.to/en/standorte/milch-mit-zukunft"
+      title="Milch mit Zukunft">
+      <circle cx="840" cy="595" r="60" fill="#0a372d" />
+      <text x="840" y="600" text-anchor="middle" dominant-baseline="middle" class="fill-current" font-size="5rem">2</text>
+    </a>
+
+    <a 
+      href="https://pwa.arenenberg.ch.marceli.to/en/standorte/vom-acker-auf-den-tisch"
+      title="Vom Acker auf den Tisch">
+      <circle cx="750" cy="145" r="60" fill="#0a372d" />
+      <text x="750" y="155" text-anchor="middle" dominant-baseline="middle" class="fill-current" font-size="5rem">3</text>
+    </a>
+
+    <a 
+      href="https://pwa.arenenberg.ch.marceli.to/en/standorte/wundervolle-gartenwelt"
+      title="Wundervolle Gartenwelt">
+      <circle cx="415" cy="790" r="60" fill="#0a372d" />
+      <text x="415" y="795" text-anchor="middle" dominant-baseline="middle" class="fill-current" font-size="5rem">4</text>
+    </a>
+
+    <a 
+      href="https://pwa.arenenberg.ch.marceli.to/en/standorte/kaiserliches-leben"
+      title="Kaiserliches Leben">
+      <circle cx="550" cy="1160" r="60" fill="#0a372d" />
+      <text x="550" y="1165" text-anchor="middle" dominant-baseline="middle" class="fill-current" font-size="5rem">5</text>
+    </a>
+</svg>
+
+</figure>    <div>
+      <a 
+    href="https://pwa.arenenberg.ch.marceli.to/en/locations/list" 
+    class="w-full text-lg h-50 border-2 border-evergreen flex items-center justify-center "
+    title="Listenansicht"
+    aria-label="Listenansicht">
+    <span>Listenansicht</span>
+  </a>
+    </div>
+  </div>
+  </div>
+</main>
+<link rel="modulepreload" href="https://pwa.arenenberg.ch.marceli.to/build/assets/app.js" /><script type="module" src="https://pwa.arenenberg.ch.marceli.to/build/assets/app.js" data-navigate-track="reload"></script></body>
+</html>
+<!-- made with ❤ by bivgrafik.ch & marceli.to -->
