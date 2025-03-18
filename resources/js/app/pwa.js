@@ -232,15 +232,45 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Register Service Worker
+// if ('serviceWorker' in navigator) {
+//   window.addEventListener('load', () => {
+//   navigator.serviceWorker.register('/sw.js')
+//     .then((registration) => {
+//       console.log('Service Worker registered with scope:', registration.scope);
+//     })
+//     .catch((error) => {
+//       console.error('Service Worker registration failed:', error);
+//     });
+//   });
+// }
+
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-  navigator.serviceWorker.register('/sw.js')
-    .then((registration) => {
-      console.log('Service Worker registered with scope:', registration.scope);
-    })
-    .catch((error) => {
-      console.error('Service Worker registration failed:', error);
-    });
+    // Paths where we should NOT register the service worker
+    const excludedPaths = [
+      '/', 
+      '/index.html', 
+      '/fr/index.html', 
+      '/en/index.html'
+    ];
+    
+    // Get the current path
+    const currentPath = window.location.pathname;
+    
+    // Check if the current path is in our excluded list
+    if (excludedPaths.includes(currentPath)) {
+      console.log('Service Worker registration skipped for excluded path:', currentPath);
+      return; // Skip registration
+    }
+    
+    // Register the service worker for all other paths
+    navigator.serviceWorker.register('/sw.js')
+      .then((registration) => {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch((error) => {
+        console.error('Service Worker registration failed:', error);
+      });
   });
 }
 
