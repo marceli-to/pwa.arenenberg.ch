@@ -85,7 +85,27 @@ class Deploy extends Command
     $this->info('Start fixing missing pages');
 
     $routes = [
+      // de
+      'zugang',
       'standorte',
+      'standorte/liste',
+      'standorte/karte',
+      'standorte/arenenberger-vielfalt',
+      'standorte/milch-mit-zukunft',
+      'standorte/vom-acker-auf-den-tisch',
+      'standorte/wundervolle-gartenwelt',
+      'standorte/kaiserliches-leben',
+      // fr
+      '/fr',
+      '/fr/acces',
+      '/fr/sites/liste',
+      '/fr/sites/carte',
+
+      // en
+      '/en',
+      '/en/access',
+      '/en/locations/list',
+      '/en/locations/map',
     ];
 
     // Get the content for the entries in $routes
