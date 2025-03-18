@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Kaiser, Kühe und Kultur – Arenenberger Vielfalt">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<meta name="csrf-token" content="S1YbeyDd4Z3gpi0PCcxaWYCflIgNlLhIw0xHlaFQ">
+<meta name="csrf-token" content="qcmucEOHoNAXd7uM3WzivX4ufWbKcCBVLFe9Ke7S">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -233,12 +233,15 @@
   <div 
     class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen hidden flex-col justify-between"
     data-resources-loader>
-    <div class="mt-10">
-      <h2 class="text-lg">
+    <div class="mt-10 pb-40 border-b border-b-evergreen">
+      <h2 class="text-lg leading-[1.4]">
         Die Inhalte werden heruntergeladen. Dies kann einen Moment dauern.
       </h2>
-      <div data-cache-status>
-        <progress data-progress-bar class="w-full" value="0" max="100"></progress>
+      <div 
+        class="mt-30"
+        data-cache-status>
+        <progress data-cache-progress-bar class="w-full bg-evergreen border border-evergreen h-10" value="0" max="100"></progress>
+        <div data-cache-progress></div>
       </div>
     </div>
   </div>
