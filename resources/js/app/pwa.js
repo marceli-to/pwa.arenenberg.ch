@@ -52,11 +52,11 @@ const ASSETS = [
 	'/zugang/index.html',
 ];
 
-const CACHE_NAME = 'arenenberg-assets-v8';
+const CACHE_NAME = 'arenenberg-assets-v9';
 
 const COOKIE_NAME = 'arenenberg-auth';
 
-const PASSWORD_PATH = '/password.txt';
+const PASSWORD_PATH = 'password.txt';
 
 const setCookie = (name, value, minutes) => {
 	const date = new Date();
@@ -89,66 +89,51 @@ const validatePassword = async (password) => {
 };
 
 const cacheAllAssets = async () => {
-  const cacheProgress = document.querySelector('[data-cache-progress]');
-  const cacheProgressBar = document.querySelector('[data-cache-progress-bar]');
-  const resourceLoader = document.querySelector('[data-resources-loader]');
+	const cacheStatus = document.querySelector('[data-cache-progress]');
+	const progressBar = document.querySelector('[data-progress-bar]');
 
-  if (resourceLoader) {
-    resourceLoader.classList.remove('hidden');
-    resourceLoader.classList.add('flex');
-  }
+	try {
+		const cache = await caches.open(CACHE_NAME);
+		let cached = 0;
 
-  try {
-    const cache = await caches.open(CACHE_NAME);
-    let cached = 0;
-    const totalAssets = ASSETS.length;
+		for (const asset of ASSETS) {
+			const response = await cache.match(asset);
+			if (!response && navigator.onLine) {
+				try {
+					const networkResponse = await fetch(asset);
+					await cache.put(asset, networkResponse.clone());
+					cached++;
+				} catch (error) {
+					console.error(`Failed to cache ${asset}:`, error);
+				}
+			} else if (response) {
+				cached++;
+			}
+			progressBar.value = (cached / ASSETS.length) * 100;
+		}
 
-    // Update progress text initially
-    if (cacheProgress) {
-      cacheProgress.textContent = `Loading: 0%`;
-    }
+		cacheStatus.textContent = cached === ASSETS.length ?
+			'All assets cached' :
+			`Cached ${cached}/${ASSETS.length} assets`;
+	} catch (error) {
+		console.error('Cache check failed:', error);
+		cacheStatus.textContent = 'Cache check failed';
+	}
+};
 
-    for (const asset of ASSETS) {
-      const response = await cache.match(asset);
-      if (!response && navigator.onLine) {
-        try {
-          const networkResponse = await fetch(asset);
-          await cache.put(asset, networkResponse.clone());
-          cached++;
-        } catch (error) {
-          console.error(`Failed to cache ${asset}:`, error);
-        }
-      } else if (response) {
-        cached++;
-      }
-      
-      // Calculate percentage
-      const progressPercentage = Math.round((cached / totalAssets) * 100);
-      
-      // Update custom progress bar
-      if (cacheProgressBar) {
-        cacheProgressBar.value = progressPercentage;
-        // If it's a div-based progress bar, update the width
-        const progressWidth = `${progressPercentage}%`;
-        cacheProgressBar.style.background = `linear-gradient(to right, #3F7D20 ${progressWidth}, transparent ${progressWidth})`;
-      }
-      
-      // Update progress text with percentage
-      if (cacheProgress) {
-        cacheProgress.textContent = `Loading: ${progressPercentage}%`;
-      }
-    }
+const handlePasswordSubmit = async (event) => {
+	event.preventDefault(); // Prevent the form from submitting
 
-    // Final progress update
-    if (cacheProgress) {
-      cacheProgress.textContent = `Loading: 100% - Complete`;
-    }
-  } catch (error) {
-    console.error('Cache check failed:', error);
-    if (cacheProgress) {
-      cacheProgress.textContent = 'Cache check failed';
-    }
-  }
+	const passwordInput = document.querySelector('[data-password-input]').value;
+	const passwordError = document.querySelector('[data-password-error]');
+
+	if (await validatePassword(passwordInput)) {
+		setCookie(COOKIE_NAME, 'true', 60); // Set cookie for 60 minutes
+		document.querySelector('[data-password-prompt]').style.display = 'none';
+		cacheAllAssets();
+	} else {
+		passwordError.textContent = 'Incorrect password. Please try again.';
+	}
 };
 
 const checkAuth = () => {
@@ -207,12 +192,10 @@ document.addEventListener('DOMContentLoaded', function() {
 			setCookie(COOKIE_NAME, 'true', 60); // Set cookie for 60 minutes
 			
 			// Hide access form and show resources loader
-      form.classList.remove('flex');
-			form.classList.add('hidden');
+			document.querySelector('[data-access-form]').classList.add('hidden');
 			const resourcesLoader = document.querySelector('[data-resources-loader]');
 			if (resourcesLoader) {
 				resourcesLoader.classList.remove('hidden');
-        resourcesLoader.classList.add('flex');
 			}
 			
 			// Start caching assets
@@ -226,33 +209,16 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 });
 
-
-// Original password form event handler - Keeping for backward compatibility
-// const handlePasswordSubmit = async (event) => {
-// 	event.preventDefault(); // Prevent the form from submitting
-
-// 	const passwordInput = document.querySelector('[data-password-input]').value;
-// 	const passwordError = document.querySelector('[data-password-error]');
-
-// 	if (await validatePassword(passwordInput)) {
-// 		setCookie(COOKIE_NAME, 'true', 60); // Set cookie for 60 minutes
-// 		document.querySelector('[data-password-prompt]').style.display = 'none';
-// 		cacheAllAssets();
-// 	} else {
-// 		passwordError.textContent = 'Incorrect password. Please try again.';
-// 	}
-// };
-
 // Original password form handling - Keeping for backward compatibility
-// const passwordForm = document.querySelector('[data-password-form]');
-// if (passwordForm) {
-// 	passwordForm.addEventListener('submit', handlePasswordSubmit);
-// }
+const passwordForm = document.querySelector('[data-password-form]');
+if (passwordForm) {
+	passwordForm.addEventListener('submit', handlePasswordSubmit);
+}
 
 // Register Service Worker
 if ('serviceWorker' in navigator) {
 	window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
+		navigator.serviceWorker.register('sw.js')
 			.then((registration) => {
 				console.log('Service Worker registered with scope:', registration.scope);
 			})
@@ -263,25 +229,22 @@ if ('serviceWorker' in navigator) {
 }
 
 // Check authentication on page load
-if (window.location.pathname !== '/zugang/index.html' && 
-    window.location.pathname !== '/zugang/' && 
-    window.location.pathname !== '/' &&
-    window.location.pathname !== '/index.html') {
+if (window.location.pathname !== '/index.html') {
 	checkAuth();
 }
 
 // Arrow function to update online/offline status
-// const updateOnlineStatus = () => {
-// 	const status = document.querySelector('[data-status]');
-// 	const isOnline = navigator.onLine;
-// 	console.log(isOnline);
-// 	status.textContent = isOnline ? 'You are online' : 'You are offline';
-// 	status.className = `status ${isOnline ? 'online' : 'offline'}`;
-// 	if (isOnline) cacheAllAssets();
-// };
+const updateOnlineStatus = () => {
+	const status = document.querySelector('[data-status]');
+	const isOnline = navigator.onLine;
+	console.log(isOnline);
+	status.textContent = isOnline ? 'You are online' : 'You are offline';
+	status.className = `status ${isOnline ? 'online' : 'offline'}`;
+	if (isOnline) cacheAllAssets();
+};
 
-// window.addEventListener('online', updateOnlineStatus);
-// window.addEventListener('offline', updateOnlineStatus);
+window.addEventListener('online', updateOnlineStatus);
+window.addEventListener('offline', updateOnlineStatus);
 
 
 // DEBUG METHODS
