@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v5';
 const CACHE_NAME = `site-assets-${CACHE_VERSION}`;
 const ASSETS = [
   'apple-touch-icon.png',
