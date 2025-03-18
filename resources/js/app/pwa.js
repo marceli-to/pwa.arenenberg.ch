@@ -52,7 +52,7 @@ const ASSETS = [
 	'/zugang/index.html',
 ];
 
-const CACHE_NAME = 'arenenberg-assets-v6';
+const CACHE_NAME = 'arenenberg-assets-v7';
 
 const COOKIE_NAME = 'arenenberg-auth';
 
@@ -89,68 +89,40 @@ const validatePassword = async (password) => {
 };
 
 const cacheAllAssets = async () => {
-  const cacheProgress = document.querySelector('[data-cache-progress]');
-  const cacheProgressBar = document.querySelector('[data-cache-progress-bar]');
+	const cacheProgress = document.querySelector('[data-cache-progress]');
+	const cacheProgressBar = document.querySelector('[ data-cache-progress-bar]');
   const resourceLoader = document.querySelector('[data-resources-loader]');
 
-  if (resourceLoader) {
-    resourceLoader.classList.remove('hidden');
-    resourceLoader.classList.add('flex');
-  }
+  resourceLoader.classList.remove('hidden');
+  resourceLoader.classList.add('flex');
 
-  try {
-    const cache = await caches.open(CACHE_NAME);
-    let cached = 0;
-    const totalAssets = ASSETS.length;
+	try {
+		const cache = await caches.open(CACHE_NAME);
+		let cached = 0;
 
-    // Update progress text initially
-    if (cacheProgress) {
-      cacheProgress.textContent = `Caching assets (0/${totalAssets})...`;
-    }
+		for (const asset of ASSETS) {
+			const response = await cache.match(asset);
+			if (!response && navigator.onLine) {
+				try {
+					const networkResponse = await fetch(asset);
+					await cache.put(asset, networkResponse.clone());
+					cached++;
+				} catch (error) {
+					console.error(`Failed to cache ${asset}:`, error);
+				}
+			} else if (response) {
+				cached++;
+			}
+			cacheProgressBar.value = (cached / ASSETS.length) * 100;
+		}
 
-    for (const asset of ASSETS) {
-      const response = await cache.match(asset);
-      if (!response && navigator.onLine) {
-        try {
-          const networkResponse = await fetch(asset);
-          await cache.put(asset, networkResponse.clone());
-          cached++;
-        } catch (error) {
-          console.error(`Failed to cache ${asset}:`, error);
-        }
-      } else if (response) {
-        cached++;
-      }
-      
-      // Update custom progress bar
-      if (cacheProgressBar) {
-        const progressPercentage = (cached / totalAssets) * 100;
-        // For a div-based progress bar, we set the width as a percentage
-        cacheProgressBar.style.background = `linear-gradient(to right, #3F7D20 ${progressPercentage}%, transparent ${progressPercentage}%)`;
-        
-        // Store current progress as attributes
-        cacheProgressBar.setAttribute('value', cached);
-        cacheProgressBar.setAttribute('max', totalAssets);
-      }
-      
-      // Update progress text
-      if (cacheProgress) {
-        cacheProgress.textContent = `Caching assets (${cached}/${totalAssets})...`;
-      }
-    }
-
-    // Final progress update
-    if (cacheProgress) {
-      cacheProgress.textContent = cached === totalAssets ?
-        'All assets cached' :
-        `Cached ${cached}/${totalAssets} assets`;
-    }
-  } catch (error) {
-    console.error('Cache check failed:', error);
-    if (cacheProgress) {
-      cacheProgress.textContent = 'Cache check failed';
-    }
-  }
+		cacheProgress.textContent = cached === ASSETS.length ?
+			'All assets cached' :
+			`Cached ${cached}/${ASSETS.length} assets`;
+	} catch (error) {
+		console.error('Cache check failed:', error);
+		cacheProgress.textContent = 'Cache check failed';
+	}
 };
 
 const checkAuth = () => {
@@ -265,7 +237,10 @@ if ('serviceWorker' in navigator) {
 }
 
 // Check authentication on page load
-if (window.location.pathname !== '/zugang/index.html' && window.location.pathname !== '/zugang/' && window.location.pathname !== '/') {
+if (window.location.pathname !== '/zugang/index.html' && 
+    window.location.pathname !== '/zugang/' && 
+    window.location.pathname !== '/' &&
+    window.location.pathname !== '/index.html') {
 	checkAuth();
 }
 
