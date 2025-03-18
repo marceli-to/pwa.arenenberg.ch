@@ -50,7 +50,7 @@ const ASSETS = [
 	'/web-app-manifest-512x512.png',
 	'/zugang/index.html',
 ];
-const CACHE_NAME = `arenenberg-assets-v14`;
+const CACHE_NAME = `arenenberg-assets-v15`;
 
 // Pre-cache all assets during installation
 self.addEventListener('install', (event) => {
