@@ -80,13 +80,12 @@
       <div 
         class="mt-30"
         data-cache-status>
-        <progress 
+        <div 
           data-cache-progress-bar 
           value="0" 
           max="100"
-          class="[&::-webkit-progress-bar]:border [&::-webkit-progress-bar]:border-evergreen [&::-webkit-progress-bar]:bg-transparent [&::-webkit-progress-value]:bg-evergreen [&::-moz-progress-bar]:bg-evergreen">
-
-        </progress>
+          class="w-full border border-evergreen">
+        </div>
         <div data-cache-progress></div>
       </div>
     </div>
