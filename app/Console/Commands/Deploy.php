@@ -60,12 +60,9 @@ class Deploy extends Command
                 $newLink = rtrim($link, '/') . '/index.html';
                 $htmlContent = str_replace('href="' . $link . '"', 'href="' . $newLink . '"', $htmlContent);
             }
-            
-            // Only write to file and log if changes were made
-            if ($originalHtmlContent !== $htmlContent) {
-                file_put_contents($filePath, $htmlContent);
-                $this->info("Updated links in file: " . $filePath);
-            }
+            file_put_contents($filePath, $htmlContent);
+            $this->info("Updated links in file: " . $filePath);
+
         }
       }
     }
