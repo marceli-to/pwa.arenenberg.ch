@@ -71,7 +71,7 @@
 
   <!-- Resources loader section  -->
   <div 
-    class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen flex flex-col justify-between"
+    class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen hidden flex-col justify-between"
     data-resources-loader>
     <div class="mt-10">
       <h2 class="text-lg">
@@ -86,7 +86,7 @@
 
   <!-- Success section -->
   <div 
-    class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen flex flex-col justify-between"
+    class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen hidden flex-col justify-between"
     data-success-section>
     <div class="text-lg py-10">
       <p>{{ __('Auf Reportage auf dem Arenenberg!') }}</p>
