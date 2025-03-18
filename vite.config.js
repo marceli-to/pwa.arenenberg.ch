@@ -32,21 +32,21 @@ export default defineConfig({
       },
     }),
   ],
-  build: {
-    rollupOptions: {
-      input: {
-        app: 'resources/js/app.js',
-        sw: 'resources/js/app/sw.js',
-        'app-css': 'resources/css/app.css',
-        spa: 'resources/js/spa.js'
-      },
-      output: {
-        entryFileNames: 'assets/[name].js',
-        chunkFileNames: 'assets/[name].js',
-        assetFileNames: 'assets/[name].[ext]'
-      }
-    }
-  },
+  // build: {
+  //   rollupOptions: {
+  //     input: {
+  //       app: 'resources/js/app.js',
+  //       sw: 'resources/js/app/sw.js',
+  //       'app-css': 'resources/css/app.css',
+  //       spa: 'resources/js/spa.js'
+  //     },
+  //     output: {
+  //       entryFileNames: 'assets/[name].js',
+  //       chunkFileNames: 'assets/[name].js',
+  //       assetFileNames: 'assets/[name].[ext]'
+  //     }
+  //   }
+  // },
   define: {
     'process.env': {}
   }
