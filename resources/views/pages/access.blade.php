@@ -84,7 +84,7 @@
           data-cache-progress-bar 
           value="0" 
           max="100"
-          class="w-full">
+          class="w-full h-2 rounded-full bg-gray-200 appearance-none [&::-webkit-progress-bar]:bg-gray-200 [&::-webkit-progress-value]:bg-blue-500 [&::-moz-progress-bar]:bg-blue-500">
         </progress>
         <div data-cache-progress></div>
       </div>
