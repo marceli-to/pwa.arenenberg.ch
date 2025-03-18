@@ -51,7 +51,7 @@ const ASSETS = [
 	'/zugang/index.html',
 ];
 
-const CACHE_NAME = 'arenenberg-assets-v16';
+const CACHE_NAME = 'arenenberg-assets-v20';
 
 const COOKIE_NAME = 'arenenberg-auth';
 
