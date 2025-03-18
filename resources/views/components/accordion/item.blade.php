@@ -1,7 +1,7 @@
 @props([
   'title' => '',
   'contentClasses' => '',
-  'id' => '',                // Unique identifier for this section
+  'id' => '',
 ])
 <div 
 	class="w-full border-t border-t-evergreen py-20">
@@ -19,9 +19,9 @@
 		</span>
 	</div>
 	<div 
-		class="mt-25"
+		class="mt-25 {{ $contentClasses }}"
 		x-show="activeSection === '{{ $id }}'">
-		<div class="{{ $contentClasses }}">
+		<div>
 			{{ $slot }}
 		</div>
 	</div>

@@ -1,3 +1,3 @@
-<div x-data="{ activeSection: null }">
+<div x-data="{ activeSection: null }" class="{{ $class ?? '' }}">
 	{{ $slot }}
 </div>
