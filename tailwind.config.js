@@ -9,6 +9,15 @@ export default {
     "./resources/**/*.vue",
   ],
 
+  safelist: [
+    'hidden',
+    '!hidden',
+    'block',
+    'flex',
+    '!flex'
+  ],
+
+
   theme: {
     extend: {
 

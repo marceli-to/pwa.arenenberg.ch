@@ -59,10 +59,9 @@
             class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-xl">
         </div>
       </div>
+      <div data-data-access-error></div>
     </div>
-    <a href="{{ localized_route('page.locations.list') }}">
-      {{ __('Liste') }}
-    </a>
+
     <x-buttons.primary 
       type="button"
       label="{{ __('Abschicken') }}">

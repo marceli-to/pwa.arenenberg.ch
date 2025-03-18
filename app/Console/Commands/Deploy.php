@@ -100,12 +100,14 @@ class Deploy extends Command
       'fr/acces',
       'fr/sites/liste',
       'fr/sites/carte',
+      // @todo: add locations
 
       // en
       'en',
       'en/access',
       'en/locations/list',
       'en/locations/map',
+      // @todo: add locations
     ];
 
     // Get the content for the entries in $routes

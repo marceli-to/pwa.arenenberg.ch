@@ -1,14 +1,14 @@
 const CACHE_VERSION = 'v1';
 const CACHE_NAME = `site-assets-${CACHE_VERSION}`;
 const ASSETS = [
-    'index.html',
-    'gallery.html',
-    'audio.html',
-    'sample.mp3',
-    'image-1.png',
-    'image-2.png',
-    'app.css',
-    'app.js'
+  'index.html',
+  'gallery.html',
+  'audio.html',
+  'sample.mp3',
+  'image-1.png',
+  'image-2.png',
+  'app.css',
+  'app.js'
 ];
 
 // Pre-cache all assets during installation
