@@ -17,6 +17,11 @@
     "isEntry": true,
     "src": "resources/js/app.js"
   },
+  "resources/js/app/sw.js": {
+    "file": "assets/sw.js",
+    "isEntry": true,
+    "src": "resources/js/app/sw.js"
+  },
   "resources/js/spa.css": {
     "file": "assets/spa.css",
     "src": "resources/js/spa.css"
