@@ -5,11 +5,19 @@
   'class' => '',
 ])
 @if ($type === 'link')
-  <a href="{{ $route }}" class="w-full text-lg h-50 border-2 border-evergreen flex items-center justify-center {{ $class }}">
+  <a 
+    href="{{ $route }}" 
+    class="w-full text-lg h-50 border-2 border-evergreen flex items-center justify-center {{ $class }}"
+    title="{{ $label }}"
+    aria-label="{{ $label }}">
     <span>{{ $label }}</span>
   </a>
 @elseif ($type === 'button')
-  <button type="submit" class="w-full text-lg h-50 border-2 border-evergreen flex items-center justify-center {{ $class }}">
+  <button 
+    type="submit" 
+    class="w-full text-lg h-50 border-2 border-evergreen flex items-center justify-center {{ $class }}"
+    title="{{ $label }}"
+    aria-label="{{ $label }}">
     <span>{{ $label }}</span>
   </button>
 @endif

@@ -3,5 +3,6 @@
 return [
   '/' => 'startseite',
   'zugang' => 'zugang',
-  'standorte' => 'standorte',
+  'standorte/liste' => 'standorte/liste',
+  'standorte/karte' => 'standorte/karte',
 ];

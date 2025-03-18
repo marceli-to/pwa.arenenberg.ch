@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
   const inputs = document.querySelectorAll('[data-digit]');
   const form = document.querySelector('[data-passcode]');
+
+  // Return if no inputs or form
+  if (!inputs || !form) {
+    return;
+  }
   
   // Focus first input on page load
   inputs[0].focus();

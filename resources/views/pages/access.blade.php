@@ -58,6 +58,9 @@
         </div>
       </div>
     </div>
+    <a href="{{ localized_route('page.locations.list') }}">
+      {{ __('Liste') }}
+    </a>
     <x-buttons.primary 
       class=""
       type="button"

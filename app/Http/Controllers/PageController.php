@@ -14,8 +14,18 @@ class PageController extends Controller
     return view('pages.access');
   }
 
-  public function locations(Request $request)
+  public function locationsList(Request $request)
   {
-    return view('pages.locations');
+    return view('pages.locations.list');
+  }
+
+  public function locationsMap(Request $request)
+  {
+    return view('pages.locations.map');
+  }
+
+  public function location(Request $request, $slug)
+  {
+    return view('pages.locations.show.' . $slug);
   }
 }
