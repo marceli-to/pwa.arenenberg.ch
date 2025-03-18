@@ -1,0 +1,64 @@
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.status {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.online {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.offline {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+nav {
+    margin: 20px 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+nav a {
+    margin-right: 15px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.cache-status {
+    margin-top: 20px;
+    padding: 10px;
+    background: #e9ecef;
+    border-radius: 4px;
+}
+
+.progress {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.audio-player {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+audio {
+    width: 100%;
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+}

@@ -28,5 +28,10 @@
     "file": "assets/spa.js",
     "isEntry": true,
     "src": "resources/js/spa.js"
+  },
+  "resources/js/sw.js": {
+    "file": "assets/sw.js",
+    "isEntry": true,
+    "src": "resources/js/sw.js"
   }
 }

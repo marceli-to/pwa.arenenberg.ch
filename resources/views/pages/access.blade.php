@@ -1,8 +1,9 @@
 <x-layout.app>
   @section('content')
-  <form 
-    class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen flex flex-col justify-between" 
-    data-passcode>
+
+  <!-- Access form section -->
+  <form class="!hidden w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen flex flex-col justify-between" 
+    data-access-from>
     <div class="mt-10">
       <h2 class="text-lg">
         {{ __('Passcode:') }}
@@ -17,7 +18,7 @@
             min="0" 
             max="9" 
             required
-            data-digit
+            data-access-input
             class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-xl">
         </div>
         <div>
@@ -29,7 +30,7 @@
             min="0" 
             max="9" 
             required
-            data-digit
+            data-access-input
             class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-xl">
         </div>
         <div>
@@ -41,7 +42,7 @@
             min="0" 
             max="9" 
             required
-            data-digit
+            data-access-input
             class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-xl">
         </div>
         <div>
@@ -53,7 +54,7 @@
             min="0" 
             max="9" 
             required
-            data-digit
+            data-access-input
             class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-xl">
         </div>
       </div>
@@ -62,10 +63,40 @@
       {{ __('Liste') }}
     </a>
     <x-buttons.primary 
-      class=""
       type="button"
       label="{{ __('Abschicken') }}">
     </x-buttons.primary>
   </form>
+  <!-- End Access form section -->
+
+  <!-- Resources loader section  -->
+  <div class="!hidden w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen flex flex-col justify-between">
+    <div class="mt-10">
+      <h2 class="text-lg">
+        {{ __('Die Inhalte werden heruntergeladen. Dies kannn einen Moment dauern.') }}
+      </h2>
+      <div data-cache-status>
+        <progress data-progress-bar class="w-full" value="0" max="100"></progress>
+      </div>
+    </div>
+  </div>
+  <!-- End Resources loader section -->
+
+  <!-- Success section -->
+  <div class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen flex flex-col justify-between">
+    <div class="text-lg py-10">
+      <p>{{ __('Auf Reportage auf dem Arenenberg!') }}</p>
+      <p>{{ __('Hinweis zum Rundgang mit Reporter:innen.') }}</p>
+      <p>{{ __('Zudem einige Informationen zur Reihenfolge und Ablaufs. Falls Unklarheiten bestehen melden Sie sich bei der Kasse.') }}</p>
+      <p class="mt-20">{{ __('Viel Spass!') }}</p>
+    </div>
+    <x-buttons.primary 
+      type="link"
+      route="{{ localized_route('page.locations.list') }}"
+      label="{!! __('Los geht\'s!') !!}">
+    </x-buttons.primary>
+  </div>
+  <!-- End Success section -->
+
   @endsection
 </x-layout.app>
