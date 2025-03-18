@@ -40,7 +40,6 @@ const ASSETS = [
 	'/robots.txt',
 	'/site.webmanifest',
 	'/standorte/arenenberger-vielfalt/index.html',
-	'/standorte/index.html',
 	'/standorte/kaiserliches-leben/index.html',
 	'/standorte/karte/index.html',
 	'/standorte/liste/index.html',
@@ -51,7 +50,7 @@ const ASSETS = [
 	'/web-app-manifest-512x512.png',
 	'/zugang/index.html',
 ];
-const CACHE_NAME = `arenenberg-assets-v12`;
+const CACHE_NAME = `arenenberg-assets-v13`;
 
 // Pre-cache all assets during installation
 self.addEventListener('install', (event) => {
