@@ -80,7 +80,7 @@
       <div 
         class="mt-30"
         data-cache-status>
-        <progress data-cache-progress-bar class="w-full bg-evergreen border border-evergreen h-10" value="0" max="100"></progress>
+        <progress data-cache-progress-bar value="0" max="100"></progress>
         <div data-cache-progress></div>
       </div>
     </div>
