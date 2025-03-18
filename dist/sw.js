@@ -1,5 +1,3 @@
-const CACHE_VERSION = 'v6';
-const CACHE_NAME = `site-assets-${CACHE_VERSION}`;
 const ASSETS = [
 	'/apple-touch-icon.png',
 	'/audio/arenenberger-vielfalt.mp3',
@@ -53,6 +51,7 @@ const ASSETS = [
 	'/web-app-manifest-512x512.png',
 	'/zugang/index.html',
 ];
+const CACHE_NAME = `arenenberg-assets-v7`;
 
 // Pre-cache all assets during installation
 self.addEventListener('install', (event) => {
