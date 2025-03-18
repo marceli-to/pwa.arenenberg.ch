@@ -52,7 +52,7 @@ const ASSETS = [
 	'/zugang/index.html',
 ];
 
-const CACHE_NAME = 'arenenberg-assets-v9';
+const CACHE_NAME = 'arenenberg-assets-v11';
 
 const COOKIE_NAME = 'arenenberg-auth';
 
@@ -232,29 +232,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 });
 
-
-// Original password form event handler - Keeping for backward compatibility
-// const handlePasswordSubmit = async (event) => {
-// 	event.preventDefault(); // Prevent the form from submitting
-
-// 	const passwordInput = document.querySelector('[data-password-input]').value;
-// 	const passwordError = document.querySelector('[data-password-error]');
-
-// 	if (await validatePassword(passwordInput)) {
-// 		setCookie(COOKIE_NAME, 'true', 60); // Set cookie for 60 minutes
-// 		document.querySelector('[data-password-prompt]').style.display = 'none';
-// 		cacheAllAssets();
-// 	} else {
-// 		passwordError.textContent = 'Incorrect password. Please try again.';
-// 	}
-// };
-
-// Original password form handling - Keeping for backward compatibility
-// const passwordForm = document.querySelector('[data-password-form]');
-// if (passwordForm) {
-// 	passwordForm.addEventListener('submit', handlePasswordSubmit);
-// }
-
 // Register Service Worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
@@ -287,27 +264,30 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-// Check authentication on page load
-if (window.location.pathname !== '/zugang/index.html' && 
-    window.location.pathname !== '/zugang/' && 
-    window.location.pathname !== '/' &&
-    window.location.pathname !== '/index.html') {
-	checkAuth();
+// Check authentication on page load except for excluded paths
+const excludedAuthPaths = [
+  '/',
+  '/index.html',
+  '/zugang/',
+  '/zugang/index.html',
+  '/fr',
+  '/fr/',
+  '/fr/index.html',
+  '/fr/acces/',
+  '/fr/acces/index.html',
+  '/en',
+  '/en/',
+  '/en/index.html',
+  '/en/access/',
+  '/en/access/index.html'
+];
+
+const currentPath = window.location.pathname;
+
+// Only check authentication if not on an excluded path
+if (!excludedAuthPaths.includes(currentPath)) {
+  checkAuth();
 }
-
-// Arrow function to update online/offline status
-// const updateOnlineStatus = () => {
-// 	const status = document.querySelector('[data-status]');
-// 	const isOnline = navigator.onLine;
-// 	console.log(isOnline);
-// 	status.textContent = isOnline ? 'You are online' : 'You are offline';
-// 	status.className = `status ${isOnline ? 'online' : 'offline'}`;
-// 	if (isOnline) cacheAllAssets();
-// };
-
-// window.addEventListener('online', updateOnlineStatus);
-// window.addEventListener('offline', updateOnlineStatus);
-
 
 // DEBUG METHODS
 // Function to delete all caches
