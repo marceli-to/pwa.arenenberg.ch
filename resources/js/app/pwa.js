@@ -52,7 +52,7 @@ const ASSETS = [
 	'/zugang/index.html',
 ];
 
-const CACHE_NAME = 'arenenberg-assets-v10';
+const CACHE_NAME = 'arenenberg-assets-v9';
 
 const COOKIE_NAME = 'arenenberg-auth';
 
@@ -93,21 +93,22 @@ const cacheAllAssets = async () => {
   const cacheProgressBar = document.querySelector('[data-cache-progress-bar]');
   const resourceLoader = document.querySelector('[data-resources-loader]');
   const successSection = document.querySelector('[data-success-section]');
-  
+
   if (resourceLoader) {
     resourceLoader.classList.remove('hidden');
     resourceLoader.classList.add('flex');
   }
-  
+
   try {
     const cache = await caches.open(CACHE_NAME);
     let cached = 0;
     const totalAssets = ASSETS.length;
+
     // Update progress text initially
     if (cacheProgress) {
       cacheProgress.textContent = `0%`;
     }
-    
+
     for (const asset of ASSETS) {
       const response = await cache.match(asset);
       if (!response && navigator.onLine) {
@@ -128,9 +129,6 @@ const cacheAllAssets = async () => {
       // Update custom progress bar
       if (cacheProgressBar) {
         cacheProgressBar.value = progressPercentage;
-        // If it's a div-based progress bar, update the width
-        const progressWidth = `${progressPercentage}%`;
-        cacheProgressBar.style.background = `linear-gradient(to right, #3F7D20 ${progressWidth}, transparent ${progressWidth})`;
       }
       
       // Update progress text with percentage
@@ -138,27 +136,19 @@ const cacheAllAssets = async () => {
         cacheProgress.textContent = `${progressPercentage}%`;
       }
     }
-    
+
     // Final progress update
     if (cacheProgress) {
       cacheProgress.textContent = `100%`;
-    }
-    
-    // Show success section after a short delay
-    setTimeout(() => {
-      // Hide resource loader
-      if (resourceLoader) {
-        resourceLoader.classList.remove('flex');
-        resourceLoader.classList.add('hidden');
-      }
-      
-      // Show success section
+
+      resourceLoader.classList.remove('flex');
+      resourceLoader.classList.add('hidden');
+
       if (successSection) {
         successSection.classList.remove('hidden');
         successSection.classList.add('flex');
       }
-    }, 1000); // 1 second delay for better user experience
-    
+    }
   } catch (error) {
     console.error('Cache check failed:', error);
     if (cacheProgress) {
@@ -267,15 +257,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Register Service Worker
 if ('serviceWorker' in navigator) {
-	window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-			.then((registration) => {
-				console.log('Service Worker registered with scope:', registration.scope);
-			})
-			.catch((error) => {
-				console.error('Service Worker registration failed:', error);
-			});
-	});
+  window.addEventListener('load', () => {
+    // Paths where the service worker should not be registered
+    const excludedPaths = [
+      '/',
+      '/index.html',
+      '/fr',
+      '/fr/',
+      '/fr/index.html',
+      '/en',
+      '/en/',
+      '/en/index.html'
+    ];
+    
+    const currentPath = window.location.pathname;
+    
+    // Check if current path is in the excluded list
+    if (!excludedPaths.includes(currentPath)) {
+      navigator.serviceWorker.register('/sw.js')
+        .then((registration) => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch((error) => {
+          console.error('Service Worker registration failed:', error);
+        });
+    } else {
+      console.log('Service Worker registration skipped for excluded path:', currentPath);
+    }
+  });
 }
 
 // Check authentication on page load
