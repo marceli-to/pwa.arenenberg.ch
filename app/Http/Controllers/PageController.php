@@ -14,6 +14,11 @@ class PageController extends Controller
     return view('pages.access');
   }
 
+  public function download(Request $request)
+  {
+    return view('pages.download');
+  }
+
   public function locationsList(Request $request)
   {
     return view('pages.locations.list');

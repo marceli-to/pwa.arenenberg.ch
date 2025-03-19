@@ -16,6 +16,7 @@ use App\Http\Controllers\PageController;
 Route::domain(env('DOMAIN_PWA'))->group(function () {
   Route::multilingual('/', [PageController::class, 'home'])->name('page.home');
   Route::multilingual('zugang', [PageController::class, 'access'])->name('page.access');
+  Route::multilingual('download', [PageController::class, 'download'])->name('page.download');
   Route::multilingual('standorte/liste', [PageController::class, 'locationsList'])->name('page.locations.list');
   Route::multilingual('standorte/karte', [PageController::class, 'locationsMap'])->name('page.locations.map');
   Route::multilingual('standorte/{slug}', [PageController::class, 'location'])->name('page.locations.show');
