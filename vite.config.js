@@ -37,7 +37,7 @@ export default defineConfig({
       input: {
         app: 'resources/js/app.js',
         'app-css': 'resources/css/app.css',
-        spa: 'resources/js/spa.js'
+        // spa: 'resources/js/spa.js'
       },
       output: {
         entryFileNames: 'assets/[name].js',
