@@ -22,7 +22,7 @@ const ASSETS = [
 	'/build/assets/spa.js',
 	'/build/manifest.json',
 	'/en/access/index.html',
-  '/en/download/index.html',
+	'/en/download/index.html',
 	'/en/index.html',
 	'/en/locations/list/index.html',
 	'/en/locations/map/index.html',
@@ -60,10 +60,10 @@ const ASSETS = [
 	'/web-app-manifest-192x192.png',
 	'/web-app-manifest-512x512.png',
 	'/zugang/index.html',
-  '/download/index.html'
+	'/download/index.html'
 ];
 
-const CACHE_NAME = 'arenenberg-assets-v20';
+const CACHE_NAME = 'arenenberg-assets-v22';
 const COOKIE_NAME = 'arenenberg-auth';
 const PASSWORD_PATH = '/password.txt';
 
@@ -87,6 +87,13 @@ const EXCLUDED_AUTH_PATHS = [
 	'/en/index.html',
 	'/en/access/',
 	'/en/access/index.html'
+];
+
+// Download page paths
+const DOWNLOAD_PATHS = [
+	'/download/index.html',
+	'/fr/download/index.html',
+	'/en/download/index.html'
 ];
 
 // =======================================================
@@ -138,7 +145,7 @@ const validatePassword = async (password) => {
 const checkAuth = () => {
 	const authCookie = getCookie(COOKIE_NAME);
 	if (!authCookie) {
-		window.location.href = 'index.html'; // Redirect to index.html if not authenticated
+		window.location.href = '/index.html'; // Redirect to index.html if not authenticated
 	}
 };
 
@@ -155,10 +162,6 @@ const cacheAllAssets = async () => {
 	const resourceLoader = document.querySelector('[data-resources-loader]');
 	const successSection = document.querySelector('[data-success-section]');
 
-	// Check if we're on the download page
-	const isDownloadPage = window.location.pathname.includes('/download/');
-
-	// Show resource loader if it exists
 	if (resourceLoader) {
 		resourceLoader.classList.remove('hidden');
 		resourceLoader.classList.add('flex');
@@ -206,10 +209,13 @@ const cacheAllAssets = async () => {
 		if (cacheProgress) {
 			cacheProgress.textContent = `100%`;
 
-			// If we're on the download page, show success section
-			if (isDownloadPage && resourceLoader && successSection) {
+			// Hide resources loader and show success section
+			if (resourceLoader) {
 				resourceLoader.classList.remove('flex');
 				resourceLoader.classList.add('hidden');
+			}
+
+			if (successSection) {
 				successSection.classList.remove('hidden');
 				successSection.classList.add('flex');
 			}
@@ -335,22 +341,73 @@ const initAccessForm = () => {
 	});
 };
 
-// Debug button initialization removed
+/**
+ * Initializes access button for direct download page navigation
+ */
+const initAccessButton = () => {
+	const accessButton = document.querySelector('[data-access-button]');
+	const inputs = document.querySelectorAll('[data-access-input]');
+	const accessError = document.querySelector('[data-access-error]');
+	
+	// Return if no button or inputs
+	if (!accessButton || !inputs || inputs.length === 0) {
+		return;
+	}
+	
+	// Handle button click
+	accessButton.addEventListener('click', async function(e) {
+		e.preventDefault();
+		
+		// Get the redirect URL from the button
+		const redirectUrl = this.getAttribute('href');
+		if (!redirectUrl) {
+			console.error('No redirect URL specified on access button');
+			return;
+		}
+		
+		// Combine all input values to form the passcode
+		const passcode = Array.from(inputs).map(input => input.value).join('');
+		
+		// Validate the passcode
+		if (await validatePassword(passcode)) {
+			// Set cookie for authentication
+			setCookie(COOKIE_NAME, 'true', 60); // Set cookie for 60 minutes
+			
+			// Redirect to the download page
+			window.location.href = redirectUrl;
+		} else {
+			// Show error message
+			if (accessError) {
+				accessError.classList.remove('hidden');
+				
+				// Clear input fields
+				inputs.forEach(input => {
+					input.value = '';
+				});
+				
+				// Focus first input for easier retry
+				inputs[0].focus();
+			}
+		}
+	});
+};
+
+/**
+ * Initializes download page functionality
+ */
+const initDownloadPage = () => {
+	const currentPath = window.location.pathname;
+	
+	// Check if we're on a download page
+	if (DOWNLOAD_PATHS.includes(currentPath)) {
+		// Start caching assets immediately
+		cacheAllAssets();
+	}
+};
 
 // =======================================================
 // Application Initialization
 // =======================================================
-
-/**
- * Initializes the download page functionality
- */
-const initDownloadPage = () => {
-	// Check if we're on a download page
-	if (window.location.pathname.includes('/download/')) {
-		// Start caching assets automatically
-		cacheAllAssets();
-	}
-};
 
 /**
  * Main initialization function
@@ -368,6 +425,7 @@ const initApp = () => {
 	// Initialize UI components
 	document.addEventListener('DOMContentLoaded', () => {
 		initAccessForm();
+		initAccessButton();
 		initDownloadPage();
 	});
 };

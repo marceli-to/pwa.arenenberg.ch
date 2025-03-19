@@ -22,6 +22,7 @@ const ASSETS = [
 	'/build/assets/spa.js',
 	'/build/manifest.json',
 	'/en/access/index.html',
+  '/en/download/index.html',
 	'/en/index.html',
 	'/en/locations/list/index.html',
 	'/en/locations/map/index.html',
@@ -34,6 +35,7 @@ const ASSETS = [
 	'/favicon.ico',
 	'/favicon.svg',
 	'/fr/acces/index.html',
+  '/fr/download/index.html',
 	'/fr/index.html',
 	'/fr/sites/carte/index.html',
 	'/fr/sites/liste/index.html',
@@ -58,6 +60,7 @@ const ASSETS = [
 	'/web-app-manifest-192x192.png',
 	'/web-app-manifest-512x512.png',
 	'/zugang/index.html',
+  '/download/index.html'
 ];
 
 const CACHE_NAME = 'arenenberg-assets-v22';
