@@ -60,7 +60,7 @@
           </div>
         </div>
       </div>
-      <div data-access-error class="text-crimson mt-10 hidden">
+      <div data-access-error class="text-crimson text-center mt-10 hidden">
         {{ __('! ungültiger Code !') }}
       </div>
     </div>
