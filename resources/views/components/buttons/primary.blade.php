@@ -10,7 +10,7 @@
     class="w-full text-lg h-50 border-2 border-evergreen flex items-center justify-center {{ $class }}"
     title="{{ $label }}"
     aria-label="{{ $label }}"
-    {{ $attributes }}>
+    {!! $attributes !!}>
     <span>{{ $label }}</span>
   </a>
 @elseif ($type === 'button')
@@ -19,7 +19,7 @@
     class="w-full text-lg h-50 border-2 border-evergreen flex items-center justify-center {{ $class }}"
     title="{{ $label }}"
     aria-label="{{ $label }}"
-    {{ $attributes }}>
+    {!! $attributes !!}>
     <span>{{ $label }}</span>
   </button>
 @endif
