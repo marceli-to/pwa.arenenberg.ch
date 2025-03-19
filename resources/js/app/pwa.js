@@ -126,7 +126,7 @@ const validatePassword = async (password) => {
 		console.log('Correct password:', correctPassword);
 		return password === correctPassword.trim();
 	} catch (error) {
-    
+
 		console.error('Failed to fetch password:', error);
 		return false;
 	}
@@ -315,6 +315,7 @@ const initAccessForm = () => {
 			// Start caching assets
 			cacheAllAssets();
 		} else {
+      console.log('Incorrect passcode');
 			// Show error message
 			if (accessError) {
 				accessError.textContent = 'Incorrect passcode. Please try again.';
