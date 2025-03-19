@@ -50,6 +50,7 @@ class ExportStatic extends Command
         $routes = [
             // German
             'zugang',
+            'download',
             'standorte/liste',
             'standorte/karte',
             'standorte/arenenberger-vielfalt',
@@ -60,6 +61,7 @@ class ExportStatic extends Command
             // French
             'fr',
             'fr/acces',
+            'fr/download',
             'fr/sites/liste',
             'fr/sites/carte',
             'fr/standorte/arenenberger-vielfalt',
@@ -70,6 +72,7 @@ class ExportStatic extends Command
             // English
             'en',
             'en/access',
+            'en/download',
             'en/locations/list',
             'en/locations/map',
             'en/standorte/arenenberger-vielfalt',
