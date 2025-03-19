@@ -315,10 +315,8 @@ const initAccessForm = () => {
 			// Start caching assets
 			cacheAllAssets();
 		} else {
-      console.log('Incorrect passcode');
 			// Show error message
 			if (accessError) {
-				accessError.textContent = 'Incorrect passcode. Please try again.';
 				accessError.classList.remove('hidden');
 				
 				// Clear input fields
