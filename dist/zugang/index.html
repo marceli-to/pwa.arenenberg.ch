@@ -10,7 +10,7 @@
 <meta name="description" content="Ein Parcours durch die Arenenberger Vielfalt">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<meta name="csrf-token" content="eu14P1JcqM2lwsk1hxsDD15N0bJB6FbSAYVeNzMt">
+<meta name="csrf-token" content="v0U7Bi24VEcVqivhTl4EyN8Vu3zZdcyVvk2eO9tQ">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -154,8 +154,7 @@
 </div>
 </div></div><main role="main">
   <div x-show="!menu">
-    <!-- Access form section -->
-  <form 
+    <form 
     class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen flex flex-col justify-between" 
     data-access-form>
     <div class="mt-10">
@@ -219,58 +218,15 @@
       </div>
     </div>
 
-    <button 
-    type="submit" 
+    <a 
+    href="https://pwa.arenenberg.ch.marceli.to/download/index.html" 
     class="w-full text-lg h-50 border-2 border-evergreen flex items-center justify-center "
     title="Abschicken"
-    aria-label="Abschicken">
+    aria-label="Abschicken"
+    data-access-button="data-access-button">
     <span>Abschicken</span>
-  </button>
-  </form>
-  <!-- End Access form section -->
-
-  <!-- Resources loader section  -->
-  <div 
-    class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen hidden flex-col justify-between"
-    data-resources-loader>
-    <div class="mt-10 pb-40 border-b border-b-evergreen">
-      <h2 class="text-lg leading-[1.4]">
-        Die Inhalte werden heruntergeladen. Dies kann einen Moment dauern.
-      </h2>
-      <div 
-        class="mt-30"
-        data-cache-status>
-        <progress 
-          data-cache-progress-bar 
-          value="0" 
-          max="100"
-          class="w-full h-8 border border-evergreen bg-transparent appearance-none [&::-webkit-progress-bar]:border [&::-webkit-progress-bar]:border-evergreen [&::-webkit-progress-bar]:bg-transparent [&::-webkit-progress-value]:bg-evergreen [&::-moz-progress-bar]:bg-evergreen">
-        </progress>
-        <div data-cache-progress class="text-right"></div>
-      </div>
-    </div>
-  </div>
-  <!-- End Resources loader section -->
-
-  <!-- Success section -->
-  <div 
-    class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen hidden flex-col justify-between"
-    data-success-section>
-    <div class="text-lg py-10">
-      <p>Auf Reportage auf dem Arenenberg!</p>
-      <p>Hinweis zum Rundgang mit Reporter:innen.</p>
-      <p>Zudem einige Informationen zur Reihenfolge und Ablaufs. Falls Unklarheiten bestehen melden Sie sich bei der Kasse.</p>
-      <p class="mt-20">Viel Spass!</p>
-    </div>
-    <a 
-    href="https://pwa.arenenberg.ch.marceli.to/standorte/liste/index.html" 
-    class="w-full text-lg h-50 border-2 border-evergreen flex items-center justify-center "
-    title="Los geht&#039;s!"
-    aria-label="Los geht&#039;s!">
-    <span>Los geht&#039;s!</span>
   </a>
-  </div>
-  <!-- End Success section -->
+  </form>
   </div>
 </main>
 <script type="module" src="https://pwa.arenenberg.ch.marceli.to/build/assets/app.js"></script></body>
