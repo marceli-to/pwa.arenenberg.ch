@@ -137,7 +137,7 @@ const checkAuth = () => {
   console.log(authCookie);
 	if (!authCookie) {
     console.log('User is not authenticated');
-		// window.location.href = 'index.html'; // Redirect to index.html if not authenticated
+		window.location.href = '/index.html'; // Redirect to index.html if not authenticated
 	}
 };
 
