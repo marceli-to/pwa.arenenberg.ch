@@ -6,7 +6,7 @@
     class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen flex flex-col justify-between" 
     data-access-form>
     <div class="mt-10">
-      <div class="pb-40 border-b border-b-evergreen">
+      <div class="pb-60 border-b border-b-evergreen">
         <h2 class="text-lg">
           {{ __('Passcode:') }}
         </h2>
@@ -61,7 +61,7 @@
           </div>
         </div>
       </div>
-      <div data-access-error class="text-center text-crimson mt-10">
+      <div data-access-error class="text-crimson mt-10">
         {{ __('! ungültiger Code !') }}
       </div>
     </div>
