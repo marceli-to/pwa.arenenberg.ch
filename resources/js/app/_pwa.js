@@ -22,7 +22,6 @@ const ASSETS = [
 	'/build/assets/spa.js',
 	'/build/manifest.json',
 	'/en/access/index.html',
-	'/en/download/index.html',
 	'/en/index.html',
 	'/en/locations/list/index.html',
 	'/en/locations/map/index.html',
@@ -35,7 +34,6 @@ const ASSETS = [
 	'/favicon.ico',
 	'/favicon.svg',
 	'/fr/acces/index.html',
-  '/fr/download/index.html',
 	'/fr/index.html',
 	'/fr/sites/carte/index.html',
 	'/fr/sites/liste/index.html',
@@ -60,10 +58,9 @@ const ASSETS = [
 	'/web-app-manifest-192x192.png',
 	'/web-app-manifest-512x512.png',
 	'/zugang/index.html',
-  '/download/index.html'
 ];
 
-const CACHE_NAME = 'arenenberg-assets-v20';
+const CACHE_NAME = 'arenenberg-assets-v22';
 const COOKIE_NAME = 'arenenberg-auth';
 const PASSWORD_PATH = '/password.txt';
 
@@ -138,7 +135,7 @@ const validatePassword = async (password) => {
 const checkAuth = () => {
 	const authCookie = getCookie(COOKIE_NAME);
 	if (!authCookie) {
-		window.location.href = 'index.html'; // Redirect to index.html if not authenticated
+		window.location.href = '/index.html'; // Redirect to index.html if not authenticated
 	}
 };
 
@@ -155,10 +152,6 @@ const cacheAllAssets = async () => {
 	const resourceLoader = document.querySelector('[data-resources-loader]');
 	const successSection = document.querySelector('[data-success-section]');
 
-	// Check if we're on the download page
-	const isDownloadPage = window.location.pathname.includes('/download/');
-
-	// Show resource loader if it exists
 	if (resourceLoader) {
 		resourceLoader.classList.remove('hidden');
 		resourceLoader.classList.add('flex');
@@ -206,10 +199,10 @@ const cacheAllAssets = async () => {
 		if (cacheProgress) {
 			cacheProgress.textContent = `100%`;
 
-			// If we're on the download page, show success section
-			if (isDownloadPage && resourceLoader && successSection) {
-				resourceLoader.classList.remove('flex');
-				resourceLoader.classList.add('hidden');
+			resourceLoader.classList.remove('flex');
+			resourceLoader.classList.add('hidden');
+
+			if (successSection) {
 				successSection.classList.remove('hidden');
 				successSection.classList.add('flex');
 			}
@@ -321,7 +314,6 @@ const initAccessForm = () => {
 		} else {
 			// Show error message
 			if (accessError) {
-				accessError.textContent = 'Incorrect passcode. Please try again.';
 				accessError.classList.remove('hidden');
 				
 				// Clear input fields
@@ -343,17 +335,6 @@ const initAccessForm = () => {
 // =======================================================
 
 /**
- * Initializes the download page functionality
- */
-const initDownloadPage = () => {
-	// Check if we're on a download page
-	if (window.location.pathname.includes('/download/')) {
-		// Start caching assets automatically
-		cacheAllAssets();
-	}
-};
-
-/**
  * Main initialization function
  */
 const initApp = () => {
@@ -369,7 +350,6 @@ const initApp = () => {
 	// Initialize UI components
 	document.addEventListener('DOMContentLoaded', () => {
 		initAccessForm();
-		initDownloadPage();
 	});
 };
 
