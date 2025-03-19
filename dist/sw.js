@@ -9,8 +9,6 @@ const ASSETS = [
 	'/build/assets/GT-Alpina-Standard-Medium.woff2',
 	'/build/assets/app.css',
 	'/build/assets/app.js',
-	'/build/assets/spa.css',
-	'/build/assets/spa.js',
 	'/build/manifest.json',
 	'/en/access/index.html',
 	'/en/download/index.html',
