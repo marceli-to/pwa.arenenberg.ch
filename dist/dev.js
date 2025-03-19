@@ -10,6 +10,7 @@ const deleteAllCaches = async () => {
     await unregisterServiceWorker();
     console.log('Service Worker unregistered.');
 
+    alert('Cache deleted, Service Worker unregistered.');
     
   } catch (error) {
     console.error('Failed to delete caches:', error);
@@ -19,8 +20,6 @@ const deleteAllCaches = async () => {
 const deleteAuthCookie = async () => {
 	document.cookie = 'arenenberg-auth=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 	console.log('Cookie arenenberg-auth deleted.');
-	alert('Cookie arenenberg-auth deleted.');
-
 };
 
 // Function to unregister the service worker
@@ -29,7 +28,6 @@ const unregisterServiceWorker = async () => {
     const registrations = await navigator.serviceWorker.getRegistrations();
     await Promise.all(registrations.map(registration => registration.unregister()));
     console.log('Service Worker unregistered.');
-    alert('Service Worker unregistered.');
   } catch (error) {
     console.error('Failed to unregister Service Worker:', error);
   }
