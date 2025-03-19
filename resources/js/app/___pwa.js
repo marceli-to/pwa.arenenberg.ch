@@ -18,8 +18,6 @@ const ASSETS = [
 	'/build/assets/GT-Alpina-Standard-Medium.woff2',
 	'/build/assets/app.css',
 	'/build/assets/app.js',
-	'/build/assets/spa.css',
-	'/build/assets/spa.js',
 	'/build/manifest.json',
 	'/en/access/index.html',
 	'/en/download/index.html',
@@ -262,31 +260,6 @@ const registerServiceWorker = () => {
 	});
 };
 
-/**
- * Unregisters all service workers and clears all caches
- */
-const cleanupServiceWorkerAndCaches = async () => {
-	// Unregister all service workers
-	if ('serviceWorker' in navigator) {
-		const registrations = await navigator.serviceWorker.getRegistrations();
-		for (const registration of registrations) {
-			await registration.unregister();
-			console.log('Service Worker unregistered');
-		}
-	}
-	
-	// Clear all caches
-	if ('caches' in window) {
-		const cacheNames = await caches.keys();
-		for (const cacheName of cacheNames) {
-			await caches.delete(cacheName);
-			console.log(`Cache '${cacheName}' deleted`);
-		}
-	}
-	
-	console.log('Service workers and caches cleaned up');
-};
-
 // =======================================================
 // UI Event Handlers
 // =======================================================
@@ -465,24 +438,14 @@ const handleAccessPageRedirect = () => {
  * Main initialization function
  */
 const initApp = () => {
-	const currentPath = window.location.pathname;
-	const authCookie = getCookie(COOKIE_NAME);
-	
-	// Define homepage paths
-	const homepagePaths = ['/', '/index.html', '/fr/index.html', '/en/index.html'];
-	
-	// If on homepage and not authenticated, clean up service workers and caches
-	if (homepagePaths.includes(currentPath) && !authCookie) {
-		cleanupServiceWorkerAndCaches();
-	} else {
-		// Register service worker for non-homepage or authenticated users
-		registerServiceWorker();
-	}
+	// Register service worker
+	registerServiceWorker();
 	
 	// Check for authenticated users on access pages
 	handleAccessPageRedirect();
 	
 	// Check authentication if not on excluded path
+	const currentPath = window.location.pathname;
 	if (!EXCLUDED_AUTH_PATHS.includes(currentPath)) {
 		checkAuth();
 	}
