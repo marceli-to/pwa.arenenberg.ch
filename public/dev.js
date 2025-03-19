@@ -5,9 +5,10 @@ const deleteAllCaches = async () => {
     
     await Promise.all(cacheNames.map(name => caches.delete(name)));
     console.log('All caches deleted.');
-    alert('All caches deleted');
-
     await deleteAuthCookie();
+
+    await unregisterServiceWorker();
+    console.log('Service Worker unregistered.');
 
     
   } catch (error) {
