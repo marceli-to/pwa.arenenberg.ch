@@ -16,17 +16,5 @@
     "file": "assets/app.js",
     "isEntry": true,
     "src": "resources/js/app.js"
-  },
-  "resources/js/spa.css": {
-    "file": "assets/spa.css",
-    "src": "resources/js/spa.css"
-  },
-  "resources/js/spa.js": {
-    "css": [
-      "assets/spa.css"
-    ],
-    "file": "assets/spa.js",
-    "isEntry": true,
-    "src": "resources/js/spa.js"
   }
 }
