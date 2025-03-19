@@ -18,8 +18,6 @@ const ASSETS = [
 	'/build/assets/GT-Alpina-Standard-Medium.woff2',
 	'/build/assets/app.css',
 	'/build/assets/app.js',
-	'/build/assets/spa.css',
-	'/build/assets/spa.js',
 	'/build/manifest.json',
 	'/en/access/index.html',
 	'/en/download/index.html',
@@ -63,7 +61,7 @@ const ASSETS = [
 	'/download/index.html'
 ];
 
-const CACHE_NAME = 'arenenberg-assets-v22';
+const CACHE_NAME = 'arenenberg-assets-v23';
 const COOKIE_NAME = 'arenenberg-auth';
 const PASSWORD_PATH = '/password.txt';
 
@@ -72,10 +70,7 @@ const EXCLUDED_SW_PATHS = [
 	'/', 
 	'/index.html', 
 	'/fr/index.html', 
-	'/en/index.html',
-	'/zugang/index.html',
-	'/en/access/index.html',
-	'/fr/acces/index.html'
+	'/en/index.html'
 ];
 
 // Paths excluded from authentication check
@@ -409,30 +404,6 @@ const initDownloadPage = () => {
 };
 
 // =======================================================
-// Access Page Handling
-// =======================================================
-
-/**
- * Redirects authenticated users from access pages to download pages
- */
-const handleAccessPageRedirect = () => {
-	const currentPath = window.location.pathname;
-	const authCookie = getCookie(COOKIE_NAME);
-	
-	// Define access pages and their corresponding download pages
-	const accessToDownloadMap = {
-		'/zugang/index.html': '/download/index.html',
-		'/en/access/index.html': '/en/download/index.html',
-		'/fr/acces/index.html': '/fr/download/index.html'
-	};
-	
-	// If user is authenticated and on an access page, redirect to download page
-	if (authCookie && accessToDownloadMap[currentPath]) {
-		window.location.href = accessToDownloadMap[currentPath];
-	}
-};
-
-// =======================================================
 // Application Initialization
 // =======================================================
 
@@ -442,9 +413,6 @@ const handleAccessPageRedirect = () => {
 const initApp = () => {
 	// Register service worker
 	registerServiceWorker();
-	
-	// Check for authenticated users on access pages
-	handleAccessPageRedirect();
 	
 	// Check authentication if not on excluded path
 	const currentPath = window.location.pathname;
