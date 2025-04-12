@@ -24,7 +24,7 @@ Route::domain(env('DOMAIN_PWA'))->group(function () {
 
 Route::domain(env('DOMAIN_DASHBOARD'))->group(function () {
   Route::get('/dashboard/{any?}', function () {
-    return view('pages.dashboard');
+    return view('dashboard');
   })->where('any', '.*')->middleware(['auth', 'verified'])->name('page.dashboard');
 });
 
