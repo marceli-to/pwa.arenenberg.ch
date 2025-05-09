@@ -10,7 +10,7 @@
 <meta name="description" content="Un parcours à travers la diversité d&#039;Arenenberg">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<meta name="csrf-token" content="QPjfSybntwGJJY9oQr7TVb0o8qj5Y9mfBOkwnlYc">
+<meta name="csrf-token" content="tzIqHy618DpcWkDVZHyFJwA2HngQExQz1tcRnZTU">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -57,7 +57,7 @@
 	class="relative w-full mt-50">
   <div x-data="{ activeSection: null }" class="">
 	<div 
-	class="w-full border-t border-t-evergreen py-20">
+	class="w-full border-t border-t-evergreen py-15">
 	<div 
 		@click="activeSection = (activeSection === 'language') ? null : 'language'"
 		class="flex items-center justify-between cursor-pointer">
@@ -65,13 +65,15 @@
 			Sprachauswahl
 		</span>
 		<span x-show="activeSection !== 'language'">
-			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
-<path d="M0.5 9.99963L19.8408 0.329712V19.6705L0.5 9.99963Z" fill="currentColor"/>
-</svg>		</span>
+			<svg width="35" height="20" viewBox="0 0 35 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-32 h-auto">
+<path d="M0.707001 1.20801L17.147 17.622L33.588 1.20801" stroke="currentColor" stroke-width="2"/>
+</svg>
+		</span>
 		<span x-show="activeSection === 'language'">
-			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
-<path d="M0.32959 0.329712H19.6704L10 19.6705L0.32959 0.329712Z" fill="currentColor"/>
-</svg>		</span>
+			<svg width="35" height="20" viewBox="0 0 35 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-32 h-auto">
+<path d="M0.707001 18.327L17.147 1.91296L33.588 18.327" stroke="currentColor" stroke-width="2"/>
+</svg>
+		</span>
 	</div>
 	<div 
 		class="mt-25 "
@@ -98,7 +100,7 @@
 	</div>
 </div>  
     <div 
-	class="w-full border-t border-t-evergreen py-20">
+	class="w-full border-t border-t-evergreen py-15">
 	<div 
 		@click="activeSection = (activeSection === 'impressum') ? null : 'impressum'"
 		class="flex items-center justify-between cursor-pointer">
@@ -106,13 +108,15 @@
 			Impressum
 		</span>
 		<span x-show="activeSection !== 'impressum'">
-			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
-<path d="M0.5 9.99963L19.8408 0.329712V19.6705L0.5 9.99963Z" fill="currentColor"/>
-</svg>		</span>
+			<svg width="35" height="20" viewBox="0 0 35 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-32 h-auto">
+<path d="M0.707001 1.20801L17.147 17.622L33.588 1.20801" stroke="currentColor" stroke-width="2"/>
+</svg>
+		</span>
 		<span x-show="activeSection === 'impressum'">
-			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
-<path d="M0.32959 0.329712H19.6704L10 19.6705L0.32959 0.329712Z" fill="currentColor"/>
-</svg>		</span>
+			<svg width="35" height="20" viewBox="0 0 35 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-32 h-auto">
+<path d="M0.707001 18.327L17.147 1.91296L33.588 18.327" stroke="currentColor" stroke-width="2"/>
+</svg>
+		</span>
 	</div>
 	<div 
 		class="mt-25 block w-full"
@@ -121,39 +125,11 @@
 			<p>Impressum content goes here.</p>
 		</div>
 	</div>
-</div>  
-    <div 
-	class="w-full border-t border-t-evergreen py-20">
-	<div 
-		@click="activeSection = (activeSection === 'bildquellen') ? null : 'bildquellen'"
-		class="flex items-center justify-between cursor-pointer">
-		<span class="text-xl select-none">
-			Bildquellen
-		</span>
-		<span x-show="activeSection !== 'bildquellen'">
-			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
-<path d="M0.5 9.99963L19.8408 0.329712V19.6705L0.5 9.99963Z" fill="currentColor"/>
-</svg>		</span>
-		<span x-show="activeSection === 'bildquellen'">
-			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
-<path d="M0.32959 0.329712H19.6704L10 19.6705L0.32959 0.329712Z" fill="currentColor"/>
-</svg>		</span>
-	</div>
-	<div 
-		class="mt-25 block w-full"
-		x-show="activeSection === 'bildquellen'">
-		<div>
-			<p>Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte.</p>
-      <p>»Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab.</p>
-      <p>Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte.</p>
-      <p>»Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab.</p>
-		</div>
-	</div>
 </div>
 </div></div><main role="main">
   <div x-show="!menu">
     <div 
-    class="w-full h-[calc(100dvh_-_215px)] mt-50 flex flex-col justify-between">
+    class="w-full h-[calc(100dvh_-_175px)] mt-50 flex flex-col justify-between">
     <div>
       <a 
   href="https://pwa.arenenberg.ch.marceli.to/fr/standorte/arenenberger-vielfalt/index.html" 
@@ -167,8 +143,11 @@
     Kapelle
   </p>
   </span>
-  <span class="text-xl">
-    1
+  <span>
+    <svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+  <path d="M9.71201 21.64H18.704V20.488C17.4027 20.488 16.5173 20.3706 16.048 20.136C15.5787 19.88 15.344 19.3573 15.344 18.568V5.44797H13.712C13.1147 5.7893 12.5067 6.08797 11.888 6.34397C11.2693 6.59997 10.6507 6.8133 10.032 6.98397V8.03997H13.104V18.568C13.104 19.1013 12.9973 19.5066 12.784 19.784C12.592 20.0613 12.2507 20.2533 11.76 20.36C11.2693 20.4453 10.5867 20.488 9.71201 20.488V21.64ZM14 26.76C12.1867 26.76 10.48 26.4186 8.88001 25.736C7.28001 25.0533 5.87201 24.1146 4.65601 22.92C3.46134 21.704 2.52268 20.296 1.84001 18.696C1.15734 17.096 0.81601 15.3893 0.81601 13.576C0.81601 11.7626 1.15734 10.0666 1.84001 8.48797C2.52268 6.88797 3.46134 5.47997 4.65601 4.26397C5.87201 3.04797 7.28001 2.09863 8.88001 1.41597C10.48 0.733301 12.1867 0.391968 14 0.391968C15.8347 0.391968 17.5413 0.733301 19.12 1.41597C20.72 2.09863 22.1173 3.04797 23.312 4.26397C24.528 5.47997 25.4773 6.88797 26.16 8.48797C26.8427 10.0666 27.184 11.7626 27.184 13.576C27.184 15.3893 26.8427 17.096 26.16 18.696C25.4773 20.296 24.528 21.704 23.312 22.92C22.1173 24.1146 20.72 25.0533 19.12 25.736C17.5413 26.4186 15.8347 26.76 14 26.76Z" fill="currentColor"/>
+  </svg>
+      <x-icons.number.1 class="w-28 h-auto" />
   </span>
 </a>    
       <a 
@@ -183,8 +162,11 @@
     Milchviehstall
   </p>
   </span>
-  <span class="text-xl">
-    2
+  <span>
+    <svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+<path d="M8.36798 21.64H19.248C19.2906 20.4666 19.3226 19.4533 19.344 18.6C19.3866 17.7466 19.44 17.1493 19.504 16.808H18.288V17.032C18.288 17.7146 18.224 18.2266 18.096 18.568C17.9893 18.9093 17.7653 19.1333 17.424 19.24C17.104 19.3466 16.624 19.4 15.984 19.4H10.64C11.024 18.9733 11.5573 18.4933 12.24 17.96C12.944 17.4053 13.6906 16.8186 14.48 16.2C15.6533 15.2613 16.592 14.4186 17.296 13.672C18 12.904 18.5013 12.1786 18.8 11.496C19.12 10.8133 19.28 10.12 19.28 9.41597C19.28 8.75464 19.152 8.16797 18.896 7.65597C18.6613 7.12263 18.3093 6.67463 17.84 6.31197C17.392 5.9493 16.8266 5.67197 16.144 5.47997C15.4826 5.28797 14.7253 5.19197 13.872 5.19197C12.8053 5.19197 11.8666 5.35197 11.056 5.67197C10.2666 5.99197 9.64798 6.43997 9.19998 7.01597C8.75198 7.57064 8.52798 8.21064 8.52798 8.93597C8.52798 9.55464 8.68798 10.056 9.00798 10.44C9.32798 10.8026 9.76531 10.984 10.32 10.984C10.8746 10.984 11.312 10.8133 11.632 10.472C11.952 10.1093 12.112 9.6613 12.112 9.12797C12.112 8.5093 11.888 7.9653 11.44 7.49597C11.6106 7.23997 11.888 6.99464 12.272 6.75997C12.6773 6.50397 13.1893 6.37597 13.808 6.37597C14.6826 6.37597 15.408 6.63197 15.984 7.14397C16.5813 7.65597 16.88 8.35997 16.88 9.25597C16.88 9.8533 16.72 10.504 16.4 11.208C16.08 11.8906 15.5573 12.648 14.832 13.48C14.1066 14.312 13.136 15.2613 11.92 16.328C11.2373 16.9253 10.576 17.5226 9.93598 18.12C9.31731 18.696 8.79465 19.2293 8.36798 19.72V21.64ZM14 26.76C12.1866 26.76 10.48 26.4186 8.87998 25.736C7.27998 25.0533 5.87198 24.1146 4.65598 22.92C3.46131 21.704 2.52265 20.296 1.83998 18.696C1.15731 17.096 0.815979 15.3893 0.815979 13.576C0.815979 11.7626 1.15731 10.0666 1.83998 8.48797C2.52265 6.88797 3.46131 5.47997 4.65598 4.26397C5.87198 3.04797 7.27998 2.09863 8.87998 1.41597C10.48 0.733301 12.1866 0.391968 14 0.391968C15.8346 0.391968 17.5413 0.733301 19.12 1.41597C20.72 2.09863 22.1173 3.04797 23.312 4.26397C24.528 5.47997 25.4773 6.88797 26.16 8.48797C26.8426 10.0666 27.184 11.7626 27.184 13.576C27.184 15.3893 26.8426 17.096 26.16 18.696C25.4773 20.296 24.528 21.704 23.312 22.92C22.1173 24.1146 20.72 25.0533 19.12 25.736C17.5413 26.4186 15.8346 26.76 14 26.76Z" fill="currentColor"/>
+</svg>
+    <x-icons.number.2 class="w-28 h-auto" />
   </span>
 </a>      
       <a 
@@ -199,8 +181,10 @@
     Feldkulturengarten
   </p>
   </span>
-  <span class="text-xl">
-    3
+  <span>
+    <svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+<path d="M13.648 21.96C15.6106 21.96 17.1573 21.5013 18.288 20.584C19.4186 19.6666 19.984 18.472 19.984 17C19.984 15.7413 19.568 14.7493 18.736 14.024C17.9253 13.2773 16.7626 12.808 15.248 12.616C16.5706 12.232 17.552 11.7306 18.192 11.112C18.832 10.4933 19.152 9.70397 19.152 8.74397C19.152 7.59197 18.704 6.7173 17.808 6.11997C16.9333 5.5013 15.6533 5.19197 13.968 5.19197C12.4106 5.19197 11.1733 5.4373 10.256 5.92797C9.35998 6.41864 8.91198 7.1013 8.91198 7.97597C8.91198 8.46664 9.05065 8.8613 9.32798 9.15997C9.60531 9.45864 9.99998 9.60797 10.512 9.60797C11.0026 9.60797 11.3866 9.47997 11.664 9.22397C11.9626 8.96797 12.112 8.58397 12.112 8.07197C12.112 7.81597 12.0693 7.5813 11.984 7.36797C11.92 7.1333 11.8026 6.9413 11.632 6.79197C11.8666 6.6213 12.1866 6.51464 12.592 6.47197C12.9973 6.40797 13.3813 6.37597 13.744 6.37597C14.7466 6.37597 15.4933 6.5893 15.984 7.01597C16.496 7.4213 16.752 8.01863 16.752 8.80797C16.752 9.8533 16.336 10.664 15.504 11.24C14.672 11.816 13.6266 12.1466 12.368 12.232V13.288C13.4346 13.3306 14.352 13.4906 15.12 13.768C15.9093 14.024 16.5066 14.4186 16.912 14.952C17.3386 15.464 17.552 16.1253 17.552 16.936C17.552 18.1093 17.2 19.0373 16.496 19.72C15.8133 20.4026 14.8746 20.744 13.68 20.744C13.0826 20.744 12.56 20.6693 12.112 20.52C11.664 20.3706 11.3546 20.1893 11.184 19.976C11.5253 19.5706 11.696 19.0586 11.696 18.44C11.696 17.9493 11.5573 17.5653 11.28 17.288C11.0026 16.9893 10.608 16.84 10.096 16.84C9.54131 16.84 9.10398 17.0213 8.78398 17.384C8.48531 17.7253 8.33598 18.1733 8.33598 18.728C8.33598 19.7306 8.80531 20.52 9.74398 21.096C10.704 21.672 12.0053 21.96 13.648 21.96ZM14 26.76C12.1866 26.76 10.48 26.4186 8.87998 25.736C7.27998 25.0533 5.87198 24.1146 4.65598 22.92C3.46131 21.704 2.52265 20.296 1.83998 18.696C1.15731 17.096 0.815979 15.3893 0.815979 13.576C0.815979 11.7626 1.15731 10.0666 1.83998 8.48797C2.52265 6.88797 3.46131 5.47997 4.65598 4.26397C5.87198 3.04797 7.27998 2.09863 8.87998 1.41597C10.48 0.733301 12.1866 0.391968 14 0.391968C15.8346 0.391968 17.5413 0.733301 19.12 1.41597C20.72 2.09863 22.1173 3.04797 23.312 4.26397C24.528 5.47997 25.4773 6.88797 26.16 8.48797C26.8426 10.0666 27.184 11.7626 27.184 13.576C27.184 15.3893 26.8426 17.096 26.16 18.696C25.4773 20.296 24.528 21.704 23.312 22.92C22.1173 24.1146 20.72 25.0533 19.12 25.736C17.5413 26.4186 15.8346 26.76 14 26.76Z" fill="currentColor"/>
+</svg>    <x-icons.number.3 class="w-28 h-auto" />
   </span>
 </a>      
       <a 
@@ -215,8 +199,10 @@
     Eremitage
   </p>
   </span>
-  <span class="text-xl">
-    4
+  <span>
+    <svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+<path d="M11.44 21.64H19.376V20.488C18.7787 20.488 18.2773 20.4133 17.872 20.264C17.4667 20.1146 17.1573 19.8906 16.944 19.592C16.752 19.272 16.656 18.8986 16.656 18.472V16.968H19.664V15.496H16.656V5.44797H14.672L7.184 15.144V16.968H14.416V18.504C14.416 18.952 14.3093 19.3253 14.096 19.624C13.904 19.9226 13.5947 20.1466 13.168 20.296C12.7413 20.424 12.1653 20.488 11.44 20.488V21.64ZM8.304 15.496L14.416 7.65597V15.496H8.304ZM13.968 26.76C12.1547 26.76 10.448 26.4186 8.848 25.736C7.248 25.0533 5.84 24.1146 4.624 22.92C3.42933 21.704 2.49066 20.296 1.808 18.696C1.12533 17.096 0.783997 15.3893 0.783997 13.576C0.783997 11.7626 1.12533 10.0666 1.808 8.48797C2.49066 6.88797 3.42933 5.47997 4.624 4.26397C5.84 3.04797 7.248 2.09863 8.848 1.41597C10.448 0.733301 12.1547 0.391968 13.968 0.391968C15.8027 0.391968 17.5093 0.733301 19.088 1.41597C20.688 2.09863 22.0853 3.04797 23.28 4.26397C24.496 5.47997 25.4453 6.88797 26.128 8.48797C26.8107 10.0666 27.152 11.7626 27.152 13.576C27.152 15.3893 26.8107 17.096 26.128 18.696C25.4453 20.296 24.496 21.704 23.28 22.92C22.0853 24.1146 20.688 25.0533 19.088 25.736C17.5093 26.4186 15.8027 26.76 13.968 26.76Z" fill="currentColor"/>
+</svg>    <x-icons.number.4 class="w-28 h-auto" />
   </span>
 </a>      
       <a 
@@ -231,18 +217,20 @@
     Grabplatte
   </p>
   </span>
-  <span class="text-xl">
-    5
+  <span>
+    <svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+<path d="M13.328 21.96C15.2693 21.96 16.784 21.48 17.872 20.52C18.96 19.56 19.504 18.2693 19.504 16.648C19.504 15.0906 19.024 13.8533 18.064 12.936C17.1253 12.0186 15.9306 11.56 14.48 11.56C13.8613 11.56 13.2 11.6453 12.496 11.816C11.792 11.9866 11.1306 12.2533 10.512 12.616L10.768 7.68797H18.16L18.448 4.26397H17.456L17.328 4.83997C17.2853 5.07464 17.168 5.23464 16.976 5.31997C16.8053 5.4053 16.5813 5.44797 16.304 5.44797H9.74398L9.26398 13.992L9.93598 14.312C10.4906 13.928 11.0773 13.6506 11.696 13.48C12.336 13.3093 12.9226 13.224 13.456 13.224C14.5866 13.224 15.472 13.5653 16.112 14.248C16.752 14.9093 17.072 15.8053 17.072 16.936C17.072 18.152 16.72 19.1013 16.016 19.784C15.312 20.4666 14.384 20.808 13.232 20.808C12.848 20.808 12.4746 20.7653 12.112 20.68C11.7493 20.5733 11.4506 20.3813 11.216 20.104C11.3866 19.9546 11.5253 19.7626 11.632 19.528C11.76 19.272 11.824 19.0053 11.824 18.728C11.824 18.3653 11.7066 18.0346 11.472 17.736C11.2373 17.4373 10.864 17.288 10.352 17.288C9.88265 17.288 9.48798 17.448 9.16798 17.768C8.84798 18.0666 8.68798 18.4933 8.68798 19.048C8.68798 19.6453 8.86931 20.168 9.23198 20.616C9.61598 21.0426 10.1493 21.3733 10.832 21.608C11.536 21.8426 12.368 21.96 13.328 21.96ZM14 26.76C12.1866 26.76 10.48 26.4186 8.87998 25.736C7.27998 25.0533 5.87198 24.1146 4.65598 22.92C3.46131 21.704 2.52265 20.296 1.83998 18.696C1.15731 17.096 0.815979 15.3893 0.815979 13.576C0.815979 11.7626 1.15731 10.0666 1.83998 8.48797C2.52265 6.88797 3.46131 5.47997 4.65598 4.26397C5.87198 3.04797 7.27998 2.09863 8.87998 1.41597C10.48 0.733301 12.1866 0.391968 14 0.391968C15.8346 0.391968 17.5413 0.733301 19.12 1.41597C20.72 2.09863 22.1173 3.04797 23.312 4.26397C24.528 5.47997 25.4773 6.88797 26.16 8.48797C26.8426 10.0666 27.184 11.7626 27.184 13.576C27.184 15.3893 26.8426 17.096 26.16 18.696C25.4773 20.296 24.528 21.704 23.312 22.92C22.1173 24.1146 20.72 25.0533 19.12 25.736C17.5413 26.4186 15.8346 26.76 14 26.76Z" fill="#09372C"/>
+</svg>    <x-icons.number.5 class="w-28 h-auto" />
   </span>
 </a>    </div>
     <div>
       <a 
     href="https://pwa.arenenberg.ch.marceli.to/fr/sites/carte/index.html" 
     class="w-full max-w-[290px] mx-auto text-xl h-50 border-2 border-evergreen rounded-full flex items-center justify-center hover:text-blush hover:border-crimson hover:bg-crimson transition-all "
-    title="Kartenansicht"
-    aria-label="Kartenansicht"
+    title="Karte"
+    aria-label="Karte"
     >
-    <span>Kartenansicht</span>
+    <span>Karte</span>
   </a>
     </div>
   </div>

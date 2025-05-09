@@ -10,7 +10,7 @@
 <meta name="description" content="Un parcours à travers la diversité d&#039;Arenenberg">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<meta name="csrf-token" content="EKa3qjouQmSmghc8R5tIyJGD4QIX9dLTJlBbLGyo">
+<meta name="csrf-token" content="4JmiGGexWIXC5xvKK9H12pgbb7u3Wn9lOXZhgR63">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -55,7 +55,7 @@
 	class="relative w-full mt-50">
   <div x-data="{ activeSection: null }" class="">
 	<div 
-	class="w-full border-t border-t-evergreen py-20">
+	class="w-full border-t border-t-evergreen py-15">
 	<div 
 		@click="activeSection = (activeSection === 'language') ? null : 'language'"
 		class="flex items-center justify-between cursor-pointer">
@@ -63,13 +63,15 @@
 			Sprachauswahl
 		</span>
 		<span x-show="activeSection !== 'language'">
-			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
-<path d="M0.5 9.99963L19.8408 0.329712V19.6705L0.5 9.99963Z" fill="currentColor"/>
-</svg>		</span>
+			<svg width="35" height="20" viewBox="0 0 35 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-32 h-auto">
+<path d="M0.707001 1.20801L17.147 17.622L33.588 1.20801" stroke="currentColor" stroke-width="2"/>
+</svg>
+		</span>
 		<span x-show="activeSection === 'language'">
-			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
-<path d="M0.32959 0.329712H19.6704L10 19.6705L0.32959 0.329712Z" fill="currentColor"/>
-</svg>		</span>
+			<svg width="35" height="20" viewBox="0 0 35 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-32 h-auto">
+<path d="M0.707001 18.327L17.147 1.91296L33.588 18.327" stroke="currentColor" stroke-width="2"/>
+</svg>
+		</span>
 	</div>
 	<div 
 		class="mt-25 "
@@ -96,7 +98,7 @@
 	</div>
 </div>  
     <div 
-	class="w-full border-t border-t-evergreen py-20">
+	class="w-full border-t border-t-evergreen py-15">
 	<div 
 		@click="activeSection = (activeSection === 'impressum') ? null : 'impressum'"
 		class="flex items-center justify-between cursor-pointer">
@@ -104,47 +106,21 @@
 			Impressum
 		</span>
 		<span x-show="activeSection !== 'impressum'">
-			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
-<path d="M0.5 9.99963L19.8408 0.329712V19.6705L0.5 9.99963Z" fill="currentColor"/>
-</svg>		</span>
+			<svg width="35" height="20" viewBox="0 0 35 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-32 h-auto">
+<path d="M0.707001 1.20801L17.147 17.622L33.588 1.20801" stroke="currentColor" stroke-width="2"/>
+</svg>
+		</span>
 		<span x-show="activeSection === 'impressum'">
-			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
-<path d="M0.32959 0.329712H19.6704L10 19.6705L0.32959 0.329712Z" fill="currentColor"/>
-</svg>		</span>
+			<svg width="35" height="20" viewBox="0 0 35 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-32 h-auto">
+<path d="M0.707001 18.327L17.147 1.91296L33.588 18.327" stroke="currentColor" stroke-width="2"/>
+</svg>
+		</span>
 	</div>
 	<div 
 		class="mt-25 block w-full"
 		x-show="activeSection === 'impressum'">
 		<div>
 			<p>Impressum content goes here.</p>
-		</div>
-	</div>
-</div>  
-    <div 
-	class="w-full border-t border-t-evergreen py-20">
-	<div 
-		@click="activeSection = (activeSection === 'bildquellen') ? null : 'bildquellen'"
-		class="flex items-center justify-between cursor-pointer">
-		<span class="text-xl select-none">
-			Bildquellen
-		</span>
-		<span x-show="activeSection !== 'bildquellen'">
-			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
-<path d="M0.5 9.99963L19.8408 0.329712V19.6705L0.5 9.99963Z" fill="currentColor"/>
-</svg>		</span>
-		<span x-show="activeSection === 'bildquellen'">
-			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
-<path d="M0.32959 0.329712H19.6704L10 19.6705L0.32959 0.329712Z" fill="currentColor"/>
-</svg>		</span>
-	</div>
-	<div 
-		class="mt-25 block w-full"
-		x-show="activeSection === 'bildquellen'">
-		<div>
-			<p>Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte.</p>
-      <p>»Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab.</p>
-      <p>Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte.</p>
-      <p>»Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab.</p>
 		</div>
 	</div>
 </div>
