@@ -6,7 +6,7 @@
     data-access-form>
     <div class="mt-10">
       <div class="pb-60 border-b border-b-evergreen">
-        <h2 class="text-xl">
+        <h2 class="text-lg">
           {{ __('Passcode:') }}
         </h2>
         <div class="flex justify-around gap-x-15 max-w-[270px] mx-auto mt-75">
