@@ -10,7 +10,7 @@
 <meta name="description" content="Ein Parcours durch die Arenenberger Vielfalt">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<meta name="csrf-token" content="l7pBRRO9Fh3GMJ7mUprBU8YuzUPdmEuR3BA4U3Pj">
+<meta name="csrf-token" content="m27umZasNbzr5X5SZ1sgGOjtWbYk6BV3i4q3nBLx">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -25,7 +25,7 @@
         href="https://pwa.arenenberg.ch.marceli.to/index.html"
         class="block"
         title="Startseite">
-        <h1 class="text-crimson text-xl leading-none mb-5">
+        <h1 class="text-crimson text-2xl leading-none mb-5">
           Kaiser, Kühe<br>und Kultur
         </h1>
               </a>
@@ -61,7 +61,7 @@
 	<div 
 		@click="activeSection = (activeSection === 'language') ? null : 'language'"
 		class="flex items-center justify-between cursor-pointer">
-		<span class="text-lg select-none">
+		<span class="text-xl select-none">
 			Sprachauswahl
 		</span>
 		<span x-show="activeSection !== 'language'">
@@ -80,17 +80,17 @@
 			<div class="flex justify-center gap-45">
         <a 
   href="https://pwa.arenenberg.ch.marceli.to/zugang/index.html" 
-  class="flex items-center justify-center text-xl text-center rounded-full w-64 h-64 border-crimson border-2 transition-colors bg-crimson text-blush"
+  class="flex items-center justify-center text-2xl text-center rounded-full w-64 h-64 border-crimson border-2 transition-colors bg-crimson text-blush"
 >
   <span>D</span>
 </a>        <a 
   href="https://pwa.arenenberg.ch.marceli.to/fr/acces/index.html" 
-  class="flex items-center justify-center text-xl text-center rounded-full w-64 h-64 border-crimson border-2 transition-colors bg-blush text-crimson"
+  class="flex items-center justify-center text-2xl text-center rounded-full w-64 h-64 border-crimson border-2 transition-colors bg-blush text-crimson"
 >
   <span>F</span>
 </a>        <a 
   href="https://pwa.arenenberg.ch.marceli.to/en/access/index.html" 
-  class="flex items-center justify-center text-xl text-center rounded-full w-64 h-64 border-crimson border-2 transition-colors bg-blush text-crimson"
+  class="flex items-center justify-center text-2xl text-center rounded-full w-64 h-64 border-crimson border-2 transition-colors bg-blush text-crimson"
 >
   <span>E</span>
 </a>      </div>
@@ -102,7 +102,7 @@
 	<div 
 		@click="activeSection = (activeSection === 'impressum') ? null : 'impressum'"
 		class="flex items-center justify-between cursor-pointer">
-		<span class="text-lg select-none">
+		<span class="text-xl select-none">
 			Impressum
 		</span>
 		<span x-show="activeSection !== 'impressum'">
@@ -127,7 +127,7 @@
 	<div 
 		@click="activeSection = (activeSection === 'bildquellen') ? null : 'bildquellen'"
 		class="flex items-center justify-between cursor-pointer">
-		<span class="text-lg select-none">
+		<span class="text-xl select-none">
 			Bildquellen
 		</span>
 		<span x-show="activeSection !== 'bildquellen'">
@@ -171,7 +171,7 @@
               max="9" 
               required
               data-access-input
-              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-xl">
+              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-3xl">
           </div>
           <div>
             <input 
@@ -183,7 +183,7 @@
               max="9" 
               required
               data-access-input
-              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-xl">
+              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-3xl">
           </div>
           <div>
             <input 
@@ -195,7 +195,7 @@
               max="9" 
               required
               data-access-input
-              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-xl">
+              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-3xl">
           </div>
           <div>
             <input 
@@ -207,7 +207,7 @@
               max="9" 
               required
               data-access-input
-              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-xl">
+              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-3xl">
           </div>
         </div>
       </div>
@@ -218,7 +218,7 @@
 
     <a 
     href="https://pwa.arenenberg.ch.marceli.to/download/index.html" 
-    class="w-full max-w-[290px] mx-auto text-lg h-50 border-2 border-evergreen rounded-full flex items-center justify-center hover:text-blush hover:border-crimson hover:bg-crimson transition-all "
+    class="w-full max-w-[290px] mx-auto text-xl h-50 border-2 border-evergreen rounded-full flex items-center justify-center hover:text-blush hover:border-crimson hover:bg-crimson transition-all "
     title="Abschicken"
     aria-label="Abschicken"
     data-access-button="data-access-button">
