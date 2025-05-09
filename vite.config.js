@@ -47,6 +47,7 @@ export default defineConfig({
     }
   },
   define: {
-    'process.env': {}
+    'process.env': {},
+    __CACHE_NAME__: JSON.stringify(`arenenberg-assets-${Date.now()}`) // or use Git hash
   }
 });
