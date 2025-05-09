@@ -2,7 +2,7 @@
   @section('content')
 
   <form 
-    class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen flex flex-col justify-between" 
+    class="w-full h-[calc(100dvh_-_175px)] mt-50 border-t border-t-evergreen flex flex-col justify-between" 
     data-access-form>
     <div class="mt-10">
       <div class="pb-60 border-b border-b-evergreen">

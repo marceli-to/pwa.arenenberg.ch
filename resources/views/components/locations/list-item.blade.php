@@ -16,7 +16,8 @@
     {{ $description }}
   </p>
   </span>
-  <span class="text-xl">
-    {{ $number }}
+  <span>
+    @include('components.icons.numbers.' . $number)
+    <x-icons.number.{{ $number }} class="w-28 h-auto" />
   </span>
 </a>

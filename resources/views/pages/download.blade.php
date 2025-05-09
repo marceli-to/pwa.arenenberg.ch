@@ -25,13 +25,11 @@
 
   <!-- Success section -->
   <div 
-    class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen hidden flex-col justify-between"
+    class="w-full h-[calc(100dvh_-_175px)] mt-50 border-t border-t-evergreen hidden flex-col justify-between"
     data-success-section>
-    <div class="text-xl py-10">
-      <p>{{ __('Auf Reportage auf dem Arenenberg!') }}</p>
-      <p>{{ __('Hinweis zum Rundgang mit Reporter:innen.') }}</p>
-      <p>{{ __('Zudem einige Informationen zur Reihenfolge und Ablaufs. Falls Unklarheiten bestehen melden Sie sich bei der Kasse.') }}</p>
-      <p class="mt-20">{{ __('Viel Spass!') }}</p>
+    <div class="text-lg py-10">
+      <h1 class="text-2xl mb-15">{{ __('Erkunden Sie den Arenenberg!') }}</h1>
+      <p>{{ __('Ein Kurzfilm und vier Hörreportagen mit Annette Fetscherin und Arenenberger Expertinnen und Experten gewähren Einblicke in die vielfältige Geschichte und Gegenwart des Ortes. Die Stationen auf dem gesamten Areal sind in beliebiger Reihenfolge erlebbar. Und stets erwartet Gross und Klein ein Spiel. Bei Fragen melden Sie sich gerne im Besuchszentrum.') }}</p>
     </div>
     <x-buttons.primary 
       type="link"

@@ -4,7 +4,7 @@
   'id' => '',
 ])
 <div 
-	class="w-full border-t border-t-evergreen py-20">
+	class="w-full border-t border-t-evergreen py-15">
 	<div 
 		@click="activeSection = (activeSection === '{{ $id }}') ? null : '{{ $id }}'"
 		class="flex items-center justify-between cursor-pointer">
@@ -12,10 +12,10 @@
 			{{ $title }}
 		</span>
 		<span x-show="activeSection !== '{{ $id }}'">
-			<x-icons.chevron-left />
+			<x-icons.chevron-down class="w-32 h-auto" />
 		</span>
 		<span x-show="activeSection === '{{ $id }}'">
-			<x-icons.chevron-down />
+			<x-icons.chevron-up class="w-32 h-auto" />
 		</span>
 	</div>
 	<div 
