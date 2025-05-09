@@ -15,7 +15,7 @@
           data-cache-progress-bar 
           value="0" 
           max="100"
-          class="w-full h-8 border border-evergreen bg-transparent appearance-none [&::-webkit-progress-bar]:border [&::-webkit-progress-bar]:border-evergreen [&::-webkit-progress-bar]:bg-transparent [&::-webkit-progress-value]:bg-evergreen [&::-moz-progress-bar]:bg-evergreen">
+          class="w-full h-8 border rounded-full border-evergreen bg-transparent appearance-none [&::-webkit-progress-bar]:rounded-full [&::-webkit-progress-bar]:border [&::-webkit-progress-bar]:border-evergreen [&::-webkit-progress-bar]:bg-transparent [&::-webkit-progress-value]:bg-evergreen [&::-moz-progress-bar]:bg-evergreen">
         </progress>
         <div data-cache-progress class="text-right"></div>
       </div>

@@ -61,6 +61,7 @@ export default {
         'lg': '1.313rem',  // 21px
         'xl': '1.625rem',  // 26px
         '2xl': '2rem',     // 32px
+        '3xl': '2.5rem',   // 40px
       },
 
       zIndex: {

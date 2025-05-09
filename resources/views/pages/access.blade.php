@@ -20,7 +20,7 @@
               max="9" 
               required
               data-access-input
-              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-2xl">
+              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-3xl">
           </div>
           <div>
             <input 
@@ -32,7 +32,7 @@
               max="9" 
               required
               data-access-input
-              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-2xl">
+              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-3xl">
           </div>
           <div>
             <input 
@@ -44,7 +44,7 @@
               max="9" 
               required
               data-access-input
-              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-2xl">
+              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-3xl">
           </div>
           <div>
             <input 
@@ -56,7 +56,7 @@
               max="9" 
               required
               data-access-input
-              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-2xl">
+              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-3xl">
           </div>
         </div>
       </div>
