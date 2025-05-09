@@ -27,7 +27,7 @@
   <div 
     class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen hidden flex-col justify-between"
     data-success-section>
-    <div class="text-lg py-10">
+    <div class="text-xl py-10">
       <p>{{ __('Auf Reportage auf dem Arenenberg!') }}</p>
       <p>{{ __('Hinweis zum Rundgang mit Reporter:innen.') }}</p>
       <p>{{ __('Zudem einige Informationen zur Reihenfolge und Ablaufs. Falls Unklarheiten bestehen melden Sie sich bei der Kasse.') }}</p>

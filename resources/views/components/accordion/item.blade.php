@@ -8,7 +8,7 @@
 	<div 
 		@click="activeSection = (activeSection === '{{ $id }}') ? null : '{{ $id }}'"
 		class="flex items-center justify-between cursor-pointer">
-		<span class="text-lg select-none">
+		<span class="text-xl select-none">
 			{{ $title }}
 		</span>
 		<span x-show="activeSection !== '{{ $id }}'">

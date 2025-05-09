@@ -8,7 +8,7 @@
   <figure class="h-[calc(100dvh_-_335px)]">
     <img src="/img/{{ $visual }}" alt="{{ $title }}" width="698" height="956" class="w-full h-full object-contain">
   </figure>
-  <h1 class="text-lg flex justify-between py-15 border-y border-y-evergreen">
+  <h1 class="text-xl flex justify-between py-15 border-y border-y-evergreen">
     <span>{{ $title }}</span>
     <span>{{ $number }}</span>
   </h1>

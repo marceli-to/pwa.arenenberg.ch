@@ -28,7 +28,7 @@
         href="{{ localized_route('page.home') }}"
         class="block"
         title="{{ __('Startseite') }}">
-        <h1 class="text-crimson text-xl leading-none mb-5">
+        <h1 class="text-crimson text-2xl leading-none mb-5">
           {!! __('Kaiser, Kühe<br>und Kultur') !!}
         </h1>
         @if (Route::is('*.page.home'))

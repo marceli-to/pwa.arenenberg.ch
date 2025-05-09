@@ -17,7 +17,7 @@
           id="access-code" 
           contentClasses="block w-full pt-10 border-t border-t-evergreen">
           <p>Lore ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo.</p>
-          <div class="text-center text-lg mt-30">
+          <div class="text-center text-xl mt-30">
             5826
           </div>
         </x-accordion.item>

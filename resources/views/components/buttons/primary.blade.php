@@ -7,7 +7,7 @@
 @if ($type === 'link')
   <a 
     href="{{ $route }}" 
-    class="w-full max-w-[290px] mx-auto text-lg h-50 border-2 border-evergreen rounded-full flex items-center justify-center hover:text-blush hover:border-crimson hover:bg-crimson transition-all {{ $class }}"
+    class="w-full max-w-[290px] mx-auto text-xl h-50 border-2 border-evergreen rounded-full flex items-center justify-center hover:text-blush hover:border-crimson hover:bg-crimson transition-all {{ $class }}"
     title="{{ $label }}"
     aria-label="{{ $label }}"
     {!! $attributes !!}>
@@ -16,7 +16,7 @@
 @elseif ($type === 'button')
   <button 
     type="submit" 
-    class="w-full max-w-[290px] mx-auto text-lg h-50 border-2 border-evergreen rounded-full flex items-center justify-center hover:text-blush hover:border-crimson hover:bg-crimson transition-all {{ $class }}"
+    class="w-full max-w-[290px] mx-auto text-xl h-50 border-2 border-evergreen rounded-full flex items-center justify-center hover:text-blush hover:border-crimson hover:bg-crimson transition-all {{ $class }}"
     title="{{ $label }}"
     aria-label="{{ $label }}"
     {!! $attributes !!}>

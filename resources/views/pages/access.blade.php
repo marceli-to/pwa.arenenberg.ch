@@ -6,7 +6,7 @@
     data-access-form>
     <div class="mt-10">
       <div class="pb-60 border-b border-b-evergreen">
-        <h2 class="text-lg">
+        <h2 class="text-xl">
           {{ __('Passcode:') }}
         </h2>
         <div class="flex justify-around gap-x-15 max-w-[270px] mx-auto mt-75">
@@ -20,7 +20,7 @@
               max="9" 
               required
               data-access-input
-              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-xl">
+              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-2xl">
           </div>
           <div>
             <input 
@@ -32,7 +32,7 @@
               max="9" 
               required
               data-access-input
-              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-xl">
+              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-2xl">
           </div>
           <div>
             <input 
@@ -44,7 +44,7 @@
               max="9" 
               required
               data-access-input
-              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-xl">
+              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-2xl">
           </div>
           <div>
             <input 
@@ -56,7 +56,7 @@
               max="9" 
               required
               data-access-input
-              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-xl">
+              class="w-60 text-center bg-transparent border-0 border-b border-evergreen focus:outline-none focus:ring-0 focus:border-evergreen py-3 px-5 text-2xl">
           </div>
         </div>
       </div>
