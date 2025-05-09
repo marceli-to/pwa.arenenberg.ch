@@ -170,9 +170,10 @@ const cacheAllAssets = async () => {
 		resourceLoader.classList.add('flex');
 	}
 
+  console.log(CACHE_NAME);
+
 	try {
 		const cache = await caches.open(CACHE_NAME);
-    console.log('Cache opened:', CACHE_NAME);
 		let cached = 0;
 		const totalAssets = ASSETS.length;
 
