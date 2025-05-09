@@ -40,23 +40,9 @@ export default {
       },
 
       colors: {
-        'blush': '#f5cddc',
+        'blush': '#fbdfe9',
         'crimson': '#d22837',
         'evergreen': '#0a372d',
-
-        // Old colors
-        'graphite': '#78786E',
-        'ash': '#96968C',
-        'pebble': '#D2D2C8',
-        'snow': '#F5F5F3',
-        'ice': '#96E6FF',
-        'candy': '#FF8CD2',
-        'lemon': '#EBF000',
-        'lime': '#B4E600',
-        'flame': '#FF3200',
-        'onyx': '#1E1E1E',
-        'charcoal': '#464644',
-        'steel': '#8C8C8C',
       },
 
       fontFamily: {
@@ -64,11 +50,16 @@ export default {
       },
 
       fontSize: {
-        'xs': '0.875rem',  // 14px
-        'sm': '1rem',      // 16px
+        // 'xs': '0.875rem',  // 14px
+        // 'sm': '1rem',      // 16px
+        // 'md': '1.1875rem', // 19px
+        // 'lg': '1.75rem', // 28px
+        // 'xl': '2.5rem', // 40px
+
+        'sm': '1.063rem', // 17px
         'md': '1.1875rem', // 19px
-        'lg': '1.75rem', // 28px
-        'xl': '2.5rem', // 40px
+        'lg': '1.625rem', // 26px
+        'xl': '2rem', // 32px
       },
 
       zIndex: {

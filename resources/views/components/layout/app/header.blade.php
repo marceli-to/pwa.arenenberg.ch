@@ -10,12 +10,12 @@
         <a 
           href="javascript:;"
           @click="menu = !menu"
-          class="w-46 h-32 flex items-center justify-center">
+          class="w-47 h-35 flex items-center justify-center">
           <span x-show="!menu" x-cloak>
-            <x-icons.burger class="w-46 h-auto" />
+            <x-icons.burger class="w-47 h-auto" />
           </span>
           <span x-show="menu" x-cloak>
-            <x-icons.cross class="w-32 h-auto" />
+            <x-icons.cross class="w-35 h-auto" />
           </span>
         </a>
       </div>
@@ -28,12 +28,14 @@
         href="{{ localized_route('page.home') }}"
         class="block"
         title="{{ __('Startseite') }}">
-        <h1 class="text-crimson text-xl leading-none">
+        <h1 class="text-crimson text-xl leading-none mb-5">
           {!! __('Kaiser, Kühe<br>und Kultur') !!}
         </h1>
-        <div class="text-crimson">
-          {!! __('Ein Parcours durch die<br>Arenenberger Vielfalt') !!}
-        </div>
+        @if (Route::is('*.page.home'))
+          <div class="text-crimson text-sm">
+            {!! __('Ein Parcours durch die<br>Arenenberger Vielfalt') !!}
+          </div>
+        @endif
       </a>
       <div class="mt-10">
         <a 
