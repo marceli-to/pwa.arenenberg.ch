@@ -18,8 +18,6 @@ const ASSETS = [
 	'/build/assets/GT-Alpina-Standard-Medium.woff2',
 	'/build/assets/app.css',
 	'/build/assets/app.js',
-	'/build/assets/spa.css',
-	'/build/assets/spa.js',
 	'/build/manifest.json',
 	'/en/access/index.html',
 	'/en/download/index.html',
@@ -148,7 +146,7 @@ const validatePassword = async (password) => {
 const checkAuth = () => {
 	const authCookie = getCookie(COOKIE_NAME);
 	if (!authCookie) {
-		// window.location.href = '/index.html'; // Redirect to index.html if not authenticated
+		window.location.href = '/index.html'; // Redirect to index.html if not authenticated
 	}
 };
 
