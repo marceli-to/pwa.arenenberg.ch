@@ -61,7 +61,7 @@ const ASSETS = [
 	'/download/index.html'
 ];
 
-const CACHE_NAME = 'arenenberg-assets-v26';
+const CACHE_NAME = 'arenenberg-assets-v1';
 const COOKIE_NAME = 'arenenberg-auth';
 const PASSWORD_PATH = '/password.txt';
 

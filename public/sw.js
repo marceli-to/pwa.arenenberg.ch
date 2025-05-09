@@ -52,19 +52,15 @@ const ASSETS = [
   '/download/index.html'
 ];
 
-const CACHE_NAME = `arenenberg-assets-v26`;
+const CACHE_NAME = `arenenberg-assets-v1`;
 
 // Pre-cache all assets during installation
-// self.addEventListener('install', (event) => {
-// 	event.waitUntil(
-// 		caches.open(CACHE_NAME)
-// 			.then((cache) => cache.addAll(ASSETS))
-// 			.then(() => self.skipWaiting())
-// 	);
-// });
-
 self.addEventListener('install', (event) => {
-  self.skipWaiting();
+	event.waitUntil(
+		caches.open(CACHE_NAME)
+			.then((cache) => cache.addAll(ASSETS))
+			.then(() => self.skipWaiting())
+	);
 });
 
 // Clean up old caches during activation
