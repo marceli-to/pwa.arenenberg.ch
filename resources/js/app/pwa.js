@@ -168,8 +168,6 @@ const cacheAllAssets = async () => {
 		resourceLoader.classList.add('flex');
 	}
 
-  console.log(CACHE_NAME);
-
 	try {
 		const cache = await caches.open(CACHE_NAME);
 		let cached = 0;
