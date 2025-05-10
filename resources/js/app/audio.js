@@ -20,8 +20,11 @@ const AudioPlayer = (function() {
       this.progressBar = this.player.querySelector('[data-audio-progress]');
       this.progressHandle = this.player.querySelector('[data-audio-handle]');
       this.progressContainer = this.player.querySelector('[data-audio-progress-container]');
-      // Removed currentTimeEl
-      this.timeLeftEl = this.player.querySelector('[data-audio-time-left]');
+
+      // Time total/remaining
+      this.timeTotal = this.player.querySelector('[data-audio-time-total]');
+      this.timeRemaining = this.player.querySelector('[data-audio-time-remaining]');
+
       // Validate required elements
       this.validateElements();
       // Initialize audio
@@ -39,7 +42,7 @@ const AudioPlayer = (function() {
         progressBar: '[data-audio-progress]',
         progressHandle: '[data-audio-handle]',
         progressContainer: '[data-audio-progress-container]',
-        timeLeftEl: '[data-audio-time-left]'
+        timeRemaining: '[data-audio-time-remaining]'
       };
       for (const [key, selector] of Object.entries(requiredElements)) {
         if (!this[key]) {
@@ -73,14 +76,15 @@ const AudioPlayer = (function() {
       
       const percent = (this.audio.currentTime / this.audio.duration) * 100;
       this.progressBar.style.width = `${percent}%`;
-      // do not update after 95%
+
+      // do not update after 98%
       if (percent < 98) {
         this.progressHandle.style.left = `${percent}%`;
       }
       
       // Update time left display
-      const timeLeft = this.audio.duration - this.audio.currentTime;
-      this.timeLeftEl.textContent = this.formatTime(timeLeft);
+      const timeRemaining = this.audio.duration - this.audio.currentTime;
+      this.timeRemaining.textContent = `-${this.formatTime(timeRemaining)}`;
     }
     formatTime(seconds) {
       const minutes = Math.floor(seconds / 60);
@@ -104,8 +108,8 @@ const AudioPlayer = (function() {
     initializeEventListeners() {
       // Audio events
       this.audio.addEventListener('loadedmetadata', () => {
-        // Update the time left display
-        this.timeLeftEl.textContent = this.formatTime(this.audio.duration);
+        this.timeTotal.textContent = this.formatTime(this.audio.duration);
+        this.timeRemaining.textContent = `-${this.formatTime(this.audio.duration)}`;
       });
       this.audio.addEventListener('timeupdate', this.updateProgress);
       this.audio.addEventListener('ended', () => {
