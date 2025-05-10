@@ -2,8 +2,8 @@
   <header class="sticky top-0 py-20 w-full z-40 bg-blush border-b border-b-evergreen">
     <div class="w-full flex justify-between">
       <div>
-        <a href="javascript:history.back()" class="block mt-15">
-          <x-icons.arrow-left class="w-50 h-auto" />
+        <a href="javascript:history.back()" class="block mt-8">
+          <x-icons.arrow-left class="w-48 h-auto" />
         </a>
       </div>
       <div class="mt-10">

@@ -2,6 +2,7 @@
   @section('content')
     <x-locations.show 
       title="{{ __('Arenenberger Vielfalt') }}" 
+      description="{{ __('Kapelle') }}"
       number="1"
       visual="visual-location.png"
       audio="arenenberger-vielfalt.mp3">
@@ -10,28 +11,42 @@
         <p>{{ __('Lore ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.') }}</p>
       </div>
 
-      <x-accordion.wrapper class="mt-40">
+      <x-accordion.wrapper class="mt-25">
       
         <x-accordion.item 
           title="{{ __('Türcode') }}" 
           id="access-code" 
-          contentClasses="block w-full pt-10 border-t border-t-evergreen">
+          contentClasses="block w-full pt-10">
           <p>Lore ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo.</p>
-          <div class="text-center text-xl mt-30">
+          <div class="text-center text-xl mt-20 tracking-[.3rem]">
             5826
           </div>
         </x-accordion.item>
-      
-        <x-accordion.item
-          title="{{ __('Bildquellen') }}" 
-          id="bildquellen" 
-          contentClasses="block w-full pt-10 border-t border-t-evergreen">
-          <p>Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte.</p>
-          <p>»Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab.</p>
-          <p>Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte.</p>
-          <p>»Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab.</p>
-        </x-accordion.item>
+
       </x-accordion.wrapper>
+
+      <x-toggleable title="{{ __('Bildnachweis') }}">
+        <p>
+          <strong>
+            {{ __('Hortense de Beaurnhais') }}
+          </strong><br>
+          {{ __('François Baron Gérard, Hortense de Beauharnais, Napoleon Museum Thurgau, Schloss und Park Arenenberg/Daniel Steiner') }}
+        </p>
+
+        <p>
+          <strong>
+            {{ __('Hermann Fürst von Pückler-Muskau') }}
+          </strong><br>
+          {{ __('Porträt Hermann Fürst von Pückler-Muskau in preussischer Uniform, Öl auf Leinwand, August Gosch nach Franz Krüger, 1846, Inv.-Nr.: GFPB-043, mit Genehmi-gung der Gräflichen Familie von Pückler in Branitz, © Stiftung Fürst-Pückler-Museum Park und Schloss Branitz') }}
+        </p>
+
+        <p>
+          <strong>
+            {{ __('Napoléon III.') }}
+          </strong><br>
+          {{ __('Felix Cottr(e)au, Prinz Louis Napoléon im Park von Schloss Arenenberg.') }}
+        </p>
+      </x-toggleable>
 
     </x-locations.show>
   @endsection

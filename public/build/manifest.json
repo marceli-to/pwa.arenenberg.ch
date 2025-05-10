@@ -4,6 +4,14 @@
     "isEntry": true,
     "src": "resources/css/app.css"
   },
+  "resources/fonts/GT-Alpina-Standard-Bold.woff": {
+    "file": "assets/GT-Alpina-Standard-Bold.woff",
+    "src": "resources/fonts/GT-Alpina-Standard-Bold.woff"
+  },
+  "resources/fonts/GT-Alpina-Standard-Bold.woff2": {
+    "file": "assets/GT-Alpina-Standard-Bold.woff2",
+    "src": "resources/fonts/GT-Alpina-Standard-Bold.woff2"
+  },
   "resources/fonts/GT-Alpina-Standard-Medium.woff": {
     "file": "assets/GT-Alpina-Standard-Medium.woff",
     "src": "resources/fonts/GT-Alpina-Standard-Medium.woff"

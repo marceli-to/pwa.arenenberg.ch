@@ -7,6 +7,8 @@ const ASSETS = [
 	// '/audio/wundervolle-gartenwelt.mp3',
 	'/build/assets/GT-Alpina-Standard-Medium.woff',
 	'/build/assets/GT-Alpina-Standard-Medium.woff2',
+  '/build/assets/GT-Alpina-Standard-Bold.woff',
+	'/build/assets/GT-Alpina-Standard-Bold.woff2',
 	'/build/assets/app.css',
 	'/build/assets/app.js',
 	'/build/manifest.json',

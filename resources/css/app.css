@@ -13,6 +13,14 @@
   display: none !important;
 }
 
+strong {
+  @apply font-gt-alpina-bold font-normal;
+}
+
+p:not(:last-child) {
+  @apply mb-20
+}
+
 /* Form elements */
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 

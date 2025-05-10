@@ -45,8 +45,13 @@ export default {
         'evergreen': '#0a372d',
       },
 
+      textUnderlineOffset: {
+        '5': '5px',
+      },
+
       fontFamily: {
         'gt-alpina-medium': ['GT-Alpina-Standard-Medium', ...defaultTheme.fontFamily.sans],
+        'gt-alpina-bold': ['GT-Alpina-Standard-Bold', ...defaultTheme.fontFamily.sans],
       },
 
       fontSize: {

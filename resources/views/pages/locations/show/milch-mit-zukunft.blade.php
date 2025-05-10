@@ -2,6 +2,7 @@
   @section('content')
     <x-locations.show 
       title="{{ __('Milch mit Zukunft') }}" 
+      description="{{ __('Milchviehstall') }}"
       number="2" 
       visual="visual-location.png"
       audio="milch-mit-zukunft.mp3" />

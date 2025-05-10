@@ -9,7 +9,7 @@
   class="flex justify-between border-t border-t-evergreen last-of-type:border-b last-of-type:border-b-evergreen py-10"
   title="{{ $title }}">
   <span>
-  <h2 class="text-xl">
+  <h2 class="text-xl mb-2">
    {{ $title }}
   </h2>
   <p class="text-md">
@@ -17,7 +17,6 @@
   </p>
   </span>
   <span>
-    @include('components.icons.numbers.' . $number)
-    <x-icons.number.{{ $number }} class="w-28 h-auto" />
+    @include('components.icons.numbers.' . $number, ['class' => 'w-30 h-auto'])
   </span>
 </a>

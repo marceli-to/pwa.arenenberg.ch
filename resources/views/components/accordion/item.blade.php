@@ -4,7 +4,7 @@
   'id' => '',
 ])
 <div 
-	class="w-full border-t border-t-evergreen py-15">
+	class="w-full border-t border-t-evergreen py-10">
 	<div 
 		@click="activeSection = (activeSection === '{{ $id }}') ? null : '{{ $id }}'"
 		class="flex items-center justify-between cursor-pointer">
@@ -19,7 +19,7 @@
 		</span>
 	</div>
 	<div 
-		class="mt-25 {{ $contentClasses }}"
+		class="mt-10 pb-10 {{ $contentClasses }}"
 		x-show="activeSection === '{{ $id }}'">
 		<div>
 			{{ $slot }}
