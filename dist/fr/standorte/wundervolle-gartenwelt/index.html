@@ -10,7 +10,7 @@
 <meta name="description" content="Un parcours à travers la diversité d&#039;Arenenberg">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<meta name="csrf-token" content="4JmiGGexWIXC5xvKK9H12pgbb7u3Wn9lOXZhgR63">
+<meta name="csrf-token" content="mmECSYQ7Uo5suvaz5yInfqHmF838LnwLUwU5BDKp">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -22,10 +22,12 @@
 <header class="sticky top-0 py-20 w-full z-40 bg-blush border-b border-b-evergreen">
     <div class="w-full flex justify-between">
       <div>
-        <a href="javascript:history.back()" class="block mt-15">
-          <svg width="52" height="24" viewBox="0 0 52 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-50 h-auto">
-<path d="M14.791 0.711548L0.237976 11.9306V12.1165L14.791 23.2886L16.398 21.5666L9 13.7926V13.4196H51.393V10.5336H9V10.2076L16.398 2.43355L14.791 0.711548Z" fill="currentColor"/>
-</svg>        </a>
+        <a href="javascript:history.back()" class="block mt-8">
+          <svg width="49" height="40" viewBox="0 0 49 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-48 h-auto">
+<path d="M20.498 0.707031L1.41299 19.824L20.498 38.941" stroke="currentColor" stroke-width="2"/>
+<path d="M1.51099 19.823H48.511" stroke="currentColor" stroke-width="2"/>
+</svg>
+        </a>
       </div>
       <div class="mt-10">
         <a 
@@ -53,9 +55,11 @@
 	x-cloak 
 	x-show="menu"
 	class="relative w-full mt-50">
-  <div x-data="{ activeSection: null }" class="">
+  <div 
+  x-data="{ activeSection: null }" 
+  class=" border-b border-b-evergreen">
 	<div 
-	class="w-full border-t border-t-evergreen py-15">
+	class="w-full border-t border-t-evergreen py-10">
 	<div 
 		@click="activeSection = (activeSection === 'language') ? null : 'language'"
 		class="flex items-center justify-between cursor-pointer">
@@ -74,7 +78,7 @@
 		</span>
 	</div>
 	<div 
-		class="mt-25 "
+		class="mt-10 pb-10 !py-20"
 		x-show="activeSection === 'language'">
 		<div>
 			<div class="flex justify-center gap-45">
@@ -98,7 +102,7 @@
 	</div>
 </div>  
     <div 
-	class="w-full border-t border-t-evergreen py-15">
+	class="w-full border-t border-t-evergreen py-10">
 	<div 
 		@click="activeSection = (activeSection === 'impressum') ? null : 'impressum'"
 		class="flex items-center justify-between cursor-pointer">
@@ -117,7 +121,7 @@
 		</span>
 	</div>
 	<div 
-		class="mt-25 block w-full"
+		class="mt-10 pb-10 block w-full !py-20"
 		x-show="activeSection === 'impressum'">
 		<div>
 			<p>Impressum content goes here.</p>
@@ -126,16 +130,23 @@
 </div>
 </div></div><main role="main">
   <div x-show="!menu">
-    <div class="w-full h-[calc(100dvh_-_190px)] mt-25 flex flex-col justify-between">
-  <figure class="h-[calc(100dvh_-_335px)]">
-    <img src="/img/visual-location.png" alt="Wundervolle Gartenwelt" width="698" height="956" class="w-full h-full object-contain">
-  </figure>
-  <h1 class="text-xl flex justify-between py-15 border-y border-y-evergreen">
-    <span>Wundervolle Gartenwelt</span>
-    <span>4</span>
-  </h1>
-  <div class="mt-10">
-    <div 
+    <div class="w-full min-h-[calc(100dvh_-_190px)] pt-15 pb-30">
+  <div class="flex flex-col gap-y-15 justify-between">
+    <figure class="h-[calc(100dvh_-_335px)]">
+      <img src="/img/visual-location.png" alt="Wundervolle Gartenwelt" width="698" height="956" class="w-full h-full object-contain">
+    </figure>
+    <div class="pt-5 pb-10 border-y border-y-evergreen">
+      <h1 class="text-xl flex justify-between mb-2">
+        <span>Wundervolle Gartenwelt</span>
+        <svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-30 h-auto mt-2">
+<path d="M11.44 21.64H19.376V20.488C18.7787 20.488 18.2773 20.4133 17.872 20.264C17.4667 20.1146 17.1573 19.8906 16.944 19.592C16.752 19.272 16.656 18.8986 16.656 18.472V16.968H19.664V15.496H16.656V5.44797H14.672L7.184 15.144V16.968H14.416V18.504C14.416 18.952 14.3093 19.3253 14.096 19.624C13.904 19.9226 13.5947 20.1466 13.168 20.296C12.7413 20.424 12.1653 20.488 11.44 20.488V21.64ZM8.304 15.496L14.416 7.65597V15.496H8.304ZM13.968 26.76C12.1547 26.76 10.448 26.4186 8.848 25.736C7.248 25.0533 5.84 24.1146 4.624 22.92C3.42933 21.704 2.49066 20.296 1.808 18.696C1.12533 17.096 0.783997 15.3893 0.783997 13.576C0.783997 11.7626 1.12533 10.0666 1.808 8.48797C2.49066 6.88797 3.42933 5.47997 4.624 4.26397C5.84 3.04797 7.248 2.09863 8.848 1.41597C10.448 0.733301 12.1547 0.391968 13.968 0.391968C15.8027 0.391968 17.5093 0.733301 19.088 1.41597C20.688 2.09863 22.0853 3.04797 23.28 4.26397C24.496 5.47997 25.4453 6.88797 26.128 8.48797C26.8107 10.0666 27.152 11.7626 27.152 13.576C27.152 15.3893 26.8107 17.096 26.128 18.696C25.4453 20.296 24.496 21.704 23.28 22.92C22.0853 24.1146 20.688 25.0533 19.088 25.736C17.5093 26.4186 15.8027 26.76 13.968 26.76Z" fill="currentColor"/>
+</svg>      </h1>
+      <p class="text-md">
+        Eremitage
+      </p>
+    </div>
+    <div>
+      <div 
   data-audio-player
   data-audio-src="/audio/wundervolle-gartenwelt.mp3"
   class="text-sm">
@@ -186,7 +197,8 @@
     </div>
   </div>
 
-</div>  </div>
+</div>    </div>
+  </div>
   
 </div>
   </div>

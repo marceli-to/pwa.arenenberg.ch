@@ -10,7 +10,7 @@
 <meta name="description" content="Ein Parcours durch die Arenenberger Vielfalt">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<meta name="csrf-token" content="ngF7bLw4zhX26vCkM7ts8LhzM9qR8iW3ZcnCBmrP">
+<meta name="csrf-token" content="jfPMMNDXR5kzAvVwJuO9nKJqVdX9WnvZL88MHzqA">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -22,10 +22,12 @@
 <header class="sticky top-0 py-20 w-full z-40 bg-blush border-b border-b-evergreen">
     <div class="w-full flex justify-between">
       <div>
-        <a href="javascript:history.back()" class="block mt-15">
-          <svg width="52" height="24" viewBox="0 0 52 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-50 h-auto">
-<path d="M14.791 0.711548L0.237976 11.9306V12.1165L14.791 23.2886L16.398 21.5666L9 13.7926V13.4196H51.393V10.5336H9V10.2076L16.398 2.43355L14.791 0.711548Z" fill="currentColor"/>
-</svg>        </a>
+        <a href="javascript:history.back()" class="block mt-8">
+          <svg width="49" height="40" viewBox="0 0 49 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-48 h-auto">
+<path d="M20.498 0.707031L1.41299 19.824L20.498 38.941" stroke="currentColor" stroke-width="2"/>
+<path d="M1.51099 19.823H48.511" stroke="currentColor" stroke-width="2"/>
+</svg>
+        </a>
       </div>
       <div class="mt-10">
         <a 
@@ -53,9 +55,11 @@
 	x-cloak 
 	x-show="menu"
 	class="relative w-full mt-50">
-  <div x-data="{ activeSection: null }" class="">
+  <div 
+  x-data="{ activeSection: null }" 
+  class=" border-b border-b-evergreen">
 	<div 
-	class="w-full border-t border-t-evergreen py-15">
+	class="w-full border-t border-t-evergreen py-10">
 	<div 
 		@click="activeSection = (activeSection === 'language') ? null : 'language'"
 		class="flex items-center justify-between cursor-pointer">
@@ -74,7 +78,7 @@
 		</span>
 	</div>
 	<div 
-		class="mt-25 "
+		class="mt-10 pb-10 !py-20"
 		x-show="activeSection === 'language'">
 		<div>
 			<div class="flex justify-center gap-45">
@@ -98,7 +102,7 @@
 	</div>
 </div>  
     <div 
-	class="w-full border-t border-t-evergreen py-15">
+	class="w-full border-t border-t-evergreen py-10">
 	<div 
 		@click="activeSection = (activeSection === 'impressum') ? null : 'impressum'"
 		class="flex items-center justify-between cursor-pointer">
@@ -117,7 +121,7 @@
 		</span>
 	</div>
 	<div 
-		class="mt-25 block w-full"
+		class="mt-10 pb-10 block w-full !py-20"
 		x-show="activeSection === 'impressum'">
 		<div>
 			<p>Impressum content goes here.</p>
@@ -126,16 +130,24 @@
 </div>
 </div></div><main role="main">
   <div x-show="!menu">
-    <div class="w-full h-[calc(100dvh_-_190px)] mt-25 flex flex-col justify-between">
-  <figure class="h-[calc(100dvh_-_335px)]">
-    <img src="/img/visual-location.png" alt="Milch mit Zukunft" width="698" height="956" class="w-full h-full object-contain">
-  </figure>
-  <h1 class="text-xl flex justify-between py-15 border-y border-y-evergreen">
-    <span>Milch mit Zukunft</span>
-    <span>2</span>
-  </h1>
-  <div class="mt-10">
-    <div 
+    <div class="w-full min-h-[calc(100dvh_-_190px)] pt-15 pb-30">
+  <div class="flex flex-col gap-y-15 justify-between">
+    <figure class="h-[calc(100dvh_-_335px)]">
+      <img src="/img/visual-location.png" alt="Milch mit Zukunft" width="698" height="956" class="w-full h-full object-contain">
+    </figure>
+    <div class="pt-5 pb-10 border-y border-y-evergreen">
+      <h1 class="text-xl flex justify-between mb-2">
+        <span>Milch mit Zukunft</span>
+        <svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-30 h-auto mt-2">
+<path d="M8.36798 21.64H19.248C19.2906 20.4666 19.3226 19.4533 19.344 18.6C19.3866 17.7466 19.44 17.1493 19.504 16.808H18.288V17.032C18.288 17.7146 18.224 18.2266 18.096 18.568C17.9893 18.9093 17.7653 19.1333 17.424 19.24C17.104 19.3466 16.624 19.4 15.984 19.4H10.64C11.024 18.9733 11.5573 18.4933 12.24 17.96C12.944 17.4053 13.6906 16.8186 14.48 16.2C15.6533 15.2613 16.592 14.4186 17.296 13.672C18 12.904 18.5013 12.1786 18.8 11.496C19.12 10.8133 19.28 10.12 19.28 9.41597C19.28 8.75464 19.152 8.16797 18.896 7.65597C18.6613 7.12263 18.3093 6.67463 17.84 6.31197C17.392 5.9493 16.8266 5.67197 16.144 5.47997C15.4826 5.28797 14.7253 5.19197 13.872 5.19197C12.8053 5.19197 11.8666 5.35197 11.056 5.67197C10.2666 5.99197 9.64798 6.43997 9.19998 7.01597C8.75198 7.57064 8.52798 8.21064 8.52798 8.93597C8.52798 9.55464 8.68798 10.056 9.00798 10.44C9.32798 10.8026 9.76531 10.984 10.32 10.984C10.8746 10.984 11.312 10.8133 11.632 10.472C11.952 10.1093 12.112 9.6613 12.112 9.12797C12.112 8.5093 11.888 7.9653 11.44 7.49597C11.6106 7.23997 11.888 6.99464 12.272 6.75997C12.6773 6.50397 13.1893 6.37597 13.808 6.37597C14.6826 6.37597 15.408 6.63197 15.984 7.14397C16.5813 7.65597 16.88 8.35997 16.88 9.25597C16.88 9.8533 16.72 10.504 16.4 11.208C16.08 11.8906 15.5573 12.648 14.832 13.48C14.1066 14.312 13.136 15.2613 11.92 16.328C11.2373 16.9253 10.576 17.5226 9.93598 18.12C9.31731 18.696 8.79465 19.2293 8.36798 19.72V21.64ZM14 26.76C12.1866 26.76 10.48 26.4186 8.87998 25.736C7.27998 25.0533 5.87198 24.1146 4.65598 22.92C3.46131 21.704 2.52265 20.296 1.83998 18.696C1.15731 17.096 0.815979 15.3893 0.815979 13.576C0.815979 11.7626 1.15731 10.0666 1.83998 8.48797C2.52265 6.88797 3.46131 5.47997 4.65598 4.26397C5.87198 3.04797 7.27998 2.09863 8.87998 1.41597C10.48 0.733301 12.1866 0.391968 14 0.391968C15.8346 0.391968 17.5413 0.733301 19.12 1.41597C20.72 2.09863 22.1173 3.04797 23.312 4.26397C24.528 5.47997 25.4773 6.88797 26.16 8.48797C26.8426 10.0666 27.184 11.7626 27.184 13.576C27.184 15.3893 26.8426 17.096 26.16 18.696C25.4773 20.296 24.528 21.704 23.312 22.92C22.1173 24.1146 20.72 25.0533 19.12 25.736C17.5413 26.4186 15.8346 26.76 14 26.76Z" fill="currentColor"/>
+</svg>
+      </h1>
+      <p class="text-md">
+        Milchviehstall
+      </p>
+    </div>
+    <div>
+      <div 
   data-audio-player
   data-audio-src="/audio/milch-mit-zukunft.mp3"
   class="text-sm">
@@ -186,7 +198,8 @@
     </div>
   </div>
 
-</div>  </div>
+</div>    </div>
+  </div>
   
 </div>
   </div>

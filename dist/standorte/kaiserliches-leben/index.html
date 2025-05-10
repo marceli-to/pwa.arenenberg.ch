@@ -10,7 +10,7 @@
 <meta name="description" content="Ein Parcours durch die Arenenberger Vielfalt">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<meta name="csrf-token" content="mgtferx3DxVNVjALmZesmqK8GTMwsBXE2TBV48nQ">
+<meta name="csrf-token" content="rlLEFxxWzyLKj4Qd8np0KtZ0rIYCDhiLe4la524r">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -22,10 +22,12 @@
 <header class="sticky top-0 py-20 w-full z-40 bg-blush border-b border-b-evergreen">
     <div class="w-full flex justify-between">
       <div>
-        <a href="javascript:history.back()" class="block mt-15">
-          <svg width="52" height="24" viewBox="0 0 52 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-50 h-auto">
-<path d="M14.791 0.711548L0.237976 11.9306V12.1165L14.791 23.2886L16.398 21.5666L9 13.7926V13.4196H51.393V10.5336H9V10.2076L16.398 2.43355L14.791 0.711548Z" fill="currentColor"/>
-</svg>        </a>
+        <a href="javascript:history.back()" class="block mt-8">
+          <svg width="49" height="40" viewBox="0 0 49 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-48 h-auto">
+<path d="M20.498 0.707031L1.41299 19.824L20.498 38.941" stroke="currentColor" stroke-width="2"/>
+<path d="M1.51099 19.823H48.511" stroke="currentColor" stroke-width="2"/>
+</svg>
+        </a>
       </div>
       <div class="mt-10">
         <a 
@@ -53,9 +55,11 @@
 	x-cloak 
 	x-show="menu"
 	class="relative w-full mt-50">
-  <div x-data="{ activeSection: null }" class="">
+  <div 
+  x-data="{ activeSection: null }" 
+  class=" border-b border-b-evergreen">
 	<div 
-	class="w-full border-t border-t-evergreen py-15">
+	class="w-full border-t border-t-evergreen py-10">
 	<div 
 		@click="activeSection = (activeSection === 'language') ? null : 'language'"
 		class="flex items-center justify-between cursor-pointer">
@@ -74,7 +78,7 @@
 		</span>
 	</div>
 	<div 
-		class="mt-25 "
+		class="mt-10 pb-10 !py-20"
 		x-show="activeSection === 'language'">
 		<div>
 			<div class="flex justify-center gap-45">
@@ -98,7 +102,7 @@
 	</div>
 </div>  
     <div 
-	class="w-full border-t border-t-evergreen py-15">
+	class="w-full border-t border-t-evergreen py-10">
 	<div 
 		@click="activeSection = (activeSection === 'impressum') ? null : 'impressum'"
 		class="flex items-center justify-between cursor-pointer">
@@ -117,7 +121,7 @@
 		</span>
 	</div>
 	<div 
-		class="mt-25 block w-full"
+		class="mt-10 pb-10 block w-full !py-20"
 		x-show="activeSection === 'impressum'">
 		<div>
 			<p>Impressum content goes here.</p>
@@ -126,16 +130,23 @@
 </div>
 </div></div><main role="main">
   <div x-show="!menu">
-    <div class="w-full h-[calc(100dvh_-_190px)] mt-25 flex flex-col justify-between">
-  <figure class="h-[calc(100dvh_-_335px)]">
-    <img src="/img/visual-location.png" alt="Kaiserliches Leben" width="698" height="956" class="w-full h-full object-contain">
-  </figure>
-  <h1 class="text-xl flex justify-between py-15 border-y border-y-evergreen">
-    <span>Kaiserliches Leben</span>
-    <span>5</span>
-  </h1>
-  <div class="mt-10">
-    <div 
+    <div class="w-full min-h-[calc(100dvh_-_190px)] pt-15 pb-30">
+  <div class="flex flex-col gap-y-15 justify-between">
+    <figure class="h-[calc(100dvh_-_335px)]">
+      <img src="/img/visual-location.png" alt="Kaiserliches Leben" width="698" height="956" class="w-full h-full object-contain">
+    </figure>
+    <div class="pt-5 pb-10 border-y border-y-evergreen">
+      <h1 class="text-xl flex justify-between mb-2">
+        <span>Kaiserliches Leben</span>
+        <svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-30 h-auto mt-2">
+<path d="M13.328 21.96C15.2693 21.96 16.784 21.48 17.872 20.52C18.96 19.56 19.504 18.2693 19.504 16.648C19.504 15.0906 19.024 13.8533 18.064 12.936C17.1253 12.0186 15.9306 11.56 14.48 11.56C13.8613 11.56 13.2 11.6453 12.496 11.816C11.792 11.9866 11.1306 12.2533 10.512 12.616L10.768 7.68797H18.16L18.448 4.26397H17.456L17.328 4.83997C17.2853 5.07464 17.168 5.23464 16.976 5.31997C16.8053 5.4053 16.5813 5.44797 16.304 5.44797H9.74398L9.26398 13.992L9.93598 14.312C10.4906 13.928 11.0773 13.6506 11.696 13.48C12.336 13.3093 12.9226 13.224 13.456 13.224C14.5866 13.224 15.472 13.5653 16.112 14.248C16.752 14.9093 17.072 15.8053 17.072 16.936C17.072 18.152 16.72 19.1013 16.016 19.784C15.312 20.4666 14.384 20.808 13.232 20.808C12.848 20.808 12.4746 20.7653 12.112 20.68C11.7493 20.5733 11.4506 20.3813 11.216 20.104C11.3866 19.9546 11.5253 19.7626 11.632 19.528C11.76 19.272 11.824 19.0053 11.824 18.728C11.824 18.3653 11.7066 18.0346 11.472 17.736C11.2373 17.4373 10.864 17.288 10.352 17.288C9.88265 17.288 9.48798 17.448 9.16798 17.768C8.84798 18.0666 8.68798 18.4933 8.68798 19.048C8.68798 19.6453 8.86931 20.168 9.23198 20.616C9.61598 21.0426 10.1493 21.3733 10.832 21.608C11.536 21.8426 12.368 21.96 13.328 21.96ZM14 26.76C12.1866 26.76 10.48 26.4186 8.87998 25.736C7.27998 25.0533 5.87198 24.1146 4.65598 22.92C3.46131 21.704 2.52265 20.296 1.83998 18.696C1.15731 17.096 0.815979 15.3893 0.815979 13.576C0.815979 11.7626 1.15731 10.0666 1.83998 8.48797C2.52265 6.88797 3.46131 5.47997 4.65598 4.26397C5.87198 3.04797 7.27998 2.09863 8.87998 1.41597C10.48 0.733301 12.1866 0.391968 14 0.391968C15.8346 0.391968 17.5413 0.733301 19.12 1.41597C20.72 2.09863 22.1173 3.04797 23.312 4.26397C24.528 5.47997 25.4773 6.88797 26.16 8.48797C26.8426 10.0666 27.184 11.7626 27.184 13.576C27.184 15.3893 26.8426 17.096 26.16 18.696C25.4773 20.296 24.528 21.704 23.312 22.92C22.1173 24.1146 20.72 25.0533 19.12 25.736C17.5413 26.4186 15.8346 26.76 14 26.76Z" fill="#09372C"/>
+</svg>      </h1>
+      <p class="text-md">
+        Grabplatte
+      </p>
+    </div>
+    <div>
+      <div 
   data-audio-player
   data-audio-src="/audio/kaiserliches-leben.mp3"
   class="text-sm">
@@ -186,7 +197,8 @@
     </div>
   </div>
 
-</div>  </div>
+</div>    </div>
+  </div>
   
 </div>
   </div>

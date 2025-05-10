@@ -10,7 +10,7 @@
 <meta name="description" content="Un parcours à travers la diversité d&#039;Arenenberg">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<meta name="csrf-token" content="CXNTljCUpzIfgriLvjAH5kcsOnBL7Nn0lZvYJyEJ">
+<meta name="csrf-token" content="kF3u2LLOGR6DTLAfogOl2oYR2CIqyVUmvftso0jn">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -22,10 +22,12 @@
 <header class="sticky top-0 py-20 w-full z-40 bg-blush border-b border-b-evergreen">
     <div class="w-full flex justify-between">
       <div>
-        <a href="javascript:history.back()" class="block mt-15">
-          <svg width="52" height="24" viewBox="0 0 52 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-50 h-auto">
-<path d="M14.791 0.711548L0.237976 11.9306V12.1165L14.791 23.2886L16.398 21.5666L9 13.7926V13.4196H51.393V10.5336H9V10.2076L16.398 2.43355L14.791 0.711548Z" fill="currentColor"/>
-</svg>        </a>
+        <a href="javascript:history.back()" class="block mt-8">
+          <svg width="49" height="40" viewBox="0 0 49 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-48 h-auto">
+<path d="M20.498 0.707031L1.41299 19.824L20.498 38.941" stroke="currentColor" stroke-width="2"/>
+<path d="M1.51099 19.823H48.511" stroke="currentColor" stroke-width="2"/>
+</svg>
+        </a>
       </div>
       <div class="mt-10">
         <a 
@@ -53,9 +55,11 @@
 	x-cloak 
 	x-show="menu"
 	class="relative w-full mt-50">
-  <div x-data="{ activeSection: null }" class="">
+  <div 
+  x-data="{ activeSection: null }" 
+  class=" border-b border-b-evergreen">
 	<div 
-	class="w-full border-t border-t-evergreen py-15">
+	class="w-full border-t border-t-evergreen py-10">
 	<div 
 		@click="activeSection = (activeSection === 'language') ? null : 'language'"
 		class="flex items-center justify-between cursor-pointer">
@@ -74,7 +78,7 @@
 		</span>
 	</div>
 	<div 
-		class="mt-25 "
+		class="mt-10 pb-10 !py-20"
 		x-show="activeSection === 'language'">
 		<div>
 			<div class="flex justify-center gap-45">
@@ -98,7 +102,7 @@
 	</div>
 </div>  
     <div 
-	class="w-full border-t border-t-evergreen py-15">
+	class="w-full border-t border-t-evergreen py-10">
 	<div 
 		@click="activeSection = (activeSection === 'impressum') ? null : 'impressum'"
 		class="flex items-center justify-between cursor-pointer">
@@ -117,7 +121,7 @@
 		</span>
 	</div>
 	<div 
-		class="mt-25 block w-full"
+		class="mt-10 pb-10 block w-full !py-20"
 		x-show="activeSection === 'impressum'">
 		<div>
 			<p>Impressum content goes here.</p>
@@ -126,16 +130,23 @@
 </div>
 </div></div><main role="main">
   <div x-show="!menu">
-    <div class="w-full h-[calc(100dvh_-_190px)] mt-25 flex flex-col justify-between">
-  <figure class="h-[calc(100dvh_-_335px)]">
-    <img src="/img/visual-location.png" alt="Vom Acker auf den Tisch" width="698" height="956" class="w-full h-full object-contain">
-  </figure>
-  <h1 class="text-xl flex justify-between py-15 border-y border-y-evergreen">
-    <span>Vom Acker auf den Tisch</span>
-    <span>3</span>
-  </h1>
-  <div class="mt-10">
-    <div 
+    <div class="w-full min-h-[calc(100dvh_-_190px)] pt-15 pb-30">
+  <div class="flex flex-col gap-y-15 justify-between">
+    <figure class="h-[calc(100dvh_-_335px)]">
+      <img src="/img/visual-location.png" alt="Vom Acker auf den Tisch" width="698" height="956" class="w-full h-full object-contain">
+    </figure>
+    <div class="pt-5 pb-10 border-y border-y-evergreen">
+      <h1 class="text-xl flex justify-between mb-2">
+        <span>Vom Acker auf den Tisch</span>
+        <svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-30 h-auto mt-2">
+<path d="M13.648 21.96C15.6106 21.96 17.1573 21.5013 18.288 20.584C19.4186 19.6666 19.984 18.472 19.984 17C19.984 15.7413 19.568 14.7493 18.736 14.024C17.9253 13.2773 16.7626 12.808 15.248 12.616C16.5706 12.232 17.552 11.7306 18.192 11.112C18.832 10.4933 19.152 9.70397 19.152 8.74397C19.152 7.59197 18.704 6.7173 17.808 6.11997C16.9333 5.5013 15.6533 5.19197 13.968 5.19197C12.4106 5.19197 11.1733 5.4373 10.256 5.92797C9.35998 6.41864 8.91198 7.1013 8.91198 7.97597C8.91198 8.46664 9.05065 8.8613 9.32798 9.15997C9.60531 9.45864 9.99998 9.60797 10.512 9.60797C11.0026 9.60797 11.3866 9.47997 11.664 9.22397C11.9626 8.96797 12.112 8.58397 12.112 8.07197C12.112 7.81597 12.0693 7.5813 11.984 7.36797C11.92 7.1333 11.8026 6.9413 11.632 6.79197C11.8666 6.6213 12.1866 6.51464 12.592 6.47197C12.9973 6.40797 13.3813 6.37597 13.744 6.37597C14.7466 6.37597 15.4933 6.5893 15.984 7.01597C16.496 7.4213 16.752 8.01863 16.752 8.80797C16.752 9.8533 16.336 10.664 15.504 11.24C14.672 11.816 13.6266 12.1466 12.368 12.232V13.288C13.4346 13.3306 14.352 13.4906 15.12 13.768C15.9093 14.024 16.5066 14.4186 16.912 14.952C17.3386 15.464 17.552 16.1253 17.552 16.936C17.552 18.1093 17.2 19.0373 16.496 19.72C15.8133 20.4026 14.8746 20.744 13.68 20.744C13.0826 20.744 12.56 20.6693 12.112 20.52C11.664 20.3706 11.3546 20.1893 11.184 19.976C11.5253 19.5706 11.696 19.0586 11.696 18.44C11.696 17.9493 11.5573 17.5653 11.28 17.288C11.0026 16.9893 10.608 16.84 10.096 16.84C9.54131 16.84 9.10398 17.0213 8.78398 17.384C8.48531 17.7253 8.33598 18.1733 8.33598 18.728C8.33598 19.7306 8.80531 20.52 9.74398 21.096C10.704 21.672 12.0053 21.96 13.648 21.96ZM14 26.76C12.1866 26.76 10.48 26.4186 8.87998 25.736C7.27998 25.0533 5.87198 24.1146 4.65598 22.92C3.46131 21.704 2.52265 20.296 1.83998 18.696C1.15731 17.096 0.815979 15.3893 0.815979 13.576C0.815979 11.7626 1.15731 10.0666 1.83998 8.48797C2.52265 6.88797 3.46131 5.47997 4.65598 4.26397C5.87198 3.04797 7.27998 2.09863 8.87998 1.41597C10.48 0.733301 12.1866 0.391968 14 0.391968C15.8346 0.391968 17.5413 0.733301 19.12 1.41597C20.72 2.09863 22.1173 3.04797 23.312 4.26397C24.528 5.47997 25.4773 6.88797 26.16 8.48797C26.8426 10.0666 27.184 11.7626 27.184 13.576C27.184 15.3893 26.8426 17.096 26.16 18.696C25.4773 20.296 24.528 21.704 23.312 22.92C22.1173 24.1146 20.72 25.0533 19.12 25.736C17.5413 26.4186 15.8346 26.76 14 26.76Z" fill="currentColor"/>
+</svg>      </h1>
+      <p class="text-md">
+        Feldkulturengarten
+      </p>
+    </div>
+    <div>
+      <div 
   data-audio-player
   data-audio-src="/audio/vom-acker-auf-den-tisch.mp3"
   class="text-sm">
@@ -186,7 +197,8 @@
     </div>
   </div>
 
-</div>  </div>
+</div>    </div>
+  </div>
   
 </div>
   </div>

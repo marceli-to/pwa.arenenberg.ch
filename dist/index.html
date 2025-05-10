@@ -10,7 +10,7 @@
 <meta name="description" content="Ein Parcours durch die Arenenberger Vielfalt">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<meta name="csrf-token" content="S5pvgPW8Y0nk6Rz2UQwJv1dOTSpeJKbXr7gt3b7n">
+<meta name="csrf-token" content="fBNkKrJ6ExUUTOCRNFD6HqxxERu6eAAu0jGKvOtu">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -58,9 +58,11 @@
 	x-cloak 
 	x-show="menu"
 	class="relative w-full mt-50">
-  <div x-data="{ activeSection: null }" class="">
+  <div 
+  x-data="{ activeSection: null }" 
+  class=" border-b border-b-evergreen">
 	<div 
-	class="w-full border-t border-t-evergreen py-15">
+	class="w-full border-t border-t-evergreen py-10">
 	<div 
 		@click="activeSection = (activeSection === 'language') ? null : 'language'"
 		class="flex items-center justify-between cursor-pointer">
@@ -79,7 +81,7 @@
 		</span>
 	</div>
 	<div 
-		class="mt-25 "
+		class="mt-10 pb-10 !py-20"
 		x-show="activeSection === 'language'">
 		<div>
 			<div class="flex justify-center gap-45">
@@ -103,7 +105,7 @@
 	</div>
 </div>  
     <div 
-	class="w-full border-t border-t-evergreen py-15">
+	class="w-full border-t border-t-evergreen py-10">
 	<div 
 		@click="activeSection = (activeSection === 'impressum') ? null : 'impressum'"
 		class="flex items-center justify-between cursor-pointer">
@@ -122,7 +124,7 @@
 		</span>
 	</div>
 	<div 
-		class="mt-25 block w-full"
+		class="mt-10 pb-10 block w-full !py-20"
 		x-show="activeSection === 'impressum'">
 		<div>
 			<p>Impressum content goes here.</p>

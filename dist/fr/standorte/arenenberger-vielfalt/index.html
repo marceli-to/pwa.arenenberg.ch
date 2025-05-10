@@ -10,7 +10,7 @@
 <meta name="description" content="Un parcours à travers la diversité d&#039;Arenenberg">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<meta name="csrf-token" content="CyWRf6qMKL0SEfb14laOCsxj4LkscxKr8XtYkpmT">
+<meta name="csrf-token" content="76F0uARStJyLNPf4dk1Ro6iLC76j0OjELG7QqkRQ">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -22,10 +22,12 @@
 <header class="sticky top-0 py-20 w-full z-40 bg-blush border-b border-b-evergreen">
     <div class="w-full flex justify-between">
       <div>
-        <a href="javascript:history.back()" class="block mt-15">
-          <svg width="52" height="24" viewBox="0 0 52 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-50 h-auto">
-<path d="M14.791 0.711548L0.237976 11.9306V12.1165L14.791 23.2886L16.398 21.5666L9 13.7926V13.4196H51.393V10.5336H9V10.2076L16.398 2.43355L14.791 0.711548Z" fill="currentColor"/>
-</svg>        </a>
+        <a href="javascript:history.back()" class="block mt-8">
+          <svg width="49" height="40" viewBox="0 0 49 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-48 h-auto">
+<path d="M20.498 0.707031L1.41299 19.824L20.498 38.941" stroke="currentColor" stroke-width="2"/>
+<path d="M1.51099 19.823H48.511" stroke="currentColor" stroke-width="2"/>
+</svg>
+        </a>
       </div>
       <div class="mt-10">
         <a 
@@ -53,9 +55,11 @@
 	x-cloak 
 	x-show="menu"
 	class="relative w-full mt-50">
-  <div x-data="{ activeSection: null }" class="">
+  <div 
+  x-data="{ activeSection: null }" 
+  class=" border-b border-b-evergreen">
 	<div 
-	class="w-full border-t border-t-evergreen py-15">
+	class="w-full border-t border-t-evergreen py-10">
 	<div 
 		@click="activeSection = (activeSection === 'language') ? null : 'language'"
 		class="flex items-center justify-between cursor-pointer">
@@ -74,7 +78,7 @@
 		</span>
 	</div>
 	<div 
-		class="mt-25 "
+		class="mt-10 pb-10 !py-20"
 		x-show="activeSection === 'language'">
 		<div>
 			<div class="flex justify-center gap-45">
@@ -98,7 +102,7 @@
 	</div>
 </div>  
     <div 
-	class="w-full border-t border-t-evergreen py-15">
+	class="w-full border-t border-t-evergreen py-10">
 	<div 
 		@click="activeSection = (activeSection === 'impressum') ? null : 'impressum'"
 		class="flex items-center justify-between cursor-pointer">
@@ -117,7 +121,7 @@
 		</span>
 	</div>
 	<div 
-		class="mt-25 block w-full"
+		class="mt-10 pb-10 block w-full !py-20"
 		x-show="activeSection === 'impressum'">
 		<div>
 			<p>Impressum content goes here.</p>
@@ -126,16 +130,24 @@
 </div>
 </div></div><main role="main">
   <div x-show="!menu">
-    <div class="w-full h-[calc(100dvh_-_190px)] mt-25 flex flex-col justify-between">
-  <figure class="h-[calc(100dvh_-_335px)]">
-    <img src="/img/visual-location.png" alt="Arenenberger Vielfalt" width="698" height="956" class="w-full h-full object-contain">
-  </figure>
-  <h1 class="text-xl flex justify-between py-15 border-y border-y-evergreen">
-    <span>Arenenberger Vielfalt</span>
-    <span>1</span>
-  </h1>
-  <div class="mt-10">
-    <div 
+    <div class="w-full min-h-[calc(100dvh_-_190px)] pt-15 pb-30">
+  <div class="flex flex-col gap-y-15 justify-between">
+    <figure class="h-[calc(100dvh_-_335px)]">
+      <img src="/img/visual-location.png" alt="Arenenberger Vielfalt" width="698" height="956" class="w-full h-full object-contain">
+    </figure>
+    <div class="pt-5 pb-10 border-y border-y-evergreen">
+      <h1 class="text-xl flex justify-between mb-2">
+        <span>Arenenberger Vielfalt</span>
+        <svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-30 h-auto mt-2">
+  <path d="M9.71201 21.64H18.704V20.488C17.4027 20.488 16.5173 20.3706 16.048 20.136C15.5787 19.88 15.344 19.3573 15.344 18.568V5.44797H13.712C13.1147 5.7893 12.5067 6.08797 11.888 6.34397C11.2693 6.59997 10.6507 6.8133 10.032 6.98397V8.03997H13.104V18.568C13.104 19.1013 12.9973 19.5066 12.784 19.784C12.592 20.0613 12.2507 20.2533 11.76 20.36C11.2693 20.4453 10.5867 20.488 9.71201 20.488V21.64ZM14 26.76C12.1867 26.76 10.48 26.4186 8.88001 25.736C7.28001 25.0533 5.87201 24.1146 4.65601 22.92C3.46134 21.704 2.52268 20.296 1.84001 18.696C1.15734 17.096 0.81601 15.3893 0.81601 13.576C0.81601 11.7626 1.15734 10.0666 1.84001 8.48797C2.52268 6.88797 3.46134 5.47997 4.65601 4.26397C5.87201 3.04797 7.28001 2.09863 8.88001 1.41597C10.48 0.733301 12.1867 0.391968 14 0.391968C15.8347 0.391968 17.5413 0.733301 19.12 1.41597C20.72 2.09863 22.1173 3.04797 23.312 4.26397C24.528 5.47997 25.4773 6.88797 26.16 8.48797C26.8427 10.0666 27.184 11.7626 27.184 13.576C27.184 15.3893 26.8427 17.096 26.16 18.696C25.4773 20.296 24.528 21.704 23.312 22.92C22.1173 24.1146 20.72 25.0533 19.12 25.736C17.5413 26.4186 15.8347 26.76 14 26.76Z" fill="currentColor"/>
+  </svg>
+        </h1>
+      <p class="text-md">
+        Kapelle
+      </p>
+    </div>
+    <div>
+      <div 
   data-audio-player
   data-audio-src="/audio/arenenberger-vielfalt.mp3"
   class="text-sm">
@@ -186,14 +198,17 @@
     </div>
   </div>
 
-</div>  </div>
+</div>    </div>
+  </div>
   <div class="mt-25">
         <p>Lore ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
 
-      <div x-data="{ activeSection: null }" class="mt-40">
+      <div 
+  x-data="{ activeSection: null }" 
+  class="mt-25 border-b border-b-evergreen">
 	<div 
-	class="w-full border-t border-t-evergreen py-15">
+	class="w-full border-t border-t-evergreen py-10">
 	<div 
 		@click="activeSection = (activeSection === 'access-code') ? null : 'access-code'"
 		class="flex items-center justify-between cursor-pointer">
@@ -212,46 +227,49 @@
 		</span>
 	</div>
 	<div 
-		class="mt-25 block w-full pt-10 border-t border-t-evergreen"
+		class="mt-10 pb-10 block w-full pt-10"
 		x-show="activeSection === 'access-code'">
 		<div>
 			<p>Lore ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo.</p>
-          <div class="text-center text-xl mt-30">
+          <div class="text-center text-xl mt-20 tracking-[.3rem]">
             5826
           </div>
 		</div>
 	</div>
-</div>      
-        <div 
-	class="w-full border-t border-t-evergreen py-15">
-	<div 
-		@click="activeSection = (activeSection === 'bildquellen') ? null : 'bildquellen'"
-		class="flex items-center justify-between cursor-pointer">
-		<span class="text-xl select-none">
-			Bildquellen
-		</span>
-		<span x-show="activeSection !== 'bildquellen'">
-			<svg width="35" height="20" viewBox="0 0 35 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-32 h-auto">
-<path d="M0.707001 1.20801L17.147 17.622L33.588 1.20801" stroke="currentColor" stroke-width="2"/>
-</svg>
-		</span>
-		<span x-show="activeSection === 'bildquellen'">
-			<svg width="35" height="20" viewBox="0 0 35 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-32 h-auto">
-<path d="M0.707001 18.327L17.147 1.91296L33.588 18.327" stroke="currentColor" stroke-width="2"/>
-</svg>
-		</span>
-	</div>
-	<div 
-		class="mt-25 block w-full pt-10 border-t border-t-evergreen"
-		x-show="activeSection === 'bildquellen'">
-		<div>
-			<p>Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte.</p>
-          <p>»Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab.</p>
-          <p>Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte.</p>
-          <p>»Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab.</p>
-		</div>
-	</div>
 </div>
+</div>
+      <div class="mt-45" x-data="{ open: false }">
+  <a 
+    href="javascript:;" 
+    @click="open = !open"
+    class="font-gt-alpina-bold font-normal underline underline-offset-5">
+    Bildnachweis
+  </a>
+  <div 
+    x-cloak 
+    x-show="open"
+    class="mt-20">
+    <p>
+          <strong>
+            Hortense de Beaurnhais
+          </strong><br>
+          François Baron Gérard, Hortense de Beauharnais, Napoleon Museum Thurgau, Schloss und Park Arenenberg/Daniel Steiner
+        </p>
+
+        <p>
+          <strong>
+            Hermann Fürst von Pückler-Muskau
+          </strong><br>
+          Porträt Hermann Fürst von Pückler-Muskau in preussischer Uniform, Öl auf Leinwand, August Gosch nach Franz Krüger, 1846, Inv.-Nr.: GFPB-043, mit Genehmi-gung der Gräflichen Familie von Pückler in Branitz, © Stiftung Fürst-Pückler-Museum Park und Schloss Branitz
+        </p>
+
+        <p>
+          <strong>
+            Napoléon III.
+          </strong><br>
+          Felix Cottr(e)au, Prinz Louis Napoléon im Park von Schloss Arenenberg.
+        </p>
+  </div>
 </div>
 </div>
   </div>
