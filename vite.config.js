@@ -35,7 +35,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        js: 'resources/js/app.js',
+        app: 'resources/js/app.js',
         css: 'resources/css/app.css',
         // spa: 'resources/js/spa.js'
       },
