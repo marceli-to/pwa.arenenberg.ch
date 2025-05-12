@@ -45,7 +45,7 @@ class ExportStatic extends Command
         $this->removePreloadAttributes();
 
         // Step 6: Update service worker
-        $this->updateServiceWorker();
+        // $this->updateServiceWorker();
         
         $this->info('Static export completed successfully!');
     }
