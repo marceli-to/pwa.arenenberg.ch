@@ -1,4 +1,4 @@
-const version = '__ASSET_VERSION__';
+const version = '0.0.1';
 
 const ASSETS = [
 	'/apple-touch-icon.png',
