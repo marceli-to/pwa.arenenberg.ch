@@ -54,7 +54,7 @@ const ASSETS = [
   '/download/index.html'
 ];
 
-const CACHE_NAME = `arenenberg-assets-v1`;
+const CACHE_NAME = `arenenberg-assets-v0.0.1`;
 
 // Pre-cache all assets during installation
 self.addEventListener('install', (event) => {
