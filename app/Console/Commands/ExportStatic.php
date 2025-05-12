@@ -11,6 +11,13 @@ class ExportStatic extends Command
 {
     protected $signature = 'export:static';
     protected $description = 'Export static HTML files and fix links for offline usage';
+    protected $assetVersion;
+
+    public function __construct()
+    {
+      parent::__construct();
+      $this->assetVersion = env('ASSET_VERSION', 'dev');
+    }
 
     // File extensions that should be excluded from link modification
     protected $excludedExtensions = [
@@ -36,6 +43,9 @@ class ExportStatic extends Command
         
         // Step 5: Remove preload attributes
         $this->removePreloadAttributes();
+
+        // Step 6: Update service worker
+        $this->updateServiceWorker();
         
         $this->info('Static export completed successfully!');
     }
@@ -334,4 +344,28 @@ class ExportStatic extends Command
         $this->info("Processed {$filesProcessed} HTML files");
         $this->info("Removed {$attributesRemoved} preload attributes/tags in total");
     }
+
+    protected function updateServiceWorker()
+    {
+        $this->info('Updating service worker...');
+    
+        $swPath = public_path('sw.js'); // Directly target public/sw.js
+    
+        if (file_exists($swPath)) {
+            $content = file_get_contents($swPath);
+    
+            // Replace version placeholder in filenames
+            $newContent = str_replace('__ASSET_VERSION__', $this->assetVersion, $content);
+    
+            if ($newContent !== $content) {
+                file_put_contents($swPath, $newContent);
+                $this->info("Service worker updated with asset version: {$this->assetVersion}");
+            } else {
+                $this->info('Service worker did not need updating');
+            }
+        } else {
+            $this->error("Service worker not found at: {$swPath}");
+        }
+    }
+    
 }

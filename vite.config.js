@@ -43,9 +43,9 @@ export default defineConfig(({ mode }) => {
           css: 'resources/css/app.css',
         },
         output: {
-          entryFileNames: `assets/[name]-v${env.ASSET_VERSION}.js`,
-          chunkFileNames: `assets/[name]-v${env.ASSET_VERSION}.js`,
-          assetFileNames: `assets/[name]-v${env.ASSET_VERSION}.[ext]`
+          entryFileNames: `assets/[name]-${env.ASSET_VERSION}.js`,
+          chunkFileNames: `assets/[name]-${env.ASSET_VERSION}.js`,
+          assetFileNames: `assets/[name]-${env.ASSET_VERSION}.[ext]`
         }
       }
     },
