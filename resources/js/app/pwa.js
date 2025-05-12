@@ -148,7 +148,7 @@ const validatePassword = async (password) => {
 const checkAuth = () => {
 	const authCookie = getCookie(COOKIE_NAME);
 	if (!authCookie) {
-		// window.location.href = '/index.html'; // Redirect to index.html if not authenticated
+		window.location.href = '/index.html'; // Redirect to index.html if not authenticated
 	}
 };
 
