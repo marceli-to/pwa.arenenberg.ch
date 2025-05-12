@@ -40,9 +40,9 @@ export default defineConfig({
         // spa: 'resources/js/spa.js'
       },
       output: {
-        entryFileNames: 'assets/[name].js',
-        chunkFileNames: 'assets/[name].js',
-        assetFileNames: 'assets/[name].[ext]'
+        entryFileNames: 'assets/[name]-v1.js',
+        chunkFileNames: 'assets/[name]-v1.js',
+        assetFileNames: 'assets/[name]-v1.[ext]'
       }
     }
   },

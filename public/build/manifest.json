@@ -1,27 +1,27 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app.css",
+    "file": "assets/app-v1.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/fonts/GT-Alpina-Standard-Bold.woff": {
-    "file": "assets/GT-Alpina-Standard-Bold.woff",
+    "file": "assets/GT-Alpina-Standard-Bold-v1.woff",
     "src": "resources/fonts/GT-Alpina-Standard-Bold.woff"
   },
   "resources/fonts/GT-Alpina-Standard-Bold.woff2": {
-    "file": "assets/GT-Alpina-Standard-Bold.woff2",
+    "file": "assets/GT-Alpina-Standard-Bold-v1.woff2",
     "src": "resources/fonts/GT-Alpina-Standard-Bold.woff2"
   },
   "resources/fonts/GT-Alpina-Standard-Medium.woff": {
-    "file": "assets/GT-Alpina-Standard-Medium.woff",
+    "file": "assets/GT-Alpina-Standard-Medium-v1.woff",
     "src": "resources/fonts/GT-Alpina-Standard-Medium.woff"
   },
   "resources/fonts/GT-Alpina-Standard-Medium.woff2": {
-    "file": "assets/GT-Alpina-Standard-Medium.woff2",
+    "file": "assets/GT-Alpina-Standard-Medium-v1.woff2",
     "src": "resources/fonts/GT-Alpina-Standard-Medium.woff2"
   },
   "resources/js/app.js": {
-    "file": "assets/app.js",
+    "file": "assets/app-v1.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }
