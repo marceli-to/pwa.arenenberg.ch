@@ -4,6 +4,8 @@
  * resource caching, and service worker management.
  */
 
+const version = (typeof process !== 'undefined' && process.env && process.env.ASSET_VERSION) ? process.env.ASSET_VERSION : '1.0.0';
+
 // =======================================================
 // Configuration Constants
 // =======================================================
@@ -18,8 +20,8 @@ const ASSETS = [
 	'/build/assets/GT-Alpina-Standard-Medium.woff2',
   '/build/assets/GT-Alpina-Standard-Bold.woff',
 	'/build/assets/GT-Alpina-Standard-Bold.woff2',
-	'/build/assets/app.css',
-	'/build/assets/app.js',
+  `/build/assets/app-v${version}.js`,
+  `/build/assets/app-v${version}.css`,
 	'/build/manifest.json',
 	'/en/access/index.html',
 	'/en/download/index.html',
