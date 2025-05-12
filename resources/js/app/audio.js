@@ -5,38 +5,36 @@
 const AudioPlayer = (function() {
   class Player {
     constructor(element) {
-      // Store DOM element
       this.player = element;
-      
-      // Get audio source from data attribute
       this.audioSrc = this.player.dataset.audioSrc;
       if (!this.audioSrc) {
         throw new Error('No audio source specified in data-audio-src attribute');
       }
-      // Initialize controls using data attributes
-      this.playPauseBtn = this.player.querySelector('[data-audio-play]');
+
+      // Get control elements
+      this.playBtn = this.player.querySelector('[data-audio-play]');
+      this.pauseBtn = this.player.querySelector('[data-audio-pause]');
       this.rewindBtn = this.player.querySelector('[data-audio-rewind]');
       this.forwardBtn = this.player.querySelector('[data-audio-forward]');
       this.progressBar = this.player.querySelector('[data-audio-progress]');
       this.progressHandle = this.player.querySelector('[data-audio-handle]');
       this.progressContainer = this.player.querySelector('[data-audio-progress-container]');
-
-      // Time total/remaining
       this.timeTotal = this.player.querySelector('[data-audio-time-total]');
       this.timeRemaining = this.player.querySelector('[data-audio-time-remaining]');
 
-      // Validate required elements
       this.validateElements();
-      // Initialize audio
+
       this.audio = new Audio(this.audioSrc);
-      // Initialize
+
       this.bindMethods();
       this.initializeEventListeners();
       this.initializeState();
     }
+
     validateElements() {
       const requiredElements = {
-        playPauseBtn: '[data-audio-play]',
+        playBtn: '[data-audio-play]',
+        pauseBtn: '[data-audio-pause]',
         rewindBtn: '[data-audio-rewind]',
         forwardBtn: '[data-audio-forward]',
         progressBar: '[data-audio-progress]',
@@ -50,53 +48,61 @@ const AudioPlayer = (function() {
         }
       }
     }
+
     bindMethods() {
-      this.togglePlayPause = this.togglePlayPause.bind(this);
+      this.play = this.play.bind(this);
+      this.pause = this.pause.bind(this);
       this.updateProgress = this.updateProgress.bind(this);
       this.seek = this.seek.bind(this);
       this.setProgress = this.setProgress.bind(this);
     }
+
     initializeState() {
-      // Set initial states
       this.progressBar.style.width = '0%';
       this.progressHandle.style.left = '0%';
     }
-    togglePlayPause() {
-      if (this.audio.paused) {
-        this.audio.play()
-          .catch(error => {
-            console.error('Error playing audio:', error);
-          });
-      } else {
-        this.audio.pause();
-      }
+
+    play() {
+      this.playBtn.classList.add('hidden');
+      this.pauseBtn.classList.remove('hidden');
+      this.audio.play().catch(error => {
+        console.error('Error playing audio:', error);
+      });
     }
+
+    pause() {
+      this.pauseBtn.classList.add('hidden');
+      this.playBtn.classList.remove('hidden');
+      this.audio.pause();
+    }
+
     updateProgress() {
       if (!this.audio.duration) return;
-      
+
       const percent = (this.audio.currentTime / this.audio.duration) * 100;
       this.progressBar.style.width = `${percent}%`;
 
-      // do not update after 98%
       if (percent < 98) {
         this.progressHandle.style.left = `${percent}%`;
       }
-      
-      // Update time left display
+
       const timeRemaining = this.audio.duration - this.audio.currentTime;
       this.timeRemaining.textContent = `-${this.formatTime(timeRemaining)}`;
     }
+
     formatTime(seconds) {
       const minutes = Math.floor(seconds / 60);
       const remainingSeconds = Math.floor(seconds % 60);
       return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
     }
+
     seek(seconds) {
       const newTime = Math.max(0, Math.min(this.audio.duration, this.audio.currentTime + seconds));
       if (isFinite(newTime)) {
         this.audio.currentTime = newTime;
       }
     }
+
     setProgress(e) {
       const bounds = this.progressContainer.getBoundingClientRect();
       const x = e.clientX - bounds.left;
@@ -105,44 +111,52 @@ const AudioPlayer = (function() {
         this.audio.currentTime = percent * this.audio.duration;
       }
     }
+
     initializeEventListeners() {
-      // Audio events
       this.audio.addEventListener('loadedmetadata', () => {
         this.timeTotal.textContent = this.formatTime(this.audio.duration);
         this.timeRemaining.textContent = `-${this.formatTime(this.audio.duration)}`;
       });
+
       this.audio.addEventListener('timeupdate', this.updateProgress);
+
       this.audio.addEventListener('ended', () => {
-        // Just reset the audio when it ends
+        this.pause();
+        this.audio.currentTime = 0;
+        this.updateProgress();
       });
-      // Control events
-      this.playPauseBtn.addEventListener('click', this.togglePlayPause);
-      this.rewindBtn.addEventListener('click', () => this.seek(-15)); // Changed to 15 seconds
-      this.forwardBtn.addEventListener('click', () => this.seek(15)); // Changed to 15 seconds
-      // Progress bar click event
-      this.progressContainer.addEventListener('click', this.setProgress.bind(this));
-      // Store instance reference on the element
+
+      this.playBtn.addEventListener('click', this.play);
+      this.pauseBtn.addEventListener('click', this.pause);
+      this.rewindBtn.addEventListener('click', () => this.seek(-15));
+      this.forwardBtn.addEventListener('click', () => this.seek(15));
+      this.progressContainer.addEventListener('click', this.setProgress);
+
       this.player.audioPlayer = this;
-      // Keyboard controls
+
       document.addEventListener('keydown', (e) => {
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-        
+
         switch (e.code) {
           case 'Space':
             e.preventDefault();
-            this.togglePlayPause();
+            if (this.audio.paused) {
+              this.play();
+            } else {
+              this.pause();
+            }
             break;
           case 'ArrowLeft':
-            this.seek(-15); // Changed to 15 seconds
+            this.seek(-15);
             break;
           case 'ArrowRight':
-            this.seek(15); // Changed to 15 seconds
+            this.seek(15);
             break;
         }
       });
     }
   }
-  // Initialize function for a single player
+
   function init() {
     const playerElement = document.querySelector('[data-audio-player]');
     if (playerElement) {
@@ -153,10 +167,10 @@ const AudioPlayer = (function() {
       }
     }
   }
-  // Listen for DOMContentLoaded and initialize the player if it exists
+
   document.addEventListener('DOMContentLoaded', function() {
     init();
   });
-  // Return empty object - no public API needed
+
   return {};
 })();

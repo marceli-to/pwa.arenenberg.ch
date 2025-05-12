@@ -15,11 +15,13 @@
       </button>
     </div>
     
-    <!-- Play Button -->
-    <div class="flex flex-col justify-end">
+    <!-- Play/Pause Buttons -->
+    <div class="flex flex-col justify-end items-center">
       <button data-audio-play class="text-evergreen focus:outline-none">
         <x-audio.buttons.play class="w-30 h-auto" />
-        <x-audio.buttons.pause class="w-30 h-auto hidden" />
+      </button>
+      <button data-audio-pause class="text-evergreen focus:outline-none hidden -ml-8">
+        <x-audio.buttons.pause class="w-30 h-auto" />
       </button>
     </div>
     
