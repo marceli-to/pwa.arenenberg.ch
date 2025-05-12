@@ -4,7 +4,7 @@
  * resource caching, and service worker management.
  */
 
-const version = (typeof process !== 'undefined' && process.env && process.env.ASSET_VERSION) ? process.env.ASSET_VERSION : '1.0.0';
+const version = __ASSET_VERSION__;
 
 // =======================================================
 // Configuration Constants

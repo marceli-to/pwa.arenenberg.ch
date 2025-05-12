@@ -50,7 +50,7 @@ export default defineConfig(({ mode }) => {
       }
     },
     define: {
-      'process.env.ASSET_VERSION': JSON.stringify(env.ASSET_VERSION || 'dev'),
+      __ASSET_VERSION__: JSON.stringify(env.ASSET_VERSION || 'dev'),
     }
   };
 });
