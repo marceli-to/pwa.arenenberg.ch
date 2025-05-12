@@ -347,25 +347,33 @@ class ExportStatic extends Command
 
     protected function updateServiceWorker()
     {
-        $this->info('Updating service worker...');
+        $this->info('Copying and updating service worker...');
     
-        $swPath = public_path('sw.js'); // Directly target public/sw.js
+        $source = public_path('sw.js');
+        $target = base_path('dist/sw.js');
     
-        if (file_exists($swPath)) {
-            $content = file_get_contents($swPath);
+        if (!file_exists($source)) {
+            $this->error("Source service worker not found at: {$source}");
+            return;
+        }
     
-            // Replace version placeholder in filenames
-            $newContent = str_replace('__ASSET_VERSION__', $this->assetVersion, $content);
+        // Copy sw.js from public to dist
+        if (!copy($source, $target)) {
+            $this->error("Failed to copy service worker from {$source} to {$target}");
+            return;
+        }
     
-            if ($newContent !== $content) {
-                file_put_contents($swPath, $newContent);
-                $this->info("Service worker updated with asset version: {$this->assetVersion}");
-            } else {
-                $this->info('Service worker did not need updating');
-            }
+        // Replace placeholder with actual version
+        $content = file_get_contents($target);
+        $newContent = str_replace('__ASSET_VERSION__', $this->assetVersion, $content);
+    
+        if ($newContent !== $content) {
+            file_put_contents($target, $newContent);
+            $this->info("Service worker updated with version: {$this->assetVersion}");
         } else {
-            $this->error("Service worker not found at: {$swPath}");
+            $this->info("Service worker copied but no version replacement was needed");
         }
     }
+    
     
 }
