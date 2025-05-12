@@ -1,3 +1,5 @@
+const version = '__ASSET_VERSION__';
+
 const ASSETS = [
 	'/apple-touch-icon.png',
 	'/audio/arenenberger-vielfalt.mp3',
@@ -5,12 +7,12 @@ const ASSETS = [
 	// '/audio/milch-mit-zukunft.mp3',
 	// '/audio/vom-acker-auf-den-tisch.mp3',
 	// '/audio/wundervolle-gartenwelt.mp3',
-	'/build/assets/GT-Alpina-Standard-Medium.woff',
-	'/build/assets/GT-Alpina-Standard-Medium.woff2',
-  '/build/assets/GT-Alpina-Standard-Bold.woff',
-	'/build/assets/GT-Alpina-Standard-Bold.woff2',
-	'/build/assets/app.css',
-	'/build/assets/app.js',
+  `/build/assets/GT-Alpina-Standard-Medium-${version}.woff`,
+  `/build/assets/GT-Alpina-Standard-Medium-${version}.woff2`,
+  `/build/assets/GT-Alpina-Standard-Bold-${version}.woff`,
+  `/build/assets/GT-Alpina-Standard-Bold-${version}.woff2`,
+  `/build/assets/app-${version}.js`,
+  `/build/assets/app-${version}.css`,
 	'/build/manifest.json',
 	'/en/access/index.html',
 	'/en/download/index.html',
