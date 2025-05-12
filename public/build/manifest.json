@@ -21,7 +21,7 @@
     "src": "resources/fonts/GT-Alpina-Standard-Medium.woff2"
   },
   "resources/js/app.js": {
-    "file": "assets/app.js",
+    "file": "assets/js.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }
