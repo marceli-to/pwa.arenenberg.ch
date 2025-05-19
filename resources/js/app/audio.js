@@ -40,6 +40,7 @@ const AudioPlayer = (function() {
         progressBar: '[data-audio-progress]',
         progressHandle: '[data-audio-handle]',
         progressContainer: '[data-audio-progress-container]',
+        timeSpent: '[data-audio-time-spent]',
         timeRemaining: '[data-audio-time-remaining]'
       };
       for (const [key, selector] of Object.entries(requiredElements)) {

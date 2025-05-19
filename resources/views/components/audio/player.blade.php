@@ -46,10 +46,10 @@
     <div class="mt-5 flex justify-between">
 
       <!-- Time Spent Display -->
-      <span class="tabular-nums" data-audio-time-spent>3:42</span>
+      <span class="tabular-nums" data-audio-time-spent>0:00</span>
 
       <!-- Time Remaining Display -->
-      <span class="tabular-nums" data-audio-time-remaining>3:42</span>
+      <span class="tabular-nums" data-audio-time-remaining></span>
     </div>
 
   </div>
