@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 // Only allow POST requests
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405); // Method Not Allowed
-    echo "Nice try, but no funny business here";
+    echo "You’ve reached a dead end in the Matrix.";
     exit;
 }
 
