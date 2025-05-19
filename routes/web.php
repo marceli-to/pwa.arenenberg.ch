@@ -21,11 +21,3 @@ Route::domain(env('DOMAIN_PWA'))->group(function () {
   Route::multilingual('standorte/karte', [PageController::class, 'locationsMap'])->name('page.locations.map');
   Route::multilingual('standorte/{slug}', [PageController::class, 'location'])->name('page.locations.show');
 });
-
-Route::domain(env('DOMAIN_DASHBOARD'))->group(function () {
-  Route::get('/dashboard/{any?}', function () {
-    return view('dashboard');
-  })->where('any', '.*')->middleware(['auth', 'verified'])->name('page.dashboard');
-});
-
-require __DIR__.'/auth.php';

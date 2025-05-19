@@ -10,7 +10,6 @@ export default defineConfig({
       img: resolve('resources/media'),
       fonts: resolve('resources/fonts'),
       vue: 'vue/dist/vue.esm-bundler.js',
-      '@': resolve('resources/js/spa'),
     }
   },
   server: {
@@ -21,7 +20,7 @@ export default defineConfig({
   },
   plugins: [
     laravel({
-      input: ['resources/css/app.css', 'resources/js/app.js', 'resources/js/spa.js'],
+      input: ['resources/css/app.css', 'resources/js/app.js'],
       refresh: true,
     }),
     vue({
@@ -38,7 +37,6 @@ export default defineConfig({
       input: {
         app: 'resources/js/app.js',
         css: 'resources/css/app.css',
-        // spa: 'resources/js/spa.js'
       },
       output: {
         entryFileNames: 'assets/[name].js',
