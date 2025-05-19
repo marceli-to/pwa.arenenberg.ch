@@ -7,7 +7,7 @@
       href="{{ localized_route('page.locations.show', Str::slug('Arenenberger Vielfalt')) }}"
       title="{{ __('Arenenberger Vielfalt') }}">
       <circle cx="390" cy="1075" r="45" fill="#d22837" />
-      <text x="390" y="1080" text-anchor="middle" dominant-baseline="middle" class="fill-white" font-size="4rem">1</text>
+      <text x="390" y="1080" text-anchor="middle" dominant-baseline="middle" class="fill-white" font-family="GT-Alpina-Standard-Medium" font-size="4rem">1</text>
     </a>
 
     <a 
