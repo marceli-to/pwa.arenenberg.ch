@@ -19,7 +19,7 @@ const AudioPlayer = (function() {
       this.progressBar = this.player.querySelector('[data-audio-progress]');
       this.progressHandle = this.player.querySelector('[data-audio-handle]');
       this.progressContainer = this.player.querySelector('[data-audio-progress-container]');
-      this.timeTotal = this.player.querySelector('[data-audio-time-total]');
+      this.timeSpent = this.player.querySelector('[data-audio-time-spent]');
       this.timeRemaining = this.player.querySelector('[data-audio-time-remaining]');
 
       this.validateElements();
@@ -88,6 +88,9 @@ const AudioPlayer = (function() {
 
       const timeRemaining = this.audio.duration - this.audio.currentTime;
       this.timeRemaining.textContent = `-${this.formatTime(timeRemaining)}`;
+
+      const timeSpent = this.audio.currentTime;
+      this.timeSpent.textContent = this.formatTime(timeSpent);
     }
 
     formatTime(seconds) {
@@ -114,7 +117,7 @@ const AudioPlayer = (function() {
 
     initializeEventListeners() {
       this.audio.addEventListener('loadedmetadata', () => {
-        this.timeTotal.textContent = this.formatTime(this.audio.duration);
+        this.timeSpent.textContent = this.formatTime(this.audio.duration);
         this.timeRemaining.textContent = `-${this.formatTime(this.audio.duration)}`;
       });
 
