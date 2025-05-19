@@ -14,7 +14,7 @@
           @click="menu = !menu"
           class="w-47 h-35 flex items-center justify-center">
           <span x-show="!menu" x-cloak>
-            <x-icons.burger class="w-47 h-auto grow-0" />
+            <x-icons.burger class="w-47 h-29 grow-0" />
           </span>
           <span x-show="menu" x-cloak>
             <x-icons.cross class="w-35 h-auto grow-0" />
@@ -45,7 +45,7 @@
           @click="menu = !menu"
           class="w-46 h-32 flex items-center justify-center">
           <span x-show="!menu" x-cloak>
-            <x-icons.burger class="w-46 h-auto grow-0" />
+            <x-icons.burger class="w-47 h-29 grow-0" />
           </span>
           <span x-show="menu" x-cloak>
             <x-icons.cross class="w-32 h-auto grow-0" />
