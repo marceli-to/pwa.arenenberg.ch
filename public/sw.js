@@ -87,7 +87,7 @@ self.addEventListener('fetch', (event) => {
 			caches.match(event.request)
 				.then((cachedResponse) => {
 					return cachedResponse || fetch(event.request)
-						.catch(() => caches.match('/offline.html')); // Fallback to offline page
+						.catch(() => caches.match('/offline/index.html')); // Fallback to offline page
 				})
 		);
 	} else {
