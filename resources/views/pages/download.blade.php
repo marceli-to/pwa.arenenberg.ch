@@ -34,7 +34,7 @@
     <x-buttons.primary 
       type="link"
       route="{{ localized_route('page.locations.list') }}"
-      label="{!! __('Los geht’s!') !!}">
+      label="{!! __('Los geht&lsquo;s!') !!}">
     </x-buttons.primary>
   </div>
   <!-- End Success section -->
