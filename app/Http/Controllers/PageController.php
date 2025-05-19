@@ -33,4 +33,9 @@ class PageController extends Controller
   {
     return view('pages.locations.show.' . $slug);
   }
+
+  public function offline(Request $request)
+  {
+    return view('pages.offline');
+  }
 }

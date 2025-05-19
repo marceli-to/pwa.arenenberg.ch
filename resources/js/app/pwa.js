@@ -131,17 +131,6 @@ const getCookie = (name) => {
 /**
  * Validates password against stored password
  */
-// const validatePassword = async (password) => {
-// 	try {
-// 		const response = await fetch(PASSWORD_PATH);
-// 		const correctPassword = await response.text();
-// 		return password === correctPassword.trim();
-// 	} catch (error) {
-// 		console.error('Failed to fetch password:', error);
-// 		return false;
-// 	}
-// };
-
 const validatePassword = async (password) => {
 	try {
 		const response = await fetch('/validate.php', {
@@ -170,7 +159,7 @@ const validatePassword = async (password) => {
 const checkAuth = () => {
 	const authCookie = getCookie(COOKIE_NAME);
 	if (!authCookie) {
-		// window.location.href = '/index.html'; // Redirect to index.html if not authenticated
+		window.location.href = '/index.html'; // Redirect to index.html if not authenticated
 	}
 };
 

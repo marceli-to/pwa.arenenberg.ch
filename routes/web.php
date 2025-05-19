@@ -20,4 +20,5 @@ Route::domain(env('DOMAIN_PWA'))->group(function () {
   Route::multilingual('standorte/liste', [PageController::class, 'locationsList'])->name('page.locations.list');
   Route::multilingual('standorte/karte', [PageController::class, 'locationsMap'])->name('page.locations.map');
   Route::multilingual('standorte/{slug}', [PageController::class, 'location'])->name('page.locations.show');
+  Route::get('offline', [PageController::class, 'offline'])->name('page.offline');
 });
