@@ -8,7 +8,7 @@
 <div class="w-full min-h-[calc(100dvh_-_190px)] pt-15 pb-30">
   <div class="flex flex-col gap-y-15 justify-between">
     <figure class="aspect-square">
-      <img src="/img/{{ $visual }}" alt="{{ $title }}" width="698" height="956" class="w-full h-full object-contain">
+      <img src="/img/{{ $visual }}" alt="{{ $title }}" width="698" height="956" class="w-full h-auto object-fit">
     </figure>
     <div class="pt-5 pb-10 border-y border-y-evergreen">
       <h1 class="text-xl flex justify-between mb-2">
