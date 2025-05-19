@@ -61,6 +61,7 @@ class ExportStatic extends Command
         $this->info('Fetching missing pages from live site...');
 
         $routes = [
+            'offline',
             // German
             'zugang',
             'download',
