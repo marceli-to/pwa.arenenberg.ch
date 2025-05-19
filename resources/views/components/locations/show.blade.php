@@ -13,7 +13,7 @@
     <div class="pt-5 pb-10 border-y border-y-evergreen">
       <h1 class="text-xl flex justify-between mb-2">
         <span>{{ $title }}</span>
-        @include('components.icons.numbers.' . $number, ['class' => 'w-30 h-auto mt-2'])
+        @include('components.icons.numbers.green.' . $number, ['class' => 'w-30 h-auto mt-2'])
       </h1>
       <p class="text-md">
         {{ $description }}

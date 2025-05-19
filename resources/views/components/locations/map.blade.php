@@ -1,42 +1,58 @@
-<figure class="h-[calc(100dvh_-_290px)] relative">
-
-  <svg viewBox="0 0 1000 1400" class="block w-full h-full text-blush !leading-none">
+<figure class="relative">
+  <svg viewBox="0 0 1000 1400" class="block w-full h-auto text-blush !leading-none relative">
     <image href="/img/map.png" width="1000" height="1400" preserveAspectRatio="xMidYMid slice" />
 
-    <a 
+    {{-- <a 
       href="{{ localized_route('page.locations.show', Str::slug('Arenenberger Vielfalt')) }}"
       title="{{ __('Arenenberger Vielfalt') }}">
       <circle cx="390" cy="1075" r="45" fill="#d22837" />
       <text x="390" y="1080" text-anchor="middle" dominant-baseline="middle" class="fill-white" font-size="4rem">1</text>
+    </a> --}}
+
+    <a 
+      href="{{ localized_route('page.locations.show', Str::slug('Arenenberger Vielfalt')) }}"
+      title="{{ __('Arenenberger Vielfalt') }}"
+      class="block w-29 h-29 absolute text-crimson">
+      <g transform="translate(375.5, 1060.5) scale(2.5)">
+        @include('components.icons.numbers.red.1', ['class' => 'block w-29 h-29'])
+      </g>
     </a>
 
     <a 
       href="{{ localized_route('page.locations.show', Str::slug('Milch mit Zukunft')) }}"
-      title="{{ __('Milch mit Zukunft') }}">
-      <circle cx="840" cy="595" r="45" fill="#d22837" />
-      <text x="840" y="600" text-anchor="middle" dominant-baseline="middle" class="fill-white" font-size="4rem">2</text>
+      title="{{ __('Milch mit Zukunft') }}"
+      class="block w-29 h-29 absolute text-crimson">
+      <g transform="translate(790, 560) scale(2.5)">
+        @include('components.icons.numbers.red.2', ['class' => 'block w-29 h-29'])
+      </g>
     </a>
-
+    
     <a 
       href="{{ localized_route('page.locations.show', Str::slug('Vom Acker auf den Tisch')) }}"
-      title="{{ __('Vom Acker auf den Tisch') }}">
-      <circle cx="750" cy="145" r="45" fill="#d22837" />
-      <text x="750" y="155" text-anchor="middle" dominant-baseline="middle" class="fill-white" font-size="4rem">3</text>
+      title="{{ __('Vom Acker auf den Tisch') }}"
+      class="block w-29 h-29 absolute text-crimson">
+      <g transform="translate(730, 110) scale(2.5)">
+        @include('components.icons.numbers.red.3', ['class' => 'block w-29 h-29'])
+      </g>
     </a>
-
+    
     <a 
       href="{{ localized_route('page.locations.show', Str::slug('Wundervolle Gartenwelt')) }}"
-      title="{{ __('Wundervolle Gartenwelt') }}">
-      <circle cx="415" cy="790" r="45" fill="#d22837" />
-      <text x="415" y="795" text-anchor="middle" dominant-baseline="middle" class="fill-white" font-size="4rem">4</text>
+      title="{{ __('Wundervolle Gartenwelt') }}"
+      class="block w-29 h-29 absolute text-crimson">
+      <g transform="translate(380, 760) scale(2.5)">
+        @include('components.icons.numbers.red.4', ['class' => 'block w-29 h-29'])
+      </g>
     </a>
-
+    
     <a 
       href="{{ localized_route('page.locations.show', Str::slug('Kaiserliches Leben')) }}"
-      title="{{ __('Kaiserliches Leben') }}">
-      <circle cx="550" cy="1160" r="45" fill="#d22837" />
-      <text x="550" y="1165" text-anchor="middle" dominant-baseline="middle" class="fill-white" font-size="4rem">5</text>
+      title="{{ __('Kaiserliches Leben') }}"
+      class="block w-29 h-29 absolute text-crimson">
+      <g transform="translate(510, 1120) scale(2.5)">
+        @include('components.icons.numbers.red.5', ['class' => 'block w-29 h-29'])
+      </g>
     </a>
-</svg>
-
+  
+  </svg>
 </figure>

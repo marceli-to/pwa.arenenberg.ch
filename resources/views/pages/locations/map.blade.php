@@ -1,15 +1,14 @@
 <x-layout.app>
   @section('content')
   <div 
-    class="w-full h-[calc(100dvh_-_175px)] mt-50 flex flex-col justify-between">
+    class="w-full mt-50 flex flex-col justify-between">
     <x-locations.map />
-    <div>
-      <x-buttons.primary 
-        route="{{ localized_route('page.locations.list') }}"
-        type="link"
-        label="{{ __('Liste') }}">
-      </x-buttons.primary>
-    </div>
+    <x-buttons.primary 
+      route="{{ localized_route('page.locations.list') }}"
+      type="link"
+      label="{{ __('Liste') }}"
+      class="absolute bottom-36 left-1/2 -translate-x-1/2">
+    </x-buttons.primary>
   </div>
   @endsection
 </x-layout.app>
