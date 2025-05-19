@@ -17,6 +17,6 @@
   </p>
   </span>
   <span>
-    @include('components.icons.numbers.' . $number, ['class' => 'w-30 h-auto'])
+    @include('components.icons.numbers.' . $number, ['class' => 'w-29 h-auto'])
   </span>
 </a>
