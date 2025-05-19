@@ -14,10 +14,10 @@
           @click="menu = !menu"
           class="w-47 h-35 flex items-center justify-center">
           <span x-show="!menu" x-cloak>
-            <x-icons.burger class="w-47 h-auto" />
+            <x-icons.burger class="w-47 h-auto grow-0" />
           </span>
           <span x-show="menu" x-cloak>
-            <x-icons.cross class="w-35 h-auto" />
+            <x-icons.cross class="w-35 h-auto grow-0" />
           </span>
         </a>
       </div>
