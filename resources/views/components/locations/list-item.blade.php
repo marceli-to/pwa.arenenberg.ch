@@ -6,7 +6,7 @@
 ])
 <a 
   href="{{ $route }}" 
-  class="flex justify-between gap-x-30 border-t border-t-evergreen last-of-type:border-b last-of-type:border-b-evergreen py-10"
+  class="flex justify-between gap-x-24 border-t border-t-evergreen last-of-type:border-b last-of-type:border-b-evergreen py-10"
   title="{{ $title }}">
   <span>
     <h2 class="text-xl mb-2">
