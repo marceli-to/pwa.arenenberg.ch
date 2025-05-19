@@ -7,7 +7,7 @@
 ])
 <div class="w-full min-h-[calc(100dvh_-_190px)] pt-15 pb-30">
   <div class="flex flex-col gap-y-15 justify-between">
-    <figure class="h-[calc(100dvh_-_335px)]">
+    <figure class="aspect-square">
       <img src="/img/{{ $visual }}" alt="{{ $title }}" width="698" height="956" class="w-full h-full object-contain">
     </figure>
     <div class="pt-5 pb-10 border-y border-y-evergreen">
