@@ -131,13 +131,35 @@ const getCookie = (name) => {
 /**
  * Validates password against stored password
  */
+// const validatePassword = async (password) => {
+// 	try {
+// 		const response = await fetch(PASSWORD_PATH);
+// 		const correctPassword = await response.text();
+// 		return password === correctPassword.trim();
+// 	} catch (error) {
+// 		console.error('Failed to fetch password:', error);
+// 		return false;
+// 	}
+// };
+
 const validatePassword = async (password) => {
 	try {
-		const response = await fetch(PASSWORD_PATH);
-		const correctPassword = await response.text();
-		return password === correctPassword.trim();
-	} catch (error) {
-		console.error('Failed to fetch password:', error);
+		const response = await fetch('/validate.php', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ password })
+		});
+		if (!response.ok) {
+			console.error('Server error:', response.status);
+			return false;
+		}
+		const result = await response.json();
+		return result.valid === true;
+	} 
+  catch (error) {
+		console.error('Password validation failed:', error);
 		return false;
 	}
 };
