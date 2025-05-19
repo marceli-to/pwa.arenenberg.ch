@@ -46,6 +46,9 @@ class ExportStatic extends Command
 
         // Step 6: Update service worker
         // $this->updateServiceWorker();
+
+        // Step 7: Copy validate.php to dist
+        $this->copyValidationScript();
         
         $this->info('Static export completed successfully!');
     }
@@ -375,5 +378,24 @@ class ExportStatic extends Command
         }
     }
     
-    
+    protected function copyValidationScript()
+    {
+        $this->info('Copying validate.php to dist...');
+
+        $source = public_path('validate.php');
+        $destination = base_path('dist/validate.php');
+
+        if (!file_exists($source)) {
+            $this->error("validate.php not found at: {$source}");
+            return;
+        }
+
+        if (!copy($source, $destination)) {
+            $this->error("Failed to copy validate.php to dist");
+            return;
+        }
+
+        $this->info("validate.php successfully copied to dist");
+    }
+
 }
