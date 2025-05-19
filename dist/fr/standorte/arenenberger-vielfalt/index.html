@@ -10,7 +10,7 @@
 <meta name="description" content="Un parcours à travers la diversité d&#039;Arenenberg">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<meta name="csrf-token" content="VPTrpvAE9ciNqvIfVWM1SQU7C8vxeBbkmbB4rl1Z">
+<meta name="csrf-token" content="wkXXpcpIVeY5RyEsV4T6EhAW0h2J78hnmvzEO9Bi">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -19,7 +19,9 @@
 <link rel="manifest" href="/site.webmanifest" />
 <link rel="stylesheet" href="https://pwa.arenenberg.ch.marceli.to/build/assets/app.css" /></head>
 <body class="antialiased font-gt-alpina-medium text-md leading-[1.2] text-evergreen bg-blush max-w-lg mx-auto px-15">
-<header class="sticky top-0 py-20 w-full z-40 bg-blush border-b border-b-evergreen">
+<header 
+    class="sticky top-0 py-20 w-full z-40 bg-blush border-b border-b-evergreen"
+    :class="{ '!border-b-0': menu }">
     <div class="w-full flex justify-between">
       <div>
         <a href="javascript:history.back()" class="block mt-8">
