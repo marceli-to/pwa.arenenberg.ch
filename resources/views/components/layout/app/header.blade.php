@@ -45,10 +45,10 @@
           @click="menu = !menu"
           class="w-46 h-32 flex items-center justify-center">
           <span x-show="!menu" x-cloak>
-            <x-icons.burger class="w-46 h-auto" />
+            <x-icons.burger class="w-46 h-auto grow-0" />
           </span>
           <span x-show="menu" x-cloak>
-            <x-icons.cross class="w-32 h-auto" />
+            <x-icons.cross class="w-32 h-auto grow-0" />
           </span>
         </a>
       </div>
