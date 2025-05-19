@@ -25,6 +25,7 @@ const AudioPlayer = (function() {
       this.validateElements();
 
       this.audio = new Audio(this.audioSrc);
+      this.rafId = null;
 
       this.bindMethods();
       this.initializeEventListeners();
@@ -56,6 +57,8 @@ const AudioPlayer = (function() {
       this.updateProgress = this.updateProgress.bind(this);
       this.seek = this.seek.bind(this);
       this.setProgress = this.setProgress.bind(this);
+      this.startUpdatingProgress = this.startUpdatingProgress.bind(this);
+      this.stopUpdatingProgress = this.stopUpdatingProgress.bind(this);
     }
 
     initializeState() {
@@ -69,12 +72,29 @@ const AudioPlayer = (function() {
       this.audio.play().catch(error => {
         console.error('Error playing audio:', error);
       });
+      this.startUpdatingProgress();
     }
 
     pause() {
       this.pauseBtn.classList.add('hidden');
       this.playBtn.classList.remove('hidden');
       this.audio.pause();
+      this.stopUpdatingProgress();
+    }
+
+    startUpdatingProgress() {
+      const step = () => {
+        this.updateProgress();
+        this.rafId = requestAnimationFrame(step);
+      };
+      this.rafId = requestAnimationFrame(step);
+    }
+
+    stopUpdatingProgress() {
+      if (this.rafId) {
+        cancelAnimationFrame(this.rafId);
+        this.rafId = null;
+      }
     }
 
     updateProgress() {
@@ -118,11 +138,9 @@ const AudioPlayer = (function() {
 
     initializeEventListeners() {
       this.audio.addEventListener('loadedmetadata', () => {
-        this.timeSpent.textContent = this.formatTime(this.audio.duration);
+        this.timeSpent.textContent = this.formatTime(0);
         this.timeRemaining.textContent = `-${this.formatTime(this.audio.duration)}`;
       });
-
-      this.audio.addEventListener('timeupdate', this.updateProgress);
 
       this.audio.addEventListener('ended', () => {
         this.pause();
