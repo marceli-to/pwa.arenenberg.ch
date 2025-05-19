@@ -1,6 +1,6 @@
 @if (Route::is('*.page.locations.show'))
   <header 
-    class="sticky top-0 py-20 w-full z-40 bg-blush border-b border-b-evergreen"
+    class="sticky top-0 py-20 !pt-19 w-full z-40 bg-blush border-b border-b-evergreen"
     :class="{ '!border-b-0': menu }">
     <div class="w-full flex justify-between">
       <div>
@@ -43,12 +43,12 @@
         <a 
           href="javascript:;"
           @click="menu = !menu"
-          class="w-46 h-32 flex items-center justify-center">
+          class="w-47 h-35 flex items-center justify-center">
           <span x-show="!menu" x-cloak>
             <x-icons.burger class="w-47 h-29 grow-0" />
           </span>
           <span x-show="menu" x-cloak>
-            <x-icons.cross class="w-32 h-auto grow-0" />
+            <x-icons.cross class="w-35 h-auto grow-0" />
           </span>
         </a>
       </div>
