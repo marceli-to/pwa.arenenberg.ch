@@ -1,5 +1,7 @@
 @if (Route::is('*.page.locations.show'))
-  <header class="sticky top-0 py-20 w-full z-40 bg-blush border-b border-b-evergreen">
+  <header 
+    class="sticky top-0 py-20 w-full z-40 bg-blush border-b border-b-evergreen"
+    :class="{ '!border-b-0': menu }">
     <div class="w-full flex justify-between">
       <div>
         <a href="javascript:history.back()" class="block mt-8">
