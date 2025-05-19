@@ -1,6 +1,13 @@
 <?php
 header('Content-Type: application/json');
 
+// Only allow POST requests
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405); // Method Not Allowed
+    echo json_encode(['valid' => false, 'error' => 'Only POST requests are allowed']);
+    exit;
+}
+
 $data = json_decode(file_get_contents('php://input'), true);
 $submittedPassword = $data['password'] ?? '';
 
@@ -10,7 +17,9 @@ if (strlen($submittedPassword) !== 4 || !ctype_digit($submittedPassword)) {
     exit;
 }
 
-$passwordsFile = __DIR__ . '/passwords.json';
+$basePath = realpath(dirname(__DIR__)); // project root
+$passwordsFile = $basePath . '/passwords.json';
+
 if (!file_exists($passwordsFile)) {
     http_response_code(500);
     echo json_encode(['valid' => false, 'error' => 'Password data unavailable']);
@@ -18,7 +27,7 @@ if (!file_exists($passwordsFile)) {
 }
 
 $passwords = json_decode(file_get_contents($passwordsFile), true);
-$today = date('d.m.Y');
+$today = date('Y-m-d');
 
 if (!isset($passwords[$today])) {
     http_response_code(403);
