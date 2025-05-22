@@ -35,7 +35,7 @@
         </h1>
         @if (Route::is('*.page.home'))
           <div class="text-crimson text-sm">
-            {!! __('Ein Parcours durch die<br>Arenenberger Vielfalt') !!}
+            {!! __('Ein Parcours durch<br>die Arenenberger Vielfalt') !!}
           </div>
         @endif
       </a>
