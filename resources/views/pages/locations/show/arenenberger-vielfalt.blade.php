@@ -8,16 +8,15 @@
       audio="arenenberger-vielfalt-en.mp3">
 
       <div class="mt-25">
-        <p>{{ __('Lore ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.') }}</p>
+        <p>{{ __('Erfahren Sie von den Anfängen des Arenenberg als Land- und Weingut und wie dieses sich nach der Schenkung an den Kanton Thurgau zum Ort der Kultur, Bildung und Beratung entwickelt.') }}</p>
       </div>
 
       <x-accordion.wrapper class="mt-25">
       
         <x-accordion.item 
-          title="{{ __('Türcode') }}" 
+          title="{{ __('Schlüssel') }}" 
           id="access-code" 
           contentClasses="block w-full pt-10">
-          <p>Lore ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo.</p>
           <div class="text-center text-xl mt-20 tracking-[.3rem]">
             5826
           </div>
@@ -25,7 +24,7 @@
 
       </x-accordion.wrapper>
 
-      <x-toggleable title="{{ __('Bildnachweis') }}">
+      <x-toggleable title="{{ __('Bildnachweise') }}">
         <p>
           <strong>
             {{ __('Hortense de Beaurnhais') }}
