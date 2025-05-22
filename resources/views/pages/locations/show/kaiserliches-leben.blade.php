@@ -5,6 +5,6 @@
       description="{{ __('Grabplatte') }}"
       number="5"
       visual="visual-location.png"
-      audio="kaiserliches-leben.mp3" />
+      audio="kaiserliches-leben-en.mp3" />
   @endsection
 </x-layout.app>

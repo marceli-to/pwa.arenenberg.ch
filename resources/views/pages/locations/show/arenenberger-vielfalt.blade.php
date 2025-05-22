@@ -5,7 +5,7 @@
       description="{{ __('Kapelle') }}"
       number="1"
       visual="visual-location.png"
-      audio="arenenberger-vielfalt.mp3">
+      audio="arenenberger-vielfalt-en.mp3">
 
       <div class="mt-25">
         <p>{{ __('Lore ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.') }}</p>

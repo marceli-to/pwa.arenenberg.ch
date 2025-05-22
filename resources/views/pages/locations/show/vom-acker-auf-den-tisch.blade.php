@@ -5,6 +5,6 @@
       description="{{ __('Feldkulturengarten') }}"
       number="3" 
       visual="visual-location.png"
-      audio="vom-acker-auf-den-tisch.mp3" />
+      audio="vom-acker-auf-den-tisch-en.mp3" />
   @endsection
 </x-layout.app>

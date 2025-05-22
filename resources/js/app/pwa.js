@@ -9,11 +9,10 @@
 // =======================================================
 const ASSETS = [
 	'/apple-touch-icon.png',
-	'/audio/arenenberger-vielfalt.mp3',
-	// '/audio/kaiserliches-leben.mp3',
-	// '/audio/milch-mit-zukunft.mp3',
-	// '/audio/vom-acker-auf-den-tisch.mp3',
-	// '/audio/wundervolle-gartenwelt.mp3',
+  '/audio/arenenberger-vielfalt-en.mp3', 
+  '/audio/kaiserliches-leben-en.mp3', 
+  '/audio/milch-mit-zukunft-en.mp3', 
+  '/audio/vom-acker-auf-den-tisch-en.mp3',
 	'/build/assets/GT-Alpina-Standard-Medium.woff',
 	'/build/assets/GT-Alpina-Standard-Medium.woff2',
   '/build/assets/GT-Alpina-Standard-Bold.woff',
@@ -63,9 +62,8 @@ const ASSETS = [
 	'/download/index.html'
 ];
 
-const CACHE_NAME = `arenenberg-assets-v0.0.1`;
+const CACHE_NAME = `arenenberg-assets-v0.0.2`;
 const COOKIE_NAME = 'arenenberg-auth';
-const PASSWORD_PATH = '/password.txt';
 
 // Paths excluded from service worker registration
 const EXCLUDED_SW_PATHS = [

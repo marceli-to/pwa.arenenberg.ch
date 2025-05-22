@@ -5,6 +5,6 @@
       description="{{ __('Eremitage') }}"
       number="4" 
       visual="visual-location.png"
-      audio="wundervolle-gartenwelt.mp3" />
+      audio="wundervolle-gartenwelt-en.mp3" />
   @endsection
 </x-layout.app>
