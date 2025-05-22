@@ -6,7 +6,7 @@
     data-resources-loader>
     <div class="mt-10 pb-40 border-b border-b-evergreen">
       <h2 class="text-lg leading-[1.4]">
-        {{ __('Die Inhalte werden heruntergeladen. Dies kann einen Moment dauern.') }}
+        {{ __('Die Inhalte werden geladen. Dies dauert einen Moment.') }}
       </h2>
       <div 
         class="mt-30"
@@ -29,7 +29,7 @@
     data-success-section>
     <div class="text-lg py-10">
       <h1 class="text-2xl mb-15">{{ __('Erkunden Sie den Arenenberg!') }}</h1>
-      <p>{{ __('Ein Kurzfilm und vier Hörreportagen mit Annette Fetscherin und Arenenberger Expertinnen und Experten gewähren Einblicke in die vielfältige Geschichte und Gegenwart des Ortes. Die Stationen auf dem gesamten Areal sind in beliebiger Reihenfolge erlebbar. Und stets erwartet Gross und Klein ein Spiel. Bei Fragen melden Sie sich gerne im Besuchszentrum.') }}</p>
+      <p>{{ __('Ein Kurzfilm und vier Hörreportagen mit Annette Fetscherin und Arenenberger Expertinnen und Experten gewähren Einblicke in die vielfältige Geschichte und Gegenwart des Ortes. Die Stationen auf dem gesamten Areal sind in beliebiger Reihenfolge erlebbar. Und stets erwartet Gross und Klein ein Spiel. Bei Fragen melden Sie sich gerne im Shop.') }}</p>
     </div>
     <x-buttons.primary 
       type="link"
