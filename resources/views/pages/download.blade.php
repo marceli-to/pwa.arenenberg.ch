@@ -25,7 +25,7 @@
 
   <!-- Success section -->
   <div 
-    class="w-full h-[calc(100dvh_-_175px)] mt-50 border-t border-t-evergreen hidden flex-col justify-between"
+    class="w-full min-h-[calc(100dvh_-_175px)] mt-50 border-t border-t-evergreen hidden flex-col justify-between"
     data-success-section>
     <div class="text-lg py-10">
       <h1 class="text-2xl mb-15">{{ __('Erkunden Sie den Arenenberg!') }}</h1>
