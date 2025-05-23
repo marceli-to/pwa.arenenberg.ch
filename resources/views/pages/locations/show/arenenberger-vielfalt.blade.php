@@ -4,7 +4,7 @@
       title="{{ __('Arenenberger Vielfalt') }}" 
       description="{{ __('Kapelle') }}"
       number="1"
-      visual="visual-location.png"
+      visual="visual-arenenberger-vielfalt"
       audio="arenenberger-vielfalt-en.mp3">
 
       <div class="mt-25">
