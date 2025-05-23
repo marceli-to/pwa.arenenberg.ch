@@ -17,7 +17,7 @@
           title="{{ __('Schlüssel') }}" 
           id="access-code" 
           contentClasses="block w-full pt-10">
-          <div class="text-center text-xl mt-20 tracking-[.3rem]">
+          <div class="text-center text-xl tracking-[.3rem]">
             5826
           </div>
         </x-accordion.item>
