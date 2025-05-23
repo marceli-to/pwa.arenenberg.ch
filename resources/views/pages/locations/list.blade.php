@@ -17,7 +17,7 @@
       
       <x-locations.list-item 
         route="{{ localized_route('page.locations.show', Str::slug('Vom Acker auf den Tisch')) }}"
-        title="{{ __('Vom Acker auf den Tisch ') }}" 
+        title="{{ __('Vom Acker auf den Tisch') }}" 
         description="{{ __('Feldkulturengarten') }}"
         number="3" />
       
