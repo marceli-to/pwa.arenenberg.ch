@@ -64,21 +64,18 @@ const ASSETS = [
 
 const AUDIO_FILES = {
   de: [
-    '/audio/de/arenenberger-vielfalt.mp3',
     '/audio/de/kaiserliches-leben.mp3',
     '/audio/de/milch-mit-zukunft.mp3',
     '/audio/de/vom-acker-auf-den-tisch.mp3',
     '/audio/de/wundervolle-gartenwelt.mp3'
   ],
   fr: [
-    '/audio/fr/arenenberger-vielfalt.mp3',
     '/audio/fr/kaiserliches-leben.mp3',
     '/audio/fr/milch-mit-zukunft.mp3',
     '/audio/fr/vom-acker-auf-den-tisch.mp3',
     '/audio/fr/wundervolle-gartenwelt.mp3'
   ],
   en: [
-    '/audio/en/arenenberger-vielfalt.mp3',
     '/audio/en/kaiserliches-leben.mp3',
     '/audio/en/milch-mit-zukunft.mp3',
     '/audio/en/vom-acker-auf-den-tisch.mp3',

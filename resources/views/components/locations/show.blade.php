@@ -19,9 +19,11 @@
         {{ $description }}
       </p>
     </div>
-    <div>
-      <x-audio.player src="{{ $audio }}" />
-    </div>
+    @if ($audio !== '')
+      <div>
+        <x-audio.player src="{{ $audio }}" />
+      </div>
+    @endif
   </div>
   {{ $slot }}
 </div>
