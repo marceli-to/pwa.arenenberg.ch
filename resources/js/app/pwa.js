@@ -9,10 +9,22 @@
 // =======================================================
 const ASSETS = [
 	'/apple-touch-icon.png',
-  '/audio/arenenberger-vielfalt-en.mp3', 
-  '/audio/kaiserliches-leben-en.mp3', 
-  '/audio/milch-mit-zukunft-en.mp3', 
-  '/audio/vom-acker-auf-den-tisch-en.mp3',
+
+  '/audio/de/arenenberger-vielfalt.mp3', 
+  '/audio/de/milch-mit-zukunft.mp3',
+  '/audio/de/vom-acker-auf-den-tisch.mp3',
+  '/audio/de/wundervolle-gartenwelt.mp3',
+
+  '/audio/fr/arenenberger-vielfalt.mp3', 
+  '/audio/fr/milch-mit-zukunft.mp3',
+  '/audio/fr/vom-acker-auf-den-tisch.mp3',
+  '/audio/fr/wundervolle-gartenwelt.mp3',
+
+  '/audio/en/arenenberger-vielfalt.mp3', 
+  '/audio/en/milch-mit-zukunft.mp3',
+  '/audio/en/vom-acker-auf-den-tisch.mp3',
+  '/audio/en/wundervolle-gartenwelt.mp3',
+
 	'/build/assets/GT-Alpina-Standard-Medium.woff',
 	'/build/assets/GT-Alpina-Standard-Medium.woff2',
   '/build/assets/GT-Alpina-Standard-Bold.woff',

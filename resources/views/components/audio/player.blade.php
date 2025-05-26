@@ -1,7 +1,7 @@
 @props(['src'])
 <div 
   data-audio-player
-  data-audio-src="/audio/{{ $src }}"
+  data-audio-src="/audio/{{ app()->getLocale() }}/{{ $src }}"
   class="mt-10">
   
   <!-- Buttons Row -->

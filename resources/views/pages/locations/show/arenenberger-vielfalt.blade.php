@@ -5,7 +5,7 @@
       description="{{ __('Kapelle') }}"
       number="1"
       visual="visual-arenenberger-vielfalt.png"
-      audio="arenenberger-vielfalt-en.mp3">
+      audio="arenenberger-vielfalt.mp3">
 
       <div class="mt-25">
         <p>{{ __('Erfahren Sie von den Anfängen des Arenenberg als Land- und Weingut und wie dieses sich nach der Schenkung an den Kanton Thurgau zum Ort der Kultur, Bildung und Beratung entwickelt.') }}</p>
