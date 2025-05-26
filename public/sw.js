@@ -1,4 +1,4 @@
-const CACHE_NAME = `arenenberg-assets-v0.0.4`;
+const CACHE_NAME = `arenenberg-assets-v0.0.9`;
 
 // Clean up old caches during activation
 self.addEventListener('activate', (event) => {
