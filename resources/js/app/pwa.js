@@ -320,14 +320,6 @@ const setupLanguageSwitching = () => {
   });
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  setupLanguageSwitching();
-
-  // Optional: re-enable language buttons if user goes back online
-  window.addEventListener('online', setupLanguageSwitching);
-  window.addEventListener('offline', setupLanguageSwitching);
-});
-
 // const cacheAllAssets = async () => {
 // 	const cacheProgress = document.querySelector('[data-cache-progress]');
 // 	const cacheProgressBar = document.querySelector('[data-cache-progress-bar]');
@@ -661,6 +653,13 @@ const initApp = () => {
 		initAccessForm();
 		initAccessButton();
 		initDownloadPage();
+
+    setupLanguageSwitching();
+
+    // Optional: re-enable language buttons if user goes back online
+    window.addEventListener('online', setupLanguageSwitching);
+    window.addEventListener('offline', setupLanguageSwitching);
+
 	});
 };
 
