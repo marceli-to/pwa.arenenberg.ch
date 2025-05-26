@@ -5,7 +5,7 @@
   'visual' => '',
   'audio' => ''
 ])
-<div class="w-full pt-15 pb-30">
+<div class="w-full pt-15 mb-45">
   <div class="flex flex-col gap-y-15 justify-between">
     <figure>
       <img src="/img/{{ $visual }}" alt="{{ $title }}" width="698" height="956" class="aspect-square w-full h-auto object-contain">
