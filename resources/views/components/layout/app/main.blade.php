@@ -1,5 +1,3 @@
 <main role="main">
-  <div x-show="!menu">
-    {{ $slot }}
-  </div>
+  {{ $slot }}
 </main>
