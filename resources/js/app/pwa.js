@@ -181,7 +181,7 @@ const validatePassword = async (password) => {
 const checkAuth = () => {
 	const authCookie = getCookie(COOKIE_NAME);
 	if (!authCookie) {
-		// window.location.href = '/index.html'; // Redirect to index.html if not authenticated
+		window.location.href = '/index.html'; // Redirect to index.html if not authenticated
 	}
 };
 
@@ -302,14 +302,11 @@ const setupLanguageSwitching = () => {
   const isOffline = !navigator.onLine;
   const cachedLangs = getCachedLanguages();
 
-  console.log(cachedLangs);
-
   links.forEach(link => {
     const lang = link.getAttribute('data-language');
 
     // If offline and language not cached, disable the link
     if (isOffline && !cachedLangs.includes(lang)) {
-      console.log('disable link');
       link.classList.add('!opacity-50', '!pointer-events-none');
       link.setAttribute('title', 'Language not available offline');
     } else {
