@@ -308,6 +308,7 @@ const setupLanguageSwitching = () => {
 
   links.forEach(link => {
     const lang = link.getAttribute('data-language');
+    console.log('lang', lang);
 
     // If offline and language not cached, disable the link
     if (isOffline && !cachedLangs.includes(lang)) {
