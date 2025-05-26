@@ -9,22 +9,6 @@
 // =======================================================
 const ASSETS = [
 	'/apple-touch-icon.png',
-
-  '/audio/de/arenenberger-vielfalt.mp3', 
-  '/audio/de/milch-mit-zukunft.mp3',
-  '/audio/de/vom-acker-auf-den-tisch.mp3',
-  '/audio/de/wundervolle-gartenwelt.mp3',
-
-  '/audio/fr/arenenberger-vielfalt.mp3', 
-  '/audio/fr/milch-mit-zukunft.mp3',
-  '/audio/fr/vom-acker-auf-den-tisch.mp3',
-  '/audio/fr/wundervolle-gartenwelt.mp3',
-
-  '/audio/en/arenenberger-vielfalt.mp3', 
-  '/audio/en/milch-mit-zukunft.mp3',
-  '/audio/en/vom-acker-auf-den-tisch.mp3',
-  '/audio/en/wundervolle-gartenwelt.mp3',
-
 	'/build/assets/GT-Alpina-Standard-Medium.woff',
 	'/build/assets/GT-Alpina-Standard-Medium.woff2',
   '/build/assets/GT-Alpina-Standard-Bold.woff',
@@ -77,6 +61,27 @@ const ASSETS = [
 	'/zugang/index.html',
 	'/download/index.html'
 ];
+
+const AUDIO_FILES = {
+  de: [
+    '/audio/de/arenenberger-vielfalt.mp3',
+    '/audio/de/kaiserliches-leben.mp3',
+    '/audio/de/milch-mit-zukunft.mp3',
+    '/audio/de/vom-acker-auf-den-tisch.mp3'
+  ],
+  fr: [
+    '/audio/fr/arenenberger-vielfalt-fr.mp3',
+    '/audio/fr/kaiserliches-leben-fr.mp3',
+    '/audio/fr/milch-mit-zukunft-fr.mp3',
+    '/audio/fr/vom-acker-auf-den-tisch-fr.mp3'
+  ],
+  en: [
+    '/audio/en/arenenberger-vielfalt-en.mp3',
+    '/audio/en/kaiserliches-leben-en.mp3',
+    '/audio/en/milch-mit-zukunft-en.mp3',
+    '/audio/en/vom-acker-auf-den-tisch-en.mp3'
+  ]
+};
 
 const CACHE_NAME = `arenenberg-assets-v0.0.4`;
 const COOKIE_NAME = 'arenenberg-auth';
@@ -177,6 +182,17 @@ const checkAuth = () => {
 	}
 };
 
+/**
+ * Returns the language code based on the current path
+ * @returns {string} 'de', 'fr', or 'en'
+ */
+const getLanguageFromPath = () => {
+  const path = window.location.pathname;
+  if (path.startsWith('/fr/')) return 'fr';
+  if (path.startsWith('/en/')) return 'en';
+  return 'de'; // default/fallback
+};
+
 // =======================================================
 // Caching Functions
 // =======================================================
@@ -185,76 +201,145 @@ const checkAuth = () => {
  * Caches all assets defined in ASSETS array
  */
 const cacheAllAssets = async () => {
-	const cacheProgress = document.querySelector('[data-cache-progress]');
-	const cacheProgressBar = document.querySelector('[data-cache-progress-bar]');
-	const resourceLoader = document.querySelector('[data-resources-loader]');
-	const successSection = document.querySelector('[data-success-section]');
+  const cacheProgress = document.querySelector('[data-cache-progress]');
+  const cacheProgressBar = document.querySelector('[data-cache-progress-bar]');
+  const resourceLoader = document.querySelector('[data-resources-loader]');
+  const successSection = document.querySelector('[data-success-section]');
 
-	if (resourceLoader) {
-		resourceLoader.classList.remove('hidden');
-		resourceLoader.classList.add('flex');
-	}
+  if (resourceLoader) {
+    resourceLoader.classList.remove('hidden');
+    resourceLoader.classList.add('flex');
+  }
 
-	try {
-		const cache = await caches.open(CACHE_NAME);
-		let cached = 0;
-		const totalAssets = ASSETS.length;
+  try {
+    const cache = await caches.open(CACHE_NAME);
+    const lang = getLanguageFromPath();
+    const audioAssets = AUDIO_FILES[lang] || [];
+    const finalAssetsToCache = [...ASSETS, ...audioAssets];
+    const totalAssets = finalAssetsToCache.length;
+    let cached = 0;
 
-		// Update progress text initially
-		if (cacheProgress) {
-			cacheProgress.textContent = `0%`;
-		}
+    if (cacheProgress) {
+      cacheProgress.textContent = `0%`;
+    }
 
-		for (const asset of ASSETS) {
-			const response = await cache.match(asset);
-			if (!response && navigator.onLine) {
-				try {
-					const networkResponse = await fetch(asset);
-					await cache.put(asset, networkResponse.clone());
-					cached++;
-				} catch (error) {
-					console.error(`Failed to cache ${asset}:`, error);
-				}
-			} else if (response) {
-				cached++;
-			}
-			
-			// Calculate percentage
-			const progressPercentage = Math.round((cached / totalAssets) * 100);
-			
-			// Update custom progress bar
-			if (cacheProgressBar) {
-				cacheProgressBar.value = progressPercentage;
-			}
-			
-			// Update progress text with percentage
-			if (cacheProgress) {
-				cacheProgress.textContent = `${progressPercentage}%`;
-			}
-		}
+    for (const asset of finalAssetsToCache) {
+      const response = await cache.match(asset);
+      if (!response && navigator.onLine) {
+        try {
+          const networkResponse = await fetch(asset);
+          if (networkResponse.ok) {
+            await cache.put(asset, networkResponse.clone());
+          }
+          cached++;
+        } catch (error) {
+          console.error(`Failed to cache ${asset}:`, error);
+        }
+      } else if (response) {
+        cached++;
+      }
 
-		// Final progress update
-		if (cacheProgress) {
-			cacheProgress.textContent = `100%`;
+      const progressPercentage = Math.round((cached / totalAssets) * 100);
+      if (cacheProgressBar) {
+        cacheProgressBar.value = progressPercentage;
+      }
+      if (cacheProgress) {
+        cacheProgress.textContent = `${progressPercentage}%`;
+      }
+    }
 
-			// Hide resources loader and show success section
-			if (resourceLoader) {
-				resourceLoader.classList.remove('flex');
-				resourceLoader.classList.add('hidden');
-			}
+    if (cacheProgress) {
+      cacheProgress.textContent = `100%`;
+    }
 
-			if (successSection) {
-				successSection.classList.remove('hidden');
-				successSection.classList.add('flex');
-			}
-		}
-	} catch (error) {
-		console.error('Cache check failed:', error);
-		if (cacheProgress) {
-			cacheProgress.textContent = 'Cache check failed';
-		}
-	}
+    if (resourceLoader) {
+      resourceLoader.classList.remove('flex');
+      resourceLoader.classList.add('hidden');
+    }
+
+    if (successSection) {
+      successSection.classList.remove('hidden');
+      successSection.classList.add('flex');
+    }
+  } catch (error) {
+    console.error('Cache check failed:', error);
+    if (cacheProgress) {
+      cacheProgress.textContent = 'Cache check failed';
+    }
+  }
 };
+
+// const cacheAllAssets = async () => {
+// 	const cacheProgress = document.querySelector('[data-cache-progress]');
+// 	const cacheProgressBar = document.querySelector('[data-cache-progress-bar]');
+// 	const resourceLoader = document.querySelector('[data-resources-loader]');
+// 	const successSection = document.querySelector('[data-success-section]');
+
+// 	if (resourceLoader) {
+// 		resourceLoader.classList.remove('hidden');
+// 		resourceLoader.classList.add('flex');
+// 	}
+
+// 	try {
+// 		const cache = await caches.open(CACHE_NAME);
+// 		let cached = 0;
+// 		const totalAssets = ASSETS.length;
+
+// 		// Update progress text initially
+// 		if (cacheProgress) {
+// 			cacheProgress.textContent = `0%`;
+// 		}
+
+// 		for (const asset of ASSETS) {
+// 			const response = await cache.match(asset);
+// 			if (!response && navigator.onLine) {
+// 				try {
+// 					const networkResponse = await fetch(asset);
+// 					await cache.put(asset, networkResponse.clone());
+// 					cached++;
+// 				} catch (error) {
+// 					console.error(`Failed to cache ${asset}:`, error);
+// 				}
+// 			} else if (response) {
+// 				cached++;
+// 			}
+			
+// 			// Calculate percentage
+// 			const progressPercentage = Math.round((cached / totalAssets) * 100);
+			
+// 			// Update custom progress bar
+// 			if (cacheProgressBar) {
+// 				cacheProgressBar.value = progressPercentage;
+// 			}
+			
+// 			// Update progress text with percentage
+// 			if (cacheProgress) {
+// 				cacheProgress.textContent = `${progressPercentage}%`;
+// 			}
+// 		}
+
+// 		// Final progress update
+// 		if (cacheProgress) {
+// 			cacheProgress.textContent = `100%`;
+
+// 			// Hide resources loader and show success section
+// 			if (resourceLoader) {
+// 				resourceLoader.classList.remove('flex');
+// 				resourceLoader.classList.add('hidden');
+// 			}
+
+// 			if (successSection) {
+// 				successSection.classList.remove('hidden');
+// 				successSection.classList.add('flex');
+// 			}
+// 		}
+// 	} catch (error) {
+// 		console.error('Cache check failed:', error);
+// 		if (cacheProgress) {
+// 			cacheProgress.textContent = 'Cache check failed';
+// 		}
+// 	}
+// };
 
 // =======================================================
 // Service Worker Management
