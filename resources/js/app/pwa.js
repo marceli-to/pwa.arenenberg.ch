@@ -575,12 +575,14 @@ const initAccessButton = () => {
 		
 		// Validate the passcode
 		if (await validatePassword(passcode)) {
-			// Set cookie for authentication
-			setCookie(COOKIE_NAME, 'true', 60); // Set cookie for 60 minutes
+      
+			// Set cookie for 4320 minutes (3 days)
+			setCookie(COOKIE_NAME, 'true', 4320);
 			
 			// Redirect to the download page
 			window.location.href = redirectUrl;
-		} else {
+		} 
+    else {
 			// Show error message
 			if (accessError) {
 				accessError.classList.remove('hidden');
