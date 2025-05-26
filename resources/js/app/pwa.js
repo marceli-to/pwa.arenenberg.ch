@@ -218,6 +218,7 @@ const cacheAllAssets = async () => {
     const cache = await caches.open(CACHE_NAME);
     const lang = getLanguageFromPath();
     const audioAssets = AUDIO_FILES[lang] || [];
+    markLanguageAsCached(lang);
     const finalAssetsToCache = [...ASSETS, ...audioAssets];
     const totalAssets = finalAssetsToCache.length;
     let cached = 0;
@@ -271,6 +272,58 @@ const cacheAllAssets = async () => {
     }
   }
 };
+
+/**
+ * Marks a language as cached in localStorage
+ * @param {*} lang 
+ */
+const markLanguageAsCached = (lang) => {
+  const cached = JSON.parse(localStorage.getItem('cachedLanguages') || '[]');
+  if (!cached.includes(lang)) {
+    cached.push(lang);
+    localStorage.setItem('cachedLanguages', JSON.stringify(cached));
+  }
+};
+
+/**
+ * Gets the list of cached languages from localStorage
+ * @returns {Array} Array of cached languages
+ */
+const getCachedLanguages = () => {
+  return JSON.parse(localStorage.getItem('cachedLanguages') || '[]');
+};
+
+/**
+ * Sets up language switching functionality
+ * Disables language links that are not cached when offline
+ */
+const setupLanguageSwitching = () => {
+  const links = document.querySelectorAll('[data-language]');
+  const isOffline = !navigator.onLine;
+  const cachedLangs = getCachedLanguages();
+
+  links.forEach(link => {
+    const lang = link.getAttribute('data-language');
+
+    // If offline and language not cached, disable the link
+    if (isOffline && !cachedLangs.includes(lang)) {
+      link.classList.add('opacity-50', 'pointer-events-none');
+      link.setAttribute('title', 'Language not available offline');
+    } else {
+      // Optional: remove restrictions if reloading while online
+      link.classList.remove('opacity-50', 'pointer-events-none');
+      link.removeAttribute('title');
+    }
+  });
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupLanguageSwitching();
+
+  // Optional: re-enable language buttons if user goes back online
+  window.addEventListener('online', setupLanguageSwitching);
+  window.addEventListener('offline', setupLanguageSwitching);
+});
 
 // const cacheAllAssets = async () => {
 // 	const cacheProgress = document.querySelector('[data-cache-progress]');
