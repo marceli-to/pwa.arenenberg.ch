@@ -10,7 +10,7 @@
 <meta name="description" content="Ein Parcours durch die Arenenberger Vielfalt">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<meta name="csrf-token" content="B03oNVROYFqMgOQFRgsxDMLFhShfeV2MNHCv0JYs">
+<meta name="csrf-token" content="T0E0S3wvRKFOPaOxBxXB2QBrJGcTQWwFdIi5ykoQ">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -59,49 +59,6 @@
   x-data="{ activeSection: null }" 
   class=" border-b border-b-evergreen">
 	<div 
-	class="w-full border-t border-t-evergreen py-10">
-	<div 
-		@click="activeSection = (activeSection === 'language') ? null : 'language'"
-		class="flex items-center justify-between cursor-pointer">
-		<span class="text-xl select-none">
-			Sélection de la langue
-		</span>
-		<span x-show="activeSection !== 'language'">
-			<svg width="35" height="20" viewBox="0 0 35 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-32 h-auto">
-<path d="M0.707001 1.20801L17.147 17.622L33.588 1.20801" stroke="currentColor" stroke-width="2"/>
-</svg>
-		</span>
-		<span x-show="activeSection === 'language'">
-			<svg width="35" height="20" viewBox="0 0 35 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-32 h-auto">
-<path d="M0.707001 18.327L17.147 1.91296L33.588 18.327" stroke="currentColor" stroke-width="2"/>
-</svg>
-		</span>
-	</div>
-	<div 
-		class="mt-10 pb-10 !py-20"
-		x-show="activeSection === 'language'">
-		<div>
-			<div class="flex justify-center gap-45">
-        <a 
-  href="https://pwa.arenenberg.ch.marceli.to/standorte/liste/index.html" 
-  class="flex items-center justify-center text-2xl text-center rounded-full w-64 h-64 border-crimson border-2 transition-colors bg-blush text-crimson"
->
-  <span>D</span>
-</a>        <a 
-  href="https://pwa.arenenberg.ch.marceli.to/fr/sites/liste/index.html" 
-  class="flex items-center justify-center text-2xl text-center rounded-full w-64 h-64 border-crimson border-2 transition-colors bg-crimson text-blush"
->
-  <span>F</span>
-</a>        <a 
-  href="https://pwa.arenenberg.ch.marceli.to/en/locations/list/index.html" 
-  class="flex items-center justify-center text-2xl text-center rounded-full w-64 h-64 border-crimson border-2 transition-colors bg-blush text-crimson"
->
-  <span>E</span>
-</a>      </div>
-		</div>
-	</div>
-</div>  
-    <div 
 	class="w-full border-t border-t-evergreen py-10">
 	<div 
 		@click="activeSection = (activeSection === 'impressum') ? null : 'impressum'"
