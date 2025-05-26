@@ -8,6 +8,20 @@
 // Configuration Constants
 // =======================================================
 const ASSETS = [
+
+  '/audio/de/kaiserliches-leben.mp3',
+  '/audio/de/milch-mit-zukunft.mp3',
+  '/audio/de/vom-acker-auf-den-tisch.mp3',
+  '/audio/de/wundervolle-gartenwelt.mp3',
+  '/audio/fr/kaiserliches-leben.mp3',
+  '/audio/fr/milch-mit-zukunft.mp3',
+  '/audio/fr/vom-acker-auf-den-tisch.mp3',
+  '/audio/fr/wundervolle-gartenwelt.mp3',
+  '/audio/en/kaiserliches-leben.mp3',
+  '/audio/en/milch-mit-zukunft.mp3',
+  '/audio/en/vom-acker-auf-den-tisch.mp3',
+  '/audio/en/wundervolle-gartenwelt.mp3',
+
 	'/apple-touch-icon.png',
 	'/build/assets/GT-Alpina-Standard-Medium.woff',
 	'/build/assets/GT-Alpina-Standard-Medium.woff2',
@@ -213,10 +227,18 @@ const cacheAllAssets = async () => {
 
   try {
     const cache = await caches.open(CACHE_NAME);
-    const lang = getLanguageFromPath();
-    const audioAssets = AUDIO_FILES[lang] || [];
-    markLanguageAsCached(lang);
-    const finalAssetsToCache = [...ASSETS, ...audioAssets];
+    // temp: removed separated audio caching
+
+    // const lang = getLanguageFromPath();
+    // const audioAssets = AUDIO_FILES[lang] || [];
+    // markLanguageAsCached(lang);
+    // const finalAssetsToCache = [...ASSETS, ...audioAssets];
+    // const totalAssets = finalAssetsToCache.length;
+
+    // -- temp: removed separated audio caching
+
+    // temp: caching all assets
+    const finalAssetsToCache = ASSETS;
     const totalAssets = finalAssetsToCache.length;
     let cached = 0;
 
@@ -648,11 +670,10 @@ const initApp = () => {
 		initAccessButton();
 		initDownloadPage();
 
-    setupLanguageSwitching();
-
-    // Optional: re-enable language buttons if user goes back online
-    window.addEventListener('online', setupLanguageSwitching);
-    window.addEventListener('offline', setupLanguageSwitching);
+    // Language switching, disabled for now
+    // setupLanguageSwitching();
+    // window.addEventListener('online', setupLanguageSwitching);
+    // window.addEventListener('offline', setupLanguageSwitching);
 
 	});
 };
