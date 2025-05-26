@@ -4,7 +4,7 @@
 	class="relative w-full mt-50">
   <x-accordion.wrapper>
 
-    {{-- <x-accordion.item 
+    <x-accordion.item 
       title="{{ __('Sprachauswahl') }}" 
       id="language"
       contentClasses="!py-20">
@@ -13,7 +13,7 @@
         <x-buttons.language route="{{ current_route('fr') }}" label="F" active="{{ app()->getLocale() === 'fr' }}" />
         <x-buttons.language route="{{ current_route('en') }}" label="E" active="{{ app()->getLocale() === 'en' }}" />
       </div>
-    </x-accordion.item> --}}
+    </x-accordion.item>
   
     <x-accordion.item 
       title="{{ __('Impressum') }}" 
