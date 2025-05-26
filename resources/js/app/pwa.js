@@ -302,6 +302,10 @@ const setupLanguageSwitching = () => {
   const isOffline = !navigator.onLine;
   const cachedLangs = getCachedLanguages();
 
+  console.log('links', links);
+  console.log('isOffline', isOffline);
+  console.log('cachedLangs', cachedLangs);
+
   links.forEach(link => {
     const lang = link.getAttribute('data-language');
 
