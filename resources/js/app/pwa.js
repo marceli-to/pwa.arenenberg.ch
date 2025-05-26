@@ -302,17 +302,13 @@ const setupLanguageSwitching = () => {
   const isOffline = !navigator.onLine;
   const cachedLangs = getCachedLanguages();
 
-  console.log('links', links);
-  console.log('isOffline', isOffline);
-  console.log('cachedLangs', cachedLangs);
-
   links.forEach(link => {
     const lang = link.getAttribute('data-language');
-    console.log('lang', lang);
 
     // If offline and language not cached, disable the link
     if (isOffline && !cachedLangs.includes(lang)) {
-      link.classList.add('opacity-50', 'pointer-events-none');
+      console.log('disable link');
+      link.classList.add('!opacity-50', '!pointer-events-none');
       link.setAttribute('title', 'Language not available offline');
     } else {
       // Optional: remove restrictions if reloading while online
