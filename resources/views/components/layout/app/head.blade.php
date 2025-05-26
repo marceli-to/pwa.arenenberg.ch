@@ -1,7 +1,7 @@
 <!doctype html>
 <html
   lang="{{ app()->getLocale() }}"
-  class="scroll-smooth overflow-y-auto"
+  class="scroll-smooth"
   x-data="{ menu: false }">
 <head>
 <meta charset="utf-8">
@@ -19,4 +19,4 @@
 <link rel="manifest" href="/site.webmanifest" />
 @vite('resources/css/app.css')
 </head>
-<body class="antialiased font-gt-alpina-medium text-md leading-[1.2] text-evergreen bg-blush max-w-lg mx-auto px-15">
+<body class="antialiased font-gt-alpina-medium text-md leading-[1.2] text-evergreen bg-blush max-w-lg mx-auto px-15  overflow-y-auto">
