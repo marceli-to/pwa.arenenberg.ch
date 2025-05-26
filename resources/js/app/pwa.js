@@ -658,7 +658,10 @@ const initApp = () => {
 
     // Optional: re-enable language buttons if user goes back online
     window.addEventListener('online', setupLanguageSwitching);
-    window.addEventListener('offline', setupLanguageSwitching);
+    window.addEventListener('offline', function() {
+      console.log('offline');
+      setupLanguageSwitching();
+    });
 
 	});
 };
