@@ -70,16 +70,16 @@ const AUDIO_FILES = {
     '/audio/de/vom-acker-auf-den-tisch.mp3'
   ],
   fr: [
-    '/audio/fr/arenenberger-vielfalt-fr.mp3',
-    '/audio/fr/kaiserliches-leben-fr.mp3',
-    '/audio/fr/milch-mit-zukunft-fr.mp3',
-    '/audio/fr/vom-acker-auf-den-tisch-fr.mp3'
+    '/audio/fr/arenenberger-vielfalt.mp3',
+    '/audio/fr/kaiserliches-leben.mp3',
+    '/audio/fr/milch-mit-zukunft.mp3',
+    '/audio/fr/vom-acker-auf-den-tisch.mp3'
   ],
   en: [
-    '/audio/en/arenenberger-vielfalt-en.mp3',
-    '/audio/en/kaiserliches-leben-en.mp3',
-    '/audio/en/milch-mit-zukunft-en.mp3',
-    '/audio/en/vom-acker-auf-den-tisch-en.mp3'
+    '/audio/en/arenenberger-vielfalt.mp3',
+    '/audio/en/kaiserliches-leben.mp3',
+    '/audio/en/milch-mit-zukunft.mp3',
+    '/audio/en/vom-acker-auf-den-tisch.mp3'
   ]
 };
 
