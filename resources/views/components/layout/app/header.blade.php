@@ -55,5 +55,4 @@
     </div>
   </header>
 @endif
-
 <x-layout.app.menu.wrapper />
