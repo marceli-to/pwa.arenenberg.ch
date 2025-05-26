@@ -78,7 +78,7 @@ const ASSETS = [
 	'/download/index.html'
 ];
 
-const CACHE_NAME = `arenenberg-assets-v0.0.3`;
+const CACHE_NAME = `arenenberg-assets-v0.0.4`;
 const COOKIE_NAME = 'arenenberg-auth';
 
 // Paths excluded from service worker registration
