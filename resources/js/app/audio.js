@@ -148,7 +148,6 @@ const AudioPlayer = (function() {
         this.updateProgress();
       });
 
-
       let isDragging = false;
 
       const onTouchMove = (e) => {
@@ -157,14 +156,19 @@ const AudioPlayer = (function() {
       };
     
       const onTouchEnd = () => {
-        isDragging = false;
+        if (isDragging) {
+          isDragging = false;
+          this.startUpdatingProgress(); // resume updates
+        }
       };
     
       this.progressContainer.addEventListener('touchstart', (e) => {
         if (!e.touches.length) return;
+        e.preventDefault();
         isDragging = true;
+        this.stopUpdatingProgress(); // pause updates
         this.setProgress(e.touches[0]);
-      });
+      }, { passive: false });
     
       document.addEventListener('touchmove', onTouchMove);
       document.addEventListener('touchend', onTouchEnd);
