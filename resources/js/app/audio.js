@@ -148,6 +148,28 @@ const AudioPlayer = (function() {
         this.updateProgress();
       });
 
+
+      let isDragging = false;
+
+      const onTouchMove = (e) => {
+        if (!isDragging || !e.touches.length) return;
+        this.setProgress(e.touches[0]);
+      };
+    
+      const onTouchEnd = () => {
+        isDragging = false;
+      };
+    
+      this.progressContainer.addEventListener('touchstart', (e) => {
+        if (!e.touches.length) return;
+        isDragging = true;
+        this.setProgress(e.touches[0]);
+      });
+    
+      document.addEventListener('touchmove', onTouchMove);
+      document.addEventListener('touchend', onTouchEnd);
+      
+
       this.playBtn.addEventListener('click', this.play);
       this.pauseBtn.addEventListener('click', this.pause);
       this.rewindBtn.addEventListener('click', () => this.seek(-15));
