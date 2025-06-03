@@ -10,7 +10,7 @@
 <meta name="description" content="Ein Parcours durch die Arenenberger Vielfalt">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<meta name="csrf-token" content="HsImMWe4kv9GN3oZJwMKtQXa7nIbPBpAoYvEonFp">
+<meta name="csrf-token" content="kyeiqkDGTsuyk077DpYon3AcMJesDpWQ6YfQxxoA">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -169,7 +169,7 @@
   <div x-show="!menu">
     <!-- Resources loader section  -->
   <div 
-    class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen flex flex-col justify-between"
+    class="w-full mt-50 border-t border-t-evergreen flex flex-col justify-between"
     data-resources-loader>
     <div class="mt-10 pb-40 border-b border-b-evergreen">
       <h2 class="text-lg leading-[1.4]">
@@ -192,20 +192,24 @@
 
   <!-- Success section -->
   <div 
-    class="w-full min-h-[calc(100dvh_-_175px)] mt-50 border-t border-t-evergreen hidden flex-col justify-between"
+    class="w-full mt-50 border-t border-t-evergreen hidden flex-col justify-between"
     data-success-section>
+    
     <div class="text-lg py-10">
       <h1 class="text-2xl mb-15">Explorez Arenenberg!</h1>
       <p>Un court-métrage et quatre reportages audio avec Annette Fetscherin et des expertes et experts d’Arenenberg donnent un aperçu de la richesse du passé et du présent du lieu. Vous pouvez parcourir les étapes sur l’ensemble du site dans l’ordre de votre choix. Un jeu attend les visiteuses et visiteurs de tout âge. Si vous avez des questions, n’hésitez pas à les poser à la boutique.</p>
     </div>
-    <a 
+
+    <div class="fixed bottom-25 w-full left-1/2 -translate-x-1/2">
+      <a 
     href="https://pwa.arenenberg.ch.marceli.to/fr/sites/liste/index.html" 
-    class="w-full max-w-[290px] mx-auto text-xl h-50 border-2 border-evergreen bg-red-400 rounded-full flex items-center justify-center shrink-0 hover:text-blush hover:border-crimson hover:bg-crimson "
+    class="w-full max-w-[290px] mx-auto text-xl h-50 border-2 border-evergreen bg-blush rounded-full flex items-center justify-center shrink-0 hover:text-blush hover:border-crimson hover:bg-crimson "
     title="C’est parti !"
     aria-label="C’est parti !"
     >
     <span>C’est parti !</span>
   </a>
+    </div>
   </div>
   <!-- End Success section -->
   </div>

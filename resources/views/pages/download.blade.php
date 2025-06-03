@@ -2,7 +2,7 @@
   @section('content')
   <!-- Resources loader section  -->
   <div 
-    class="w-full h-[calc(100dvh_-_215px)] mt-50 border-t border-t-evergreen flex flex-col justify-between"
+    class="w-full mt-50 border-t border-t-evergreen flex flex-col justify-between"
     data-resources-loader>
     <div class="mt-10 pb-40 border-b border-b-evergreen">
       <h2 class="text-lg leading-[1.4]">
@@ -25,17 +25,21 @@
 
   <!-- Success section -->
   <div 
-    class="w-full min-h-[calc(100dvh_-_175px)] mt-50 border-t border-t-evergreen hidden flex-col justify-between"
+    class="w-full mt-50 border-t border-t-evergreen hidden flex-col justify-between"
     data-success-section>
+    
     <div class="text-lg py-10">
       <h1 class="text-2xl mb-15">{{ __('Erkunden Sie den Arenenberg!') }}</h1>
       <p>{{ __('Ein Kurzfilm und vier Hörreportagen mit Annette Fetscherin und Arenenberger Expertinnen und Experten gewähren Einblicke in die vielfältige Geschichte und Gegenwart des Ortes. Die Stationen auf dem gesamten Areal sind in beliebiger Reihenfolge erlebbar. Und stets erwartet Gross und Klein ein Spiel. Bei Fragen melden Sie sich gerne im Shop.') }}</p>
     </div>
-    <x-buttons.primary 
-      type="link"
-      route="{{ localized_route('page.locations.list') }}"
-      label="{!! __('Los geht’s!') !!}">
-    </x-buttons.primary>
+
+    <div class="fixed bottom-25 w-full left-1/2 -translate-x-1/2">
+      <x-buttons.primary 
+        type="link"
+        route="{{ localized_route('page.locations.list') }}"
+        label="{!! __('Los geht’s!') !!}">
+      </x-buttons.primary>
+    </div>
   </div>
   <!-- End Success section -->
   @endsection
