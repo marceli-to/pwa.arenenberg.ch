@@ -17,7 +17,7 @@
           id="access-code" 
           contentClasses="block w-full pt-10">
           <div class="text-center text-xl tracking-[.3rem]">
-            5826
+            2974
           </div>
         </x-accordion.item>
 

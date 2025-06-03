@@ -10,7 +10,7 @@
 <meta name="description" content="Ein Parcours durch die Arenenberger Vielfalt">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<meta name="csrf-token" content="iDfZ6vVQP83r8ZSuvIyeD1h1ReIKwOvsgItGiPA1">
+<meta name="csrf-token" content="oaZnBNu8RukqNw63utly9eBcrWbCWTzWEf0HWT9O">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -218,9 +218,43 @@
       </div>
   
 </div>
-      <div class="my-25">
+      <div class="mt-25">
         <p>Hören Sie, welche Technologien die Arenenberger Milchwirtschaft zukunftsweisend machen. Annette Fetscherin unterhält sich mit dem Betriebsleiter Hansjörg Hauser und dem Schulleiter Michael Schwarzenberger.</p>
       </div>
+
+      <div 
+  x-data="{ activeSection: null }" 
+  class="mt-25 border-b border-b-evergreen">
+	<div 
+	class="w-full border-t border-t-evergreen py-10">
+	<div 
+		@click="activeSection = (activeSection === 'access-code') ? null : 'access-code'"
+		class="flex items-center justify-between cursor-pointer">
+		<span class="text-xl select-none">
+			Schlüssel
+		</span>
+		<span x-show="activeSection !== 'access-code'">
+			<svg width="35" height="20" viewBox="0 0 35 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-32 h-auto">
+<path d="M0.707001 1.20801L17.147 17.622L33.588 1.20801" stroke="currentColor" stroke-width="2"/>
+</svg>
+		</span>
+		<span x-show="activeSection === 'access-code'">
+			<svg width="35" height="20" viewBox="0 0 35 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-32 h-auto">
+<path d="M0.707001 18.327L17.147 1.91296L33.588 18.327" stroke="currentColor" stroke-width="2"/>
+</svg>
+		</span>
+	</div>
+	<div 
+		class="mt-10 pb-10 block w-full pt-10"
+		x-show="activeSection === 'access-code'">
+		<div>
+			<div class="text-center text-xl tracking-[.3rem]">
+            4529
+          </div>
+		</div>
+	</div>
+</div>
+</div>
   </div>
 </main>
 <script type="module" src="https://pwa.arenenberg.ch.marceli.to/build/assets/app.js"></script></body>

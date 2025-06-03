@@ -7,9 +7,22 @@
       visual="visual-kaiserliches-leben.png"
       audio="kaiserliches-leben.mp3" />
 
-      <div class="my-25">
+      <div class="mt-25">
         <p>{{ __('Bringen Sie in Erfahrung, wie die französische Kaiserfamilie am Arenenberg heimisch wird und die Gegend am Untersee bis heute prägt. Annette Fetscherin informiert sich bei der Museumsmitarbeiterin Christina Egli.') }}</p>
       </div>
+
+      <x-accordion.wrapper class="mt-25">
+      
+        <x-accordion.item 
+          title="{{ __('Schlüssel') }}" 
+          id="access-code" 
+          contentClasses="block w-full pt-10">
+          <div class="text-center text-xl tracking-[.3rem]">
+            5364
+          </div>
+        </x-accordion.item>
+
+      </x-accordion.wrapper>
 
       <x-toggleable title="{{ __('Bildnachweise') }}">
 
