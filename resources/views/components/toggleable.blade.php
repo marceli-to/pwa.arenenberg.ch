@@ -2,7 +2,7 @@
   'title' => '',
 ])
 
-<div class="pb-45" x-data="{ open: false }">
+<div class="mt-25 pb-25" x-data="{ open: false }">
   <a 
     href="javascript:;" 
     @click="open = !open"
