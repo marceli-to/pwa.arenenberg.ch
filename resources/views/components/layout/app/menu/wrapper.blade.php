@@ -44,7 +44,7 @@
       </p>
       
       <p>
-        {{ __('Programmierung: Marcel Stadelmann, Winterthur/Zürich') }}<br>
+        {{ __('Programmierung: Marcel Stadelmann, Zürich') }}<br>
         {{ __('Übersetzungen: Supertext, Zürich') }}
       </p>
       
