@@ -1,7 +1,7 @@
 <!doctype html>
 <html
   lang="{{ app()->getLocale() }}"
-  class="scroll-smooth"
+  class="scroll-smooth bg-blush"
   x-data="{ menu: false }">
 <head>
 <meta charset="utf-8">
