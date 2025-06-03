@@ -5,7 +5,7 @@
       description="{{ __('Grabplatte') }}"
       number="5"
       visual="visual-kaiserliches-leben.png"
-      audio="kaiserliches-leben.mp3" />
+      audio="kaiserliches-leben.mp3">
 
       <div class="mt-25">
         <p>{{ __('Bringen Sie in Erfahrung, wie die französische Kaiserfamilie am Arenenberg heimisch wird und die Gegend am Untersee bis heute prägt. Annette Fetscherin informiert sich bei der Museumsmitarbeiterin Christina Egli.') }}</p>
@@ -111,5 +111,7 @@
         </p>
 
       </x-toggleable>
+
+    </x-locations.show>
   @endsection
 </x-layout.app>
