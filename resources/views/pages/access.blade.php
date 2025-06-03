@@ -64,12 +64,14 @@
       </div>
     </div>
 
-    <x-buttons.primary 
-      route="{{ localized_route('page.download') }}"
-      data-access-button
-      type="link"
-      label="{{ __('Abschicken') }}">
-    </x-buttons.primary>
+    <div class="fixed bottom-25 left-1/2 -translate-x-1/2">
+      <x-buttons.primary 
+        route="{{ localized_route('page.download') }}"
+        data-access-button
+        type="link"
+        label="{{ __('Abschicken') }}">
+      </x-buttons.primary>
+    </div>
   </form>
   @endsection
 </x-layout.app>
