@@ -1,5 +1,5 @@
 <figure class="relative">
-  <svg viewBox="0 0 1000 1400" class="block w-full h-auto text-blush !leading-none relative">
+  <svg viewBox="0 0 1000 1400" class="block w-full h-auto pb-125 text-blush !leading-none relative">
     <image href="/img/map.png" width="1000" height="1400" preserveAspectRatio="xMidYMid slice" />
 
     <a 
