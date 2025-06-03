@@ -1,7 +1,7 @@
 <div 
 	x-cloak 
 	x-show="menu"
-	class="relative w-full mt-50">
+	class="relative w-full mt-50 pb-25">
   <x-accordion.wrapper>
 
     <x-accordion.item 
