@@ -10,7 +10,7 @@
 <meta name="description" content="Ein Parcours durch die Arenenberger Vielfalt">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<meta name="csrf-token" content="TXXG6bWkihQQORJwF3NA7tRCSQtVzoWjQ7hzctrH">
+<meta name="csrf-token" content="vArzjJnezNdbHjPQaUpL7KmYyEVeAhGGfwjMIE2K">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -221,6 +221,61 @@
       <div class="my-25">
         <p>Erfahren Sie Wissenswertes über die Entstehung und die Bedeutung des Arenenberger Landschaftsparks. Annette Fetscherin befragt den Museumsdirektor Dominik Gügel und den Landschaftsgärtner Daniel Brogle. </p>
       </div>
+
+      <div class="mt-45" x-data="{ open: false }">
+  <a 
+    href="javascript:;" 
+    @click="open = !open"
+    class="font-gt-alpina-bold font-normal underline underline-offset-5">
+    Bildnachweise
+  </a>
+  <div 
+    x-cloak 
+    x-show="open"
+    class="mt-20">
+    <p>
+          <strong>
+            Hortense de Beauharnais
+          </strong><br>
+          François Baron Gérard, Hortense de Beauharnais, Napoleon Museum Thurgau, Schloss und Park Arenenberg/Daniel Steiner
+        </p>
+
+        <p>
+          <strong>
+            Hermann von Pückler-Muskau
+          </strong><br>
+          Porträt Hermann Fürst von Pückler-Muskau in preussischer Uniform, Öl auf Leinwand, August Gosch nach Franz Krüger, 1846, Inv.-Nr.: GFPB-043, mit Genehmigung der Gräflichen Familie von Pückler in Branitz, © Stiftung Fürst-Pückler-Museum Park und Schloss Branitz
+        </p>
+
+        <p>
+          <strong>
+            Napoléon III
+          </strong><br>
+          Felix Cottr(e)au, Prinz Louis Napoléon im Park von Schloss Arenenberg, Napoleon Museum Thurgau, Schloss und Park Arenenberg
+        </p>
+
+        <p>
+          <strong>
+            Park Arenenberg um 1817
+          </strong><br>
+          Hortense de Beauharnais, Arenenberg und Salenstein von Südwesten, Napoleonmuseum Thurgau, Schloss und Park Arenenberg
+        </p>
+
+        <p>
+          <strong>
+            Flächenplan Schlossgut Arenenberg um 1835
+          </strong><br>
+          Flächenplan des Schlossgutes Arenenberg, 1835, Staatsarchiv des Kantons Thurgau, StATG Slg. 1, K/P 02421
+        </p>
+
+        <p>
+          <strong>
+            Die Eremitage um 1860
+          </strong><br>
+          Nach Egidius Federle, Die Eremitage, 1860, Napoleonmuseum Thurgau, Schloss und Park Arenenberg
+        </p>
+  </div>
+</div>
   </div>
 </main>
 <script type="module" src="https://pwa.arenenberg.ch.marceli.to/build/assets/app.js"></script></body>

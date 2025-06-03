@@ -23,29 +23,6 @@
 
       </x-accordion.wrapper>
 
-      <x-toggleable title="{{ __('Bildnachweise') }}">
-        <p>
-          <strong>
-            {{ __('Hortense de Beaurnhais') }}
-          </strong><br>
-          {{ __('François Baron Gérard, Hortense de Beauharnais, Napoleon Museum Thurgau, Schloss und Park Arenenberg/Daniel Steiner') }}
-        </p>
-
-        <p>
-          <strong>
-            {{ __('Hermann Fürst von Pückler-Muskau') }}
-          </strong><br>
-          {{ __('Porträt Hermann Fürst von Pückler-Muskau in preussischer Uniform, Öl auf Leinwand, August Gosch nach Franz Krüger, 1846, Inv.-Nr.: GFPB-043, mit Genehmi-gung der Gräflichen Familie von Pückler in Branitz, © Stiftung Fürst-Pückler-Museum Park und Schloss Branitz') }}
-        </p>
-
-        <p>
-          <strong>
-            {{ __('Napoléon III.') }}
-          </strong><br>
-          {{ __('Felix Cottr(e)au, Prinz Louis Napoléon im Park von Schloss Arenenberg.') }}
-        </p>
-      </x-toggleable>
-
     </x-locations.show>
   @endsection
 </x-layout.app>

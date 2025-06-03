@@ -10,7 +10,7 @@
 <meta name="description" content="Ein Parcours durch die Arenenberger Vielfalt">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<meta name="csrf-token" content="lV81AeSd2p7suweTWP6tPqG3CbCjiFukP2g1J1Tg">
+<meta name="csrf-token" content="gmGDEb0Q5yT4RlDIOaCuohzVfF6SPU3cSZ1cZtxr">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -221,6 +221,61 @@
       <div class="my-25">
         <p>Erfahren Sie Wissenswertes über die Entstehung und die Bedeutung des Arenenberger Landschaftsparks. Annette Fetscherin befragt den Museumsdirektor Dominik Gügel und den Landschaftsgärtner Daniel Brogle. </p>
       </div>
+
+      <div class="mt-45" x-data="{ open: false }">
+  <a 
+    href="javascript:;" 
+    @click="open = !open"
+    class="font-gt-alpina-bold font-normal underline underline-offset-5">
+    Légende
+  </a>
+  <div 
+    x-cloak 
+    x-show="open"
+    class="mt-20">
+    <p>
+          <strong>
+            Hortense de Beauharnais
+          </strong><br>
+          François Baron Gérard, Hortense de Beauharnais, musée Napoléon de Thurgovie, château et parc d’Arenenberg/Daniel Steiner
+        </p>
+
+        <p>
+          <strong>
+            Hermann von Pückler-Muskau
+          </strong><br>
+          Portrait du prince Hermann von Pückler-Muskau en uniforme prussien, huile sur toile, August Gosch d’après Franz Krüger, 1846, no inv. : GFPB-043, avec l’autorisation de la famille von Pückler à Branitz, © Stiftung Fürst-Pückler-Museum Park et château de Branitz
+        </p>
+
+        <p>
+          <strong>
+            Napoléon III
+          </strong><br>
+          Félix Cottr(e)au, Le Prince Louis Napoléon dans le parc du château d’Arenenberg, musée Napoléon de Thurgovie, château et parc d’Arenenberg
+        </p>
+
+        <p>
+          <strong>
+            Parc d’Arenenberg vers 1817
+          </strong><br>
+          Hortense de Beauharnais, Arenenberg et Salenstein au sud-ouest, musée Napoléon de Thurgovie, château et parc d’Arenenberg
+        </p>
+
+        <p>
+          <strong>
+            Plan du domaine du château d’Arenenberg vers 1835 
+          </strong><br>
+          Plan du domaine du château d’Arenenberg, 1835, Archives nationales du canton de Thurgovie, StATG Slg. 1, K/P 02421 
+        </p>
+
+        <p>
+          <strong>
+            L’ermitage vers 1860
+          </strong><br>
+          D’après Egidius Federle, L’Ermitage, 1860, musée Napoléon de Thurgovie, château et parc d’Arenenberg
+        </p>
+  </div>
+</div>
   </div>
 </main>
 <script type="module" src="https://pwa.arenenberg.ch.marceli.to/build/assets/app.js"></script></body>
