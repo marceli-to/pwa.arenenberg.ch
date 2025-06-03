@@ -1,7 +1,7 @@
 <x-layout.app>
   @section('content')
   <div 
-    class="w-full min-h-[calc(100dvh_-_175px)] mt-50 flex flex-col justify-between gap-y-25">
+    class="w-full mt-50 flex flex-col justify-between gap-y-25">
     <div>
       <x-locations.list-item 
         route="{{ localized_route('page.locations.show', Str::slug('Arenenberger Vielfalt')) }}"
@@ -33,7 +33,8 @@
         description="{{ __('Grabplatte') }}"
         number="5" />
     </div>
-    <div>
+    
+    <div class="fixed bottom-25 w-full left-1/2 -translate-x-1/2">
       <x-buttons.primary 
         route="{{ localized_route('page.locations.map') }}"
         type="link"
