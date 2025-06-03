@@ -15,7 +15,7 @@
       href="{{ localized_route('page.locations.show', Str::slug('Milch mit Zukunft')) }}"
       title="{{ __('Milch mit Zukunft') }}"
       class="block w-29 h-29 absolute text-crimson">
-      <g transform="translate(790, 560) scale(2.5)">
+      <g transform="translate(830, 520) scale(2.5)">
         @include('components.icons.numbers.red.2', ['class' => 'block w-29 h-29'])
       </g>
     </a>
@@ -24,7 +24,7 @@
       href="{{ localized_route('page.locations.show', Str::slug('Vom Acker auf den Tisch')) }}"
       title="{{ __('Vom Acker auf den Tisch') }}"
       class="block w-29 h-29 absolute text-crimson">
-      <g transform="translate(730, 110) scale(2.5)">
+      <g transform="translate(795, 100) scale(2.5)">
         @include('components.icons.numbers.red.3', ['class' => 'block w-29 h-29'])
       </g>
     </a>
