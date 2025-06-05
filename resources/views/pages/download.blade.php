@@ -28,7 +28,7 @@
     class="w-full mt-50 border-t border-t-evergreen hidden flex-col justify-between"
     data-success-section>
     
-    <div class="text-lg py-10">
+    <div class="text-lg pt-10 pb-100">
       <h1 class="text-2xl mb-15">{{ __('Erkunden Sie den Arenenberg!') }}</h1>
       <p>{{ __('Ein Kurzfilm und vier Hörreportagen mit Annette Fetscherin und Arenenberger Expertinnen und Experten gewähren Einblicke in die vielfältige Geschichte und Gegenwart des Ortes. Die Stationen auf dem gesamten Areal sind in beliebiger Reihenfolge erlebbar. Und stets erwartet Gross und Klein ein Spiel. Bei Fragen melden Sie sich gerne im Shop.') }}</p>
     </div>

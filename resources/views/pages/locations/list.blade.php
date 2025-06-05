@@ -1,7 +1,7 @@
 <x-layout.app>
   @section('content')
   <div 
-    class="w-full mt-50 flex flex-col justify-between gap-y-25">
+    class="w-full mt-50 flex flex-col justify-between gap-y-25 pb-100">
     <div>
       <x-locations.list-item 
         route="{{ localized_route('page.locations.show', Str::slug('Arenenberger Vielfalt')) }}"
