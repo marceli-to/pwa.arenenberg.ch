@@ -8,7 +8,7 @@
       audio="wundervolle-gartenwelt.mp3">
 
       <div class="mt-25">
-        <p>{{ __('Erfahren Sie Wissenswertes über die Entstehung und die Bedeutung des Arenenberger Landschaftsparks. Annette Fetscherin befragt den Museumsdirektor Dominik Gügel und den Landschaftsgärtner Daniel Brogle. ') }}</p>
+        <p>{{ __('Erfahren Sie Wissenswertes über die Entstehung und die Bedeutung des Arenenberger Landschaftsparks. Annette Fetscherin befragt den Museumsdirektor Dominik Gügel und den Landschaftsgärtner Daniel Brogle.') }}</p>
       </div>
 
       <x-accordion.wrapper class="mt-25">
