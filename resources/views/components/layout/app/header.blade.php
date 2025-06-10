@@ -10,7 +10,7 @@
       </div>
       <div class="mt-10">
         <a 
-          href="javascript:;"
+          href="{{ localized_route('page.locations.list') }}"
           @click="menu = !menu"
           class="w-47 h-35 flex items-center justify-center">
           <span x-show="!menu" x-cloak>
