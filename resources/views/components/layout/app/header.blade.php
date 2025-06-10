@@ -4,13 +4,13 @@
     :class="{ '!border-b-0': menu }">
     <div class="w-full flex justify-between">
       <div>
-        <a href="javascript:history.back()" class="block mt-8">
+        <a href="{{ localized_route('page.locations.list') }}" class="block mt-8">
           <x-icons.arrow-left class="w-48 h-auto" />
         </a>
       </div>
       <div class="mt-10">
         <a 
-          href="{{ localized_route('page.locations.list') }}"
+          href="javascript:;"
           @click="menu = !menu"
           class="w-47 h-35 flex items-center justify-center">
           <span x-show="!menu" x-cloak>
