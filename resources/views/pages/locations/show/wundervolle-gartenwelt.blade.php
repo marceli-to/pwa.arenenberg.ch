@@ -20,7 +20,7 @@
           <div class="text-center text-xl tracking-[.3rem]">
             7746
           </div>
-          <div class="pt-10">
+          <div class="pt-20">
             {{ __('Schliesse den Code mit # ab – sonst geht das Schloss nicht auf.') }}
           </div>
         </x-accordion.item>
