@@ -97,7 +97,7 @@ const AUDIO_FILES = {
   ]
 };
 
-const CACHE_NAME = `arenenberg-assets-v0.0.9`;
+const CACHE_NAME = `arenenberg-assets-v1.0.0`;
 const COOKIE_NAME = 'arenenberg-auth';
 
 // Paths excluded from service worker registration
